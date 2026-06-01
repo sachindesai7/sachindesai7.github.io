@@ -5,12 +5,166 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>2D Animation — Sachin Desai</title>
   <link rel="stylesheet" href="style.css" />
+  <style>
+    .project-row {
+      display: flex;
+      align-items: flex-start;
+      gap: 3rem;
+      max-width: 1100px;
+      margin: 0 auto 3.5rem;
+      padding: 0 2rem;
+    }
+
+    .project-row:nth-child(even) {
+      flex-direction: row-reverse;
+    }
+
+    .project-info {
+      flex: 1;
+      padding-top: 0.5rem;
+    }
+
+    .project-info h3 {
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 0.3rem;
+    }
+
+    .project-info h3 span {
+      font-size: 1rem;
+      font-weight: 400;
+      color: var(--muted);
+    }
+
+    .project-info ul {
+      list-style: disc;
+      padding-left: 1.2rem;
+      color: #aaa;
+      font-size: 0.93rem;
+      line-height: 1.85;
+      margin-top: 0.8rem;
+    }
+
+    .project-info ul li {
+      margin-bottom: 0.4rem;
+    }
+
+    .watch-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      margin-top: 1.2rem;
+      color: var(--accent);
+      font-size: 0.88rem;
+      font-weight: 600;
+      text-decoration: none;
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.2s;
+    }
+
+    .watch-link:hover {
+      border-bottom-color: var(--accent);
+    }
+
+    /* Landscape video */
+    .project-video {
+      flex: 1.2;
+      aspect-ratio: 16/9;
+      border-radius: 8px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      background: #000;
+      position: relative;
+      cursor: pointer;
+    }
+
+    /* Portrait video (YouTube Shorts) */
+    .project-video.portrait {
+      flex: 0 0 300px;
+      aspect-ratio: 9/16;
+      max-height: 480px;
+    }
+
+    .project-video img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.3s, opacity 0.3s;
+    }
+
+    .project-video:hover img {
+      transform: scale(1.03);
+      opacity: 0.75;
+    }
+
+    .play-btn {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 64px;
+      height: 64px;
+      background: rgba(0,0,0,0.7);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      pointer-events: none;
+      transition: background 0.2s, transform 0.2s;
+    }
+
+    .project-video:hover .play-btn {
+      background: #ff0000;
+      transform: translate(-50%, -50%) scale(1.1);
+    }
+
+    .play-btn::after {
+      content: '';
+      display: block;
+      width: 0;
+      height: 0;
+      border-style: solid;
+      border-width: 11px 0 11px 20px;
+      border-color: transparent transparent transparent #fff;
+      margin-left: 4px;
+    }
+
+    .project-video iframe {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%;
+      height: 100%;
+      display: block;
+      border: none;
+    }
+
+    @media (max-width: 768px) {
+      .project-row,
+      .project-row:nth-child(even) {
+        flex-direction: column;
+        gap: 1.2rem;
+        margin-bottom: 3rem;
+      }
+      .project-video.portrait {
+        flex: none;
+        width: 100%;
+        max-width: 300px;
+        margin: 0 auto;
+      }
+    }
+  </style>
 </head>
 <body>
 
   <nav>
     <a href="index.html" class="nav-brand">
-      <span>Sachin Desai</span>
+      <img src="images/profile.jpg" alt="Sachin Desai">
+      <div>
+        <span>Sachin Desai</span>
+        <small style="display:block;color:var(--muted);font-size:0.7rem;font-weight:400;">3D/2D Animation and Technical Artist</small>
+      </div>
     </a>
     <ul class="nav-links" id="navLinks">
       <li><a href="index.html">3D Animation</a></li>
@@ -26,38 +180,61 @@
 
   <div class="page-header">
     <h2>2D Animation</h2>
-    <p>Character animation and motion work for 2D productions</p>
+    <p>Spine rigging, slot animation, and Unity sprite work</p>
   </div>
 
-  <div class="grid">
-
-    <div class="card">
-      <div class="card-thumb">
-        <div class="placeholder">✏️</div>
-      </div>
-      <div class="card-body">
-        <h3>Character Animation Reel — TV Series</h3>
-        <div class="tags">
-          <span class="tag">2D Animation</span>
-          <span class="tag">TV Series</span>
-          <span class="tag">Character</span>
-        </div>
-      </div>
+  <!-- Character Animation - Spine -->
+  <div class="project-row" style="margin-top:2.5rem;">
+    <div class="project-info">
+      <h3>Character Animation <span>— Spine</span></h3>
+      <ul>
+        <li>Rigged and animated a chibi-style character in Spine</li>
+        <li>Created idle, walk and action cycles</li>
+        <li>Clean bone setup with mesh deformation</li>
+      </ul>
+      <a href="https://youtu.be/IrayIHEj4z4" target="_blank" class="watch-link">▶ Watch animation</a>
     </div>
-
-    <div class="card">
-      <div class="card-thumb">
-        <div class="placeholder">🎨</div>
-      </div>
-      <div class="card-body">
-        <h3>2D Demoreel</h3>
-        <div class="tags">
-          <span class="tag">2D Animation</span>
-          <span class="tag">Motion</span>
-        </div>
-      </div>
+    <div class="project-video" onclick="playVideo(this,'IrayIHEj4z4')">
+      <img src="https://img.youtube.com/vi/IrayIHEj4z4/maxresdefault.jpg" alt="Character Animation Spine"
+           onerror="this.src='https://img.youtube.com/vi/IrayIHEj4z4/hqdefault.jpg'">
+      <div class="play-btn"></div>
     </div>
+  </div>
 
+  <!-- Slot Animation - Spine -->
+  <div class="project-row">
+    <div class="project-info">
+      <h3>Slot Animation <span>— Spine</span></h3>
+      <ul>
+        <li>Animated a glowing crystal/stone using Spine slot animation</li>
+        <li>Used slot attachments and color timeline for glow effects</li>
+        <li>Smooth looping idle animation with particle-style sparkles</li>
+      </ul>
+      <a href="https://youtu.be/RE-x54GvGMI" target="_blank" class="watch-link">▶ Watch animation</a>
+    </div>
+    <div class="project-video" onclick="playVideo(this,'RE-x54GvGMI')">
+      <img src="https://img.youtube.com/vi/RE-x54GvGMI/maxresdefault.jpg" alt="Slot Animation Spine"
+           onerror="this.src='https://img.youtube.com/vi/RE-x54GvGMI/hqdefault.jpg'">
+      <div class="play-btn"></div>
+    </div>
+  </div>
+
+  <!-- Unity Sprite Animation -->
+  <div class="project-row">
+    <div class="project-info">
+      <h3>Unity Sprite Animation <span>— Avatar Setup</span></h3>
+      <ul>
+        <li>Set up and animated a 2D character avatar in Unity</li>
+        <li>Configured sprite rig with Unity's 2D animation package</li>
+        <li>Avatar ready for in-game use with modular costume system</li>
+      </ul>
+      <a href="https://youtube.com/shorts/8HOHpCe7tus" target="_blank" class="watch-link">▶ Watch animation</a>
+    </div>
+    <div class="project-video portrait" onclick="playVideo(this,'8HOHpCe7tus')">
+      <img src="https://img.youtube.com/vi/8HOHpCe7tus/maxresdefault.jpg" alt="Unity Sprite Animation"
+           onerror="this.src='https://img.youtube.com/vi/8HOHpCe7tus/hqdefault.jpg'">
+      <div class="play-btn"></div>
+    </div>
   </div>
 
   <footer>
@@ -70,6 +247,11 @@
   <script>
     function toggleNav() {
       document.getElementById('navLinks').classList.toggle('open');
+    }
+
+    function playVideo(el, videoId) {
+      el.innerHTML = '<iframe src="https://www.youtube.com/embed/' + videoId + '?autoplay=1&rel=0&modestbranding=1" allow="autoplay; encrypted-media" allowfullscreen></iframe>';
+      el.style.cursor = 'default';
     }
   </script>
 </body>
