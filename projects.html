@@ -367,8 +367,14 @@
       </ul>
       <a href="https://youtu.be/Jl9-fYVYQGs" target="_blank" class="watch-link">▶ Watch episode clips</a>
     </div>
-    <div class="project-video" onclick="playVideo(this,'Jl9-fYVYQGs')">
-      <img src="https://img.youtube.com/vi/Jl9-fYVYQGs/maxresdefault.jpg" alt="Tronji" onerror="this.src='https://img.youtube.com/vi/Jl9-fYVYQGs/hqdefault.jpg'">
+    <div class="project-video" onclick="playVideo(this,'Jl9-fYVYQGs')" style="position:relative;">
+      <img src="images/tronji.png" alt="Tronji"
+           onerror="this.style.display='none'; this.parentElement.querySelector('.thumb-fallback').style.display='flex'">
+      <div class="thumb-fallback" style="display:none;position:absolute;inset:0;background:linear-gradient(135deg,#1a1a2e,#16213e);align-items:center;justify-content:center;flex-direction:column;gap:0.5rem;">
+        <span style="font-size:2.5rem;">🥚</span>
+        <span style="color:#fff;font-weight:700;font-size:1.1rem;">Tronji</span>
+        <span style="color:var(--accent);font-size:0.8rem;">TV Show · Click to watch</span>
+      </div>
       <div class="play-btn"></div>
     </div>
   </div>
