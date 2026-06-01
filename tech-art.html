@@ -5,12 +5,221 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Tech Art — Sachin Desai</title>
   <link rel="stylesheet" href="style.css" />
+  <style>
+    .section-title {
+      max-width: 1100px;
+      margin: 3rem auto 1.5rem;
+      padding: 0 1rem 0 2rem;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--accent);
+      border-left: 3px solid var(--accent);
+    }
+
+    .project-row {
+      display: flex;
+      align-items: flex-start;
+      gap: 3rem;
+      max-width: 1100px;
+      margin: 0 auto 3.5rem;
+      padding: 0 2rem;
+    }
+
+    .project-row:nth-child(even) {
+      flex-direction: row-reverse;
+    }
+
+    .project-info {
+      flex: 1;
+      padding-top: 0.5rem;
+    }
+
+    .project-info h3 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 0.3rem;
+    }
+
+    .project-info h3 span {
+      font-size: 0.95rem;
+      font-weight: 400;
+      color: var(--muted);
+    }
+
+    .project-info ul {
+      list-style: disc;
+      padding-left: 1.2rem;
+      color: #aaa;
+      font-size: 0.93rem;
+      line-height: 1.85;
+      margin-top: 0.8rem;
+    }
+
+    .project-info ul li {
+      margin-bottom: 0.4rem;
+    }
+
+    .btn-group {
+      display: flex;
+      gap: 0.8rem;
+      flex-wrap: wrap;
+      margin-top: 1.4rem;
+    }
+
+    .watch-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      color: var(--accent);
+      font-size: 0.88rem;
+      font-weight: 600;
+      text-decoration: none;
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.2s;
+      padding: 0.5rem 0;
+    }
+
+    .watch-link:hover {
+      border-bottom-color: var(--accent);
+    }
+
+    .download-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.55rem 1.2rem;
+      background: var(--accent);
+      color: #111;
+      font-size: 0.82rem;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      text-decoration: none;
+      border-radius: 4px;
+      transition: opacity 0.2s, transform 0.2s;
+    }
+
+    .download-btn:hover {
+      opacity: 0.85;
+      transform: translateY(-2px);
+    }
+
+    .github-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.55rem 1.2rem;
+      background: transparent;
+      color: var(--text);
+      font-size: 0.82rem;
+      font-weight: 600;
+      text-decoration: none;
+      border-radius: 4px;
+      border: 1px solid #444;
+      transition: border-color 0.2s, color 0.2s;
+    }
+
+    .github-btn:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+
+    /* Video thumbnail */
+    .project-video {
+      flex: 1.4;
+      aspect-ratio: 16/9;
+      border-radius: 8px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      background: #000;
+      position: relative;
+      cursor: pointer;
+    }
+
+    .project-video img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.3s, opacity 0.3s;
+    }
+
+    .project-video:hover img {
+      transform: scale(1.03);
+      opacity: 0.75;
+    }
+
+    .play-btn {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 64px;
+      height: 64px;
+      background: rgba(0,0,0,0.7);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      pointer-events: none;
+      transition: background 0.2s, transform 0.2s;
+    }
+
+    .project-video:hover .play-btn {
+      background: #ff0000;
+      transform: translate(-50%, -50%) scale(1.1);
+    }
+
+    .play-btn::after {
+      content: '';
+      display: block;
+      width: 0;
+      height: 0;
+      border-style: solid;
+      border-width: 11px 0 11px 20px;
+      border-color: transparent transparent transparent #fff;
+      margin-left: 4px;
+    }
+
+    .project-video iframe {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%;
+      height: 100%;
+      display: block;
+      border: none;
+    }
+
+    .divider {
+      max-width: 1100px;
+      margin: 1rem auto 2rem;
+      padding: 0 2rem;
+      border: none;
+      border-top: 1px solid var(--border);
+    }
+
+    @media (max-width: 768px) {
+      .project-row,
+      .project-row:nth-child(even) {
+        flex-direction: column;
+        gap: 1.2rem;
+        margin-bottom: 3rem;
+      }
+    }
+  </style>
 </head>
 <body>
 
   <nav>
     <a href="index.html" class="nav-brand">
-      <span>Sachin Desai</span>
+      <img src="images/profile.jpg" alt="Sachin Desai">
+      <div>
+        <span>Sachin Desai</span>
+        <small style="display:block;color:var(--muted);font-size:0.7rem;font-weight:400;">3D/2D Animation and Technical Artist</small>
+      </div>
     </a>
     <ul class="nav-links" id="navLinks">
       <li><a href="index.html">3D Animation</a></li>
@@ -26,53 +235,128 @@
 
   <div class="page-header">
     <h2>Tech Art</h2>
-    <p>Rigging, shaders, pipeline tools, and technical animation work</p>
+    <p>Pipeline tools, rigging, and technical animation work — Maya · Python · Unity</p>
   </div>
 
-  <div class="grid">
+  <!-- ══════════ TOOLS ══════════ -->
+  <div class="section-title">🛠️ &nbsp; Pipeline Tools</div>
 
-    <div class="card">
-      <div class="card-thumb">
-        <div class="placeholder">⚙️</div>
-      </div>
-      <div class="card-body">
-        <h3>Captain Laser Hawk — Tech Art</h3>
-        <div class="tags">
-          <span class="tag">Rigging</span>
-          <span class="tag">Shaders</span>
-          <span class="tag">Pipeline</span>
-        </div>
+  <!-- FBX Exporter -->
+  <div class="project-row" style="margin-top:2rem;">
+    <div class="project-info">
+      <h3>FBX Exporter Tool <span>— Maya, Python</span></h3>
+      <ul>
+        <li>Batch exports multiple Maya assets to FBX in one click</li>
+        <li>Custom UI built with PyQt inside Maya</li>
+        <li>Supports custom export paths, naming conventions and settings</li>
+        <li>Saves hours of manual export work in production pipelines</li>
+      </ul>
+      <div class="btn-group">
+        <a href="https://raw.githubusercontent.com/sachindesai7/maya-tools/main/batch_fbx_exporter_pro.py"
+           class="download-btn" download>⬇ Download</a>
+        <a href="https://github.com/sachindesai7/maya-tools/blob/main/batch_fbx_exporter_pro.py"
+           target="_blank" class="github-btn">⌥ View on GitHub</a>
       </div>
     </div>
+    <div class="project-video" onclick="playVideo(this,'zBSz3j1xEdM')">
+      <img src="https://img.youtube.com/vi/zBSz3j1xEdM/maxresdefault.jpg" alt="FBX Exporter Tool"
+           onerror="this.src='https://img.youtube.com/vi/zBSz3j1xEdM/hqdefault.jpg'">
+      <div class="play-btn"></div>
+    </div>
+  </div>
 
-    <div class="card">
-      <div class="card-thumb">
-        <div class="placeholder">🔧</div>
-      </div>
-      <div class="card-body">
-        <h3>Clash of Beast — Tech Art</h3>
-        <div class="tags">
-          <span class="tag">Rigging</span>
-          <span class="tag">Shaders</span>
-          <span class="tag">Tech Art</span>
-        </div>
+  <!-- LOD Generator -->
+  <div class="project-row">
+    <div class="project-info">
+      <h3>LOD Generator Tool <span>— Maya, Python</span></h3>
+      <ul>
+        <li>Automatically generates Level of Detail (LOD) meshes in Maya</li>
+        <li>Uses QEM (Quadric Error Metrics) algorithm — pure Python, no plugins needed</li>
+        <li>Reduces polygon count at each LOD level for game optimization</li>
+        <li>Outputs ready-to-integrate LOD meshes for Unity / Unreal</li>
+      </ul>
+      <div class="btn-group">
+        <a href="https://raw.githubusercontent.com/sachindesai7/maya-tools/main/maya_lod_qem_purepy.py"
+           class="download-btn" download>⬇ Download</a>
+        <a href="https://github.com/sachindesai7/maya-tools/blob/main/maya_lod_qem_purepy.py"
+           target="_blank" class="github-btn">⌥ View on GitHub</a>
       </div>
     </div>
+    <div class="project-video" onclick="playVideo(this,'GI4z2T1pGm8')">
+      <img src="https://img.youtube.com/vi/GI4z2T1pGm8/maxresdefault.jpg" alt="LOD Generator"
+           onerror="this.src='https://img.youtube.com/vi/GI4z2T1pGm8/hqdefault.jpg'">
+      <div class="play-btn"></div>
+    </div>
+  </div>
 
-    <div class="card">
-      <div class="card-thumb">
-        <div class="placeholder">🛠️</div>
-      </div>
-      <div class="card-body">
-        <h3>Maya Tools</h3>
-        <div class="tags">
-          <span class="tag">Python</span>
-          <span class="tag">Maya</span>
-          <span class="tag">Pipeline</span>
-        </div>
+  <!-- Virus Cleaner -->
+  <div class="project-row">
+    <div class="project-info">
+      <h3>Maya Virus Cleaner Tool <span>— Python</span></h3>
+      <ul>
+        <li>Detects and removes common Maya file viruses and corrupted scripts</li>
+        <li>Scans and cleans Maya ASCII/Binary files automatically</li>
+        <li>Prevents infected files from spreading across a production pipeline</li>
+        <li>Saved multiple projects from data corruption in studio environments</li>
+      </ul>
+      <div class="btn-group">
+        <a href="https://raw.githubusercontent.com/sachindesai7/maya-tools/main/maya_virus_cleaner.py"
+           class="download-btn" download>⬇ Download</a>
+        <a href="https://github.com/sachindesai7/maya-tools/blob/main/maya_virus_cleaner.py"
+           target="_blank" class="github-btn">⌥ View on GitHub</a>
       </div>
     </div>
+    <div class="project-video" onclick="playVideo(this,'fw6gGDpFjx4')">
+      <img src="https://img.youtube.com/vi/fw6gGDpFjx4/maxresdefault.jpg" alt="Virus Cleaner Tool"
+           onerror="this.src='https://img.youtube.com/vi/fw6gGDpFjx4/hqdefault.jpg'">
+      <div class="play-btn"></div>
+    </div>
+  </div>
 
+  <hr class="divider">
+
+  <!-- ══════════ DEMOREEL ══════════ -->
+  <div class="section-title">🎬 &nbsp; Demoreel & Demos</div>
+
+  <!-- Rigging Demoreel -->
+  <div class="project-row">
+    <div class="project-info">
+      <h3>Rigging Demoreel <span>— Maya, 3dsMax</span></h3>
+      <ul>
+        <li>Character and creature rigs built in Maya and 3ds Max</li>
+        <li>Full body rigs with IK/FK switching, facial controls and deformers</li>
+        <li>Creature rigs including complex spine and limb setups</li>
+        <li>Production-ready rigs used in shipped game titles</li>
+      </ul>
+      <div class="btn-group">
+        <a href="https://youtu.be/GG7JzALkBxI" target="_blank" class="watch-link">▶ Watch full demoreel</a>
+      </div>
+    </div>
+    <div class="project-video" onclick="playVideo(this,'GG7JzALkBxI')">
+      <img src="https://img.youtube.com/vi/GG7JzALkBxI/maxresdefault.jpg" alt="Rigging Demoreel"
+           onerror="this.src='https://img.youtube.com/vi/GG7JzALkBxI/hqdefault.jpg'">
+      <div class="play-btn"></div>
+    </div>
+  </div>
+
+  <!-- Feature Mockup -->
+  <div class="project-row">
+    <div class="project-info">
+      <h3>Feature Mockup <span>— Unity, Cinemachine</span></h3>
+      <ul>
+        <li>Created a feature mockup using in-game assets and Cinemachine in Unity</li>
+        <li>Demonstrates camera sequencing, lighting and VFX integration</li>
+        <li>Used to pitch and visualise game features to design teams</li>
+      </ul>
+      <div class="btn-group">
+        <a href="https://youtu.be/aNIix2QZL2Q" target="_blank" class="watch-link">▶ Watch mockup</a>
+      </div>
+    </div>
+    <div class="project-video" onclick="playVideo(this,'aNIix2QZL2Q')">
+      <img src="https://img.youtube.com/vi/aNIix2QZL2Q/maxresdefault.jpg" alt="Feature Mockup Unity"
+           onerror="this.src='https://img.youtube.com/vi/aNIix2QZL2Q/hqdefault.jpg'">
+      <div class="play-btn"></div>
+    </div>
   </div>
 
   <footer>
@@ -85,6 +369,11 @@
   <script>
     function toggleNav() {
       document.getElementById('navLinks').classList.toggle('open');
+    }
+
+    function playVideo(el, videoId) {
+      el.innerHTML = '<iframe src="https://www.youtube.com/embed/' + videoId + '?autoplay=1&rel=0&modestbranding=1" allow="autoplay; encrypted-media" allowfullscreen></iframe>';
+      el.style.cursor = 'default';
     }
   </script>
 </body>
