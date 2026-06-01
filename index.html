@@ -5,13 +5,168 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Sachin Desai — 3D Animator & Technical Artist</title>
   <link rel="stylesheet" href="style.css" />
+  <style>
+    .project-row {
+      display: flex;
+      align-items: flex-start;
+      gap: 3rem;
+      max-width: 1100px;
+      margin: 0 auto 3.5rem;
+      padding: 0 2rem;
+    }
+
+    .project-row:nth-child(even) {
+      flex-direction: row-reverse;
+    }
+
+    .project-info {
+      flex: 1;
+      padding-top: 0.5rem;
+    }
+
+    .project-info h3 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 0.3rem;
+    }
+
+    .project-info h3 span {
+      font-size: 0.9rem;
+      font-weight: 400;
+      color: var(--muted);
+    }
+
+    .project-info ul {
+      list-style: disc;
+      padding-left: 1.2rem;
+      color: #aaa;
+      font-size: 0.93rem;
+      line-height: 1.85;
+      margin-top: 0.8rem;
+    }
+
+    .project-info ul li {
+      margin-bottom: 0.4rem;
+    }
+
+    .watch-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      margin-top: 1.2rem;
+      color: var(--accent);
+      font-size: 0.88rem;
+      font-weight: 600;
+      text-decoration: none;
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.2s;
+    }
+
+    .watch-link:hover {
+      border-bottom-color: var(--accent);
+    }
+
+    .project-video {
+      flex: 1.6;
+      aspect-ratio: 16/9;
+      border-radius: 8px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      background: #000;
+      position: relative;
+      cursor: pointer;
+    }
+
+    .project-video img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.3s, opacity 0.3s;
+    }
+
+    .project-video:hover img {
+      transform: scale(1.03);
+      opacity: 0.75;
+    }
+
+    .play-btn {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 64px;
+      height: 64px;
+      background: rgba(0,0,0,0.7);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      pointer-events: none;
+      transition: background 0.2s, transform 0.2s;
+    }
+
+    .project-video:hover .play-btn {
+      background: #ff0000;
+      transform: translate(-50%, -50%) scale(1.1);
+    }
+
+    .play-btn::after {
+      content: '';
+      display: block;
+      width: 0;
+      height: 0;
+      border-style: solid;
+      border-width: 11px 0 11px 20px;
+      border-color: transparent transparent transparent #fff;
+      margin-left: 4px;
+    }
+
+    .project-video iframe {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%;
+      height: 100%;
+      display: block;
+      border: none;
+    }
+
+    /* Two stacked videos for Clash of Beast */
+    .video-stack {
+      flex: 1.6;
+      display: flex;
+      flex-direction: column;
+      gap: 0.8rem;
+    }
+
+    .video-stack .project-video {
+      flex: none;
+      width: 100%;
+    }
+
+    @media (max-width: 768px) {
+      .project-row,
+      .project-row:nth-child(even) {
+        flex-direction: column;
+        gap: 1.2rem;
+        margin-bottom: 3rem;
+      }
+      .video-stack {
+        width: 100%;
+      }
+    }
+  </style>
 </head>
 <body>
 
   <nav>
     <a href="index.html" class="nav-brand">
-      <!-- Replace with your actual photo: <img src="images/header_profile.jpg" alt="Sachin Desai"> -->
-      <span>Sachin Desai</span>
+      <img src="images/header_profile.jpg" alt="Sachin Desai">
+      <div>
+        <span>Sachin Desai</span>
+        <small style="display:block;color:var(--muted);font-size:0.7rem;font-weight:400;">3D/2D Animation and Technical Artist</small>
+      </div>
     </a>
     <ul class="nav-links" id="navLinks">
       <li><a href="index.html" class="active">3D Animation</a></li>
@@ -25,116 +180,131 @@
     </div>
   </nav>
 
-  <section class="hero">
-    <h1>Sachin Desai</h1>
-    <p>3D Animator &nbsp;·&nbsp; Technical Artist &nbsp;·&nbsp; Game Integration</p>
-  </section>
-
-  <div class="page-header">
-    <h2>3D Animation</h2>
-    <p>Game animation, character rigs, and motion capture work</p>
+  <!-- Captain Laser Hawk -->
+  <div class="project-row" style="margin-top:2rem;">
+    <div class="project-info">
+      <h3>Captain Laser Hawk <span>— Animation, Rigging, Game Integration, Tech Art</span></h3>
+      <ul>
+        <li>Top-down multiplayer shooter — rigged biped characters</li>
+        <li>Created victory poses, emotes and locomotive cycles</li>
+        <li>Integrated and tested in-engine</li>
+      </ul>
+      <a href="https://youtu.be/a3jojm-xbZM" target="_blank" class="watch-link">▶ Watch video</a>
+    </div>
+    <div class="project-video" onclick="playVideo(this,'a3jojm-xbZM')">
+      <img src="https://img.youtube.com/vi/a3jojm-xbZM/maxresdefault.jpg" alt="Captain Laser Hawk"
+           onerror="this.src='https://img.youtube.com/vi/a3jojm-xbZM/hqdefault.jpg'">
+      <div class="play-btn"></div>
+    </div>
   </div>
 
-  <div class="grid">
-
-    <div class="card">
-      <div class="card-thumb">
-        <!-- Replace src with your actual thumbnail: <img src="images/captain-laser-hawk.jpg" alt="Captain Laser Hawk"> -->
-        <div class="placeholder">🎮</div>
+  <!-- Clash of Beast (2 videos) -->
+  <div class="project-row">
+    <div class="project-info">
+      <h3>Clash of Beast <span>— Animation, Rigging, Game Integration, Tech Art</span></h3>
+      <ul>
+        <li>Mobile strategy — rigged &amp; animated dozens of creatures/beasts and environmental assets</li>
+        <li>Created feature mockup using Unity Cinemachine and spell VFX integrations</li>
+        <li>Built and tested bundles in Unity in close collaboration with design and dev team</li>
+      </ul>
+      <a href="https://youtu.be/l-sVlzuFMvU" target="_blank" class="watch-link">▶ Watch videos</a>
+    </div>
+    <div class="video-stack">
+      <div class="project-video" onclick="playVideo(this,'l-sVlzuFMvU')">
+        <img src="https://img.youtube.com/vi/l-sVlzuFMvU/maxresdefault.jpg" alt="Clash of Beast A"
+             onerror="this.src='https://img.youtube.com/vi/l-sVlzuFMvU/hqdefault.jpg'">
+        <div class="play-btn"></div>
       </div>
-      <div class="card-body">
-        <h3>Captain Laser Hawk</h3>
-        <div class="tags">
-          <span class="tag">Animation</span>
-          <span class="tag">Rigging</span>
-          <span class="tag">Game Integration</span>
-          <span class="tag">Tech Art</span>
-        </div>
+      <div class="project-video" onclick="playVideo(this,'QTlXPh7OnD4')">
+        <img src="https://img.youtube.com/vi/QTlXPh7OnD4/maxresdefault.jpg" alt="Clash of Beast B"
+             onerror="this.src='https://img.youtube.com/vi/QTlXPh7OnD4/hqdefault.jpg'">
+        <div class="play-btn"></div>
       </div>
     </div>
+  </div>
 
-    <div class="card">
-      <div class="card-thumb">
-        <div class="placeholder">🐉</div>
-      </div>
-      <div class="card-body">
-        <h3>Clash of Beast</h3>
-        <div class="tags">
-          <span class="tag">Animation</span>
-          <span class="tag">Rigging</span>
-          <span class="tag">Game Integration</span>
-          <span class="tag">Tech Art</span>
-        </div>
-      </div>
+  <!-- Deer Hunter -->
+  <div class="project-row">
+    <div class="project-info">
+      <h3>Deer Hunter <span>— Animation, Game Integration</span></h3>
+      <ul>
+        <li>First-person shooting cycles</li>
+        <li>Wild animal animations</li>
+      </ul>
+      <a href="https://youtu.be/7hwnC-gsl-U" target="_blank" class="watch-link">▶ Watch video</a>
     </div>
-
-    <div class="card">
-      <div class="card-thumb">
-        <div class="placeholder">🦌</div>
-      </div>
-      <div class="card-body">
-        <h3>Deer Hunter</h3>
-        <div class="tags">
-          <span class="tag">Animation</span>
-          <span class="tag">Game Integration</span>
-        </div>
-      </div>
+    <div class="project-video" onclick="playVideo(this,'7hwnC-gsl-U')">
+      <img src="https://img.youtube.com/vi/7hwnC-gsl-U/maxresdefault.jpg" alt="Deer Hunter"
+           onerror="this.src='https://img.youtube.com/vi/7hwnC-gsl-U/hqdefault.jpg'">
+      <div class="play-btn"></div>
     </div>
+  </div>
 
-    <div class="card">
-      <div class="card-thumb">
-        <div class="placeholder">🤼</div>
-      </div>
-      <div class="card-body">
-        <h3>WWE Mayhem</h3>
-        <div class="tags">
-          <span class="tag">Animation</span>
-          <span class="tag">Game Integration</span>
-        </div>
-      </div>
+  <!-- WWE Mayhem -->
+  <div class="project-row">
+    <div class="project-info">
+      <h3>WWE Mayhem <span>— Animation, Game Integration</span></h3>
+      <ul>
+        <li>Sole animator for all exaggerated attack, combo, defense and special moves for wrestlers</li>
+      </ul>
+      <a href="https://youtu.be/f5peGpKzl94" target="_blank" class="watch-link">▶ Watch video</a>
     </div>
-
-    <div class="card">
-      <div class="card-thumb">
-        <div class="placeholder">🥽</div>
-      </div>
-      <div class="card-body">
-        <h3>Mocap and VR Demoreel</h3>
-        <div class="tags">
-          <span class="tag">Motion Capture</span>
-          <span class="tag">VR</span>
-          <span class="tag">Animation</span>
-        </div>
-      </div>
+    <div class="project-video" onclick="playVideo(this,'f5peGpKzl94')">
+      <img src="https://img.youtube.com/vi/f5peGpKzl94/maxresdefault.jpg" alt="WWE Mayhem"
+           onerror="this.src='https://img.youtube.com/vi/f5peGpKzl94/hqdefault.jpg'">
+      <div class="play-btn"></div>
     </div>
+  </div>
 
-    <div class="card">
-      <div class="card-thumb">
-        <div class="placeholder">🎬</div>
-      </div>
-      <div class="card-body">
-        <h3>Unity Animation</h3>
-        <div class="tags">
-          <span class="tag">Unity</span>
-          <span class="tag">Animation</span>
-          <span class="tag">Game Integration</span>
-        </div>
-      </div>
+  <!-- Mocap and VR Demoreel -->
+  <div class="project-row">
+    <div class="project-info">
+      <h3>Mocap and VR Demoreel</h3>
+      <ul>
+        <li>Motion capture performance cleanup and retargeting</li>
+        <li>VR character animation and interaction systems</li>
+      </ul>
+      <a href="https://youtu.be/CZTYiUbLDJo" target="_blank" class="watch-link">▶ Watch demoreel</a>
     </div>
-
-    <div class="card">
-      <div class="card-thumb">
-        <div class="placeholder">📺</div>
-      </div>
-      <div class="card-body">
-        <h3>Character Animation Reel — TV Series</h3>
-        <div class="tags">
-          <span class="tag">Character Animation</span>
-          <span class="tag">TV Series</span>
-        </div>
-      </div>
+    <div class="project-video" onclick="playVideo(this,'CZTYiUbLDJo')">
+      <img src="https://img.youtube.com/vi/CZTYiUbLDJo/maxresdefault.jpg" alt="Mocap and VR Demoreel"
+           onerror="this.src='https://img.youtube.com/vi/CZTYiUbLDJo/hqdefault.jpg'">
+      <div class="play-btn"></div>
     </div>
+  </div>
 
+  <!-- Unity Animation -->
+  <div class="project-row">
+    <div class="project-info">
+      <h3>Unity Animation</h3>
+      <ul>
+        <li>Character and prop animation built and integrated inside Unity</li>
+        <li>Animation state machines, blend trees and in-engine testing</li>
+      </ul>
+      <a href="https://youtu.be/EzmqlBVfVls" target="_blank" class="watch-link">▶ Watch video</a>
+    </div>
+    <div class="project-video" onclick="playVideo(this,'EzmqlBVfVls')">
+      <img src="https://img.youtube.com/vi/EzmqlBVfVls/maxresdefault.jpg" alt="Unity Animation"
+           onerror="this.src='https://img.youtube.com/vi/EzmqlBVfVls/hqdefault.jpg'">
+      <div class="play-btn"></div>
+    </div>
+  </div>
+
+  <!-- Character Animation Reel -->
+  <div class="project-row">
+    <div class="project-info">
+      <h3>Character Animation Reel <span>— TV Series</span></h3>
+      <ul>
+        <li>Character animation demoreel for TV series productions</li>
+        <li>Showcases acting, body mechanics and facial animation</li>
+      </ul>
+      <a href="https://youtu.be/GO5D99TCI_4" target="_blank" class="watch-link">▶ Watch demoreel</a>
+    </div>
+    <div class="project-video" onclick="playVideo(this,'GO5D99TCI_4')">
+      <img src="https://img.youtube.com/vi/GO5D99TCI_4/maxresdefault.jpg" alt="Character Animation Reel TV Series"
+           onerror="this.src='https://img.youtube.com/vi/GO5D99TCI_4/hqdefault.jpg'">
+      <div class="play-btn"></div>
+    </div>
   </div>
 
   <footer>
@@ -147,6 +317,11 @@
   <script>
     function toggleNav() {
       document.getElementById('navLinks').classList.toggle('open');
+    }
+
+    function playVideo(el, videoId) {
+      el.innerHTML = '<iframe src="https://www.youtube.com/embed/' + videoId + '?autoplay=1&rel=0&modestbranding=1" allow="autoplay; encrypted-media" allowfullscreen></iframe>';
+      el.style.cursor = 'default';
     }
   </script>
 </body>
