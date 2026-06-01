@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>2D Animation — Sachin Desai</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <nav>
+    <a href="index.html" class="nav-brand">
+      <span>Sachin Desai</span>
+    </a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">3D Animation</a></li>
+      <li><a href="tech-art.html">Tech Art</a></li>
+      <li><a href="2d-animation.html" class="active">2D Animation</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="about.html">About Me</a></li>
+    </ul>
+    <div class="hamburger" onclick="toggleNav()">
+      <span></span><span></span><span></span>
+    </div>
+  </nav>
+
+  <div class="page-header">
+    <h2>2D Animation</h2>
+    <p>Character animation and motion work for 2D productions</p>
+  </div>
+
+  <div class="grid">
+
+    <div class="card">
+      <div class="card-thumb">
+        <div class="placeholder">✏️</div>
+      </div>
+      <div class="card-body">
+        <h3>Character Animation Reel — TV Series</h3>
+        <div class="tags">
+          <span class="tag">2D Animation</span>
+          <span class="tag">TV Series</span>
+          <span class="tag">Character</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-thumb">
+        <div class="placeholder">🎨</div>
+      </div>
+      <div class="card-body">
+        <h3>2D Demoreel</h3>
+        <div class="tags">
+          <span class="tag">2D Animation</span>
+          <span class="tag">Motion</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <footer>
+    &copy; 2026 Sachin Desai &nbsp;·&nbsp;
+    <a href="https://www.linkedin.com/in/sachindesai7" target="_blank">LinkedIn</a>
+    &nbsp;·&nbsp;
+    <a href="about.html">Contact</a>
+  </footer>
+
+  <script>
+    function toggleNav() {
+      document.getElementById('navLinks').classList.toggle('open');
+    }
+  </script>
+</body>
+</html>

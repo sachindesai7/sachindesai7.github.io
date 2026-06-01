@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About Me — Sachin Desai</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <nav>
+    <a href="index.html" class="nav-brand">
+      <span>Sachin Desai</span>
+    </a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">3D Animation</a></li>
+      <li><a href="tech-art.html">Tech Art</a></li>
+      <li><a href="2d-animation.html">2D Animation</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="about.html" class="active">About Me</a></li>
+    </ul>
+    <div class="hamburger" onclick="toggleNav()">
+      <span></span><span></span><span></span>
+    </div>
+  </nav>
+
+  <div class="about-wrap">
+
+    <h2>About Me</h2>
+
+    <p>
+      I'm Sachin Desai, a 3D/2D Animator and Technical Artist with experience
+      in game animation, character rigging, motion capture, and pipeline tools.
+      I've worked on shipped mobile titles including WWE Mayhem, Deer Hunter,
+      Captain Laser Hawk, and Clash of Beast.
+    </p>
+
+    <p>
+      My work spans the full animation pipeline — from initial rigging and
+      character setup through game integration in Unity and Unreal Engine.
+      I also build Maya tools in Python to streamline production workflows.
+    </p>
+
+    <!-- Contact -->
+    <ul class="contact-list">
+      <li>
+        <span class="icon">📞</span>
+        <span>+91 98202 13275</span>
+      </li>
+      <li>
+        <span class="icon">🔗</span>
+        <a href="https://www.linkedin.com/in/sachindesai7" target="_blank">
+          linkedin.com/in/sachindesai7
+        </a>
+      </li>
+      <li>
+        <span class="icon">💻</span>
+        <a href="https://github.com/sachindesai7" target="_blank">
+          github.com/sachindesai7
+        </a>
+      </li>
+    </ul>
+
+    <!-- Download buttons — replace href with actual file paths once uploaded -->
+    <div class="btn-row">
+      <a href="files/Sachin_Desai_Resume.pdf" class="btn btn-primary" download>
+        ⬇ Download Resume
+      </a>
+      <a href="files/Sachin_Desai_CoverLetter.pdf" class="btn btn-outline" download>
+        ⬇ Download Cover Letter
+      </a>
+    </div>
+
+  </div>
+
+  <footer>
+    &copy; 2026 Sachin Desai &nbsp;·&nbsp;
+    <a href="https://www.linkedin.com/in/sachindesai7" target="_blank">LinkedIn</a>
+    &nbsp;·&nbsp;
+    <a href="about.html">Contact</a>
+  </footer>
+
+  <script>
+    function toggleNav() {
+      document.getElementById('navLinks').classList.toggle('open');
+    }
+  </script>
+</body>
+</html>

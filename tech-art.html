@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tech Art — Sachin Desai</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <nav>
+    <a href="index.html" class="nav-brand">
+      <span>Sachin Desai</span>
+    </a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">3D Animation</a></li>
+      <li><a href="tech-art.html" class="active">Tech Art</a></li>
+      <li><a href="2d-animation.html">2D Animation</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="about.html">About Me</a></li>
+    </ul>
+    <div class="hamburger" onclick="toggleNav()">
+      <span></span><span></span><span></span>
+    </div>
+  </nav>
+
+  <div class="page-header">
+    <h2>Tech Art</h2>
+    <p>Rigging, shaders, pipeline tools, and technical animation work</p>
+  </div>
+
+  <div class="grid">
+
+    <div class="card">
+      <div class="card-thumb">
+        <div class="placeholder">⚙️</div>
+      </div>
+      <div class="card-body">
+        <h3>Captain Laser Hawk — Tech Art</h3>
+        <div class="tags">
+          <span class="tag">Rigging</span>
+          <span class="tag">Shaders</span>
+          <span class="tag">Pipeline</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-thumb">
+        <div class="placeholder">🔧</div>
+      </div>
+      <div class="card-body">
+        <h3>Clash of Beast — Tech Art</h3>
+        <div class="tags">
+          <span class="tag">Rigging</span>
+          <span class="tag">Shaders</span>
+          <span class="tag">Tech Art</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-thumb">
+        <div class="placeholder">🛠️</div>
+      </div>
+      <div class="card-body">
+        <h3>Maya Tools</h3>
+        <div class="tags">
+          <span class="tag">Python</span>
+          <span class="tag">Maya</span>
+          <span class="tag">Pipeline</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <footer>
+    &copy; 2026 Sachin Desai &nbsp;·&nbsp;
+    <a href="https://www.linkedin.com/in/sachindesai7" target="_blank">LinkedIn</a>
+    &nbsp;·&nbsp;
+    <a href="about.html">Contact</a>
+  </footer>
+
+  <script>
+    function toggleNav() {
+      document.getElementById('navLinks').classList.toggle('open');
+    }
+  </script>
+</body>
+</html>
