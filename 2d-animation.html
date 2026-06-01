@@ -260,7 +260,7 @@
     }
 
     document.addEventListener('DOMContentLoaded', function() {
-      var isMobile = window.innerWidth <= 768 || navigator.maxTouchPoints > 1;
+      var isMobile = window.innerWidth <= 768;
       if (isMobile) return;
       document.querySelectorAll('.project-video[onclick]').forEach(function(el) {
         var match = el.getAttribute('onclick').match(/'([^']+)'\)/);
