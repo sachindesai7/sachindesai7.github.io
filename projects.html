@@ -81,9 +81,58 @@
       border: 1px solid var(--border);
       background: #000;
       position: relative;
+      cursor: pointer;
+    }
+
+    .project-video img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.3s, opacity 0.3s;
+    }
+
+    .project-video:hover img {
+      transform: scale(1.03);
+      opacity: 0.75;
+    }
+
+    /* Play button overlay */
+    .play-btn {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 64px;
+      height: 64px;
+      background: rgba(0,0,0,0.7);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      pointer-events: none;
+      transition: background 0.2s, transform 0.2s;
+    }
+
+    .project-video:hover .play-btn {
+      background: #ff0000;
+      transform: translate(-50%, -50%) scale(1.1);
+    }
+
+    .play-btn::after {
+      content: '';
+      display: block;
+      width: 0;
+      height: 0;
+      border-style: solid;
+      border-width: 11px 0 11px 20px;
+      border-color: transparent transparent transparent #fff;
+      margin-left: 4px;
     }
 
     .project-video iframe {
+      position: absolute;
+      top: 0; left: 0;
       width: 100%;
       height: 100%;
       display: block;
@@ -150,9 +199,9 @@
       </ul>
       <a href="https://www.youtube.com/watch?v=b4IhWAkFeq0" target="_blank" class="watch-link">▶ Watch gameplay video</a>
     </div>
-    <div class="project-video">
-      <iframe src="https://www.youtube.com/embed/b4IhWAkFeq0?autoplay=1&mute=1&loop=1&playlist=b4IhWAkFeq0&start=5&end=35&controls=0&modestbranding=1&rel=0"
-        allow="autoplay; encrypted-media" allowfullscreen loading="lazy"></iframe>
+    <div class="project-video" onclick="playVideo(this,'b4IhWAkFeq0')">
+      <img src="https://img.youtube.com/vi/b4IhWAkFeq0/maxresdefault.jpg" alt="LILA Black gameplay" onerror="this.src='https://img.youtube.com/vi/b4IhWAkFeq0/hqdefault.jpg'">
+      <div class="play-btn"></div>
     </div>
   </div>
 
@@ -166,9 +215,9 @@
       </ul>
       <a href="https://youtu.be/I6_KuopbfjU" target="_blank" class="watch-link">▶ Watch gameplay video</a>
     </div>
-    <div class="project-video">
-      <iframe src="https://www.youtube.com/embed/I6_KuopbfjU?autoplay=1&mute=1&loop=1&playlist=I6_KuopbfjU&start=5&end=35&controls=0&modestbranding=1&rel=0"
-        allow="autoplay; encrypted-media" allowfullscreen loading="lazy"></iframe>
+    <div class="project-video" onclick="playVideo(this,'I6_KuopbfjU')">
+      <img src="https://img.youtube.com/vi/I6_KuopbfjU/maxresdefault.jpg" alt="Laser Hawk gameplay">
+      <div class="play-btn"></div>
     </div>
   </div>
 
@@ -182,9 +231,9 @@
       </ul>
       <a href="https://youtu.be/xZYf_TgRlqE" target="_blank" class="watch-link">▶ Watch gameplay video</a>
     </div>
-    <div class="project-video">
-      <iframe src="https://www.youtube.com/embed/xZYf_TgRlqE?autoplay=1&mute=1&loop=1&playlist=xZYf_TgRlqE&start=5&end=35&controls=0&modestbranding=1&rel=0"
-        allow="autoplay; encrypted-media" allowfullscreen loading="lazy"></iframe>
+    <div class="project-video" onclick="playVideo(this,'xZYf_TgRlqE')">
+      <img src="https://img.youtube.com/vi/xZYf_TgRlqE/maxresdefault.jpg" alt="Clash of Beast gameplay">
+      <div class="play-btn"></div>
     </div>
   </div>
 
@@ -199,9 +248,9 @@
       </ul>
       <a href="https://youtu.be/fcWCKchL0To" target="_blank" class="watch-link">▶ Watch gameplay video</a>
     </div>
-    <div class="project-video">
-      <iframe src="https://www.youtube.com/embed/fcWCKchL0To?autoplay=1&mute=1&loop=1&playlist=fcWCKchL0To&start=5&end=35&controls=0&modestbranding=1&rel=0"
-        allow="autoplay; encrypted-media" allowfullscreen loading="lazy"></iframe>
+    <div class="project-video" onclick="playVideo(this,'fcWCKchL0To')">
+      <img src="https://img.youtube.com/vi/fcWCKchL0To/maxresdefault.jpg" alt="Growtopia gameplay">
+      <div class="play-btn"></div>
     </div>
   </div>
 
@@ -214,9 +263,9 @@
       </ul>
       <a href="https://youtu.be/xE1LTJslUBY" target="_blank" class="watch-link">▶ Watch gameplay video</a>
     </div>
-    <div class="project-video">
-      <iframe src="https://www.youtube.com/embed/xE1LTJslUBY?autoplay=1&mute=1&loop=1&playlist=xE1LTJslUBY&start=5&end=35&controls=0&modestbranding=1&rel=0"
-        allow="autoplay; encrypted-media" allowfullscreen loading="lazy"></iframe>
+    <div class="project-video" onclick="playVideo(this,'xE1LTJslUBY')">
+      <img src="https://img.youtube.com/vi/xE1LTJslUBY/maxresdefault.jpg" alt="Disney Sorcerer's Arena gameplay">
+      <div class="play-btn"></div>
     </div>
   </div>
 
@@ -229,9 +278,9 @@
       </ul>
       <a href="https://youtu.be/CrLgZM7mCFY" target="_blank" class="watch-link">▶ Watch gameplay video</a>
     </div>
-    <div class="project-video">
-      <iframe src="https://www.youtube.com/embed/CrLgZM7mCFY?autoplay=1&mute=1&loop=1&playlist=CrLgZM7mCFY&start=5&end=35&controls=0&modestbranding=1&rel=0"
-        allow="autoplay; encrypted-media" allowfullscreen loading="lazy"></iframe>
+    <div class="project-video" onclick="playVideo(this,'CrLgZM7mCFY')">
+      <img src="https://img.youtube.com/vi/CrLgZM7mCFY/maxresdefault.jpg" alt="Deer Hunter gameplay">
+      <div class="play-btn"></div>
     </div>
   </div>
 
@@ -243,9 +292,9 @@
       </ul>
       <a href="https://youtu.be/P3X0c4mnmcc" target="_blank" class="watch-link">▶ Watch gameplay video</a>
     </div>
-    <div class="project-video">
-      <iframe src="https://www.youtube.com/embed/P3X0c4mnmcc?autoplay=1&mute=1&loop=1&playlist=P3X0c4mnmcc&start=5&end=35&controls=0&modestbranding=1&rel=0"
-        allow="autoplay; encrypted-media" allowfullscreen loading="lazy"></iframe>
+    <div class="project-video" onclick="playVideo(this,'P3X0c4mnmcc')">
+      <img src="https://img.youtube.com/vi/P3X0c4mnmcc/maxresdefault.jpg" alt="WWE Universe gameplay">
+      <div class="play-btn"></div>
     </div>
   </div>
 
@@ -257,9 +306,9 @@
       </ul>
       <a href="https://youtu.be/4BZ5CGzmhoQ" target="_blank" class="watch-link">▶ Watch gameplay video</a>
     </div>
-    <div class="project-video">
-      <iframe src="https://www.youtube.com/embed/4BZ5CGzmhoQ?autoplay=1&mute=1&loop=1&playlist=4BZ5CGzmhoQ&start=5&end=35&controls=0&modestbranding=1&rel=0"
-        allow="autoplay; encrypted-media" allowfullscreen loading="lazy"></iframe>
+    <div class="project-video" onclick="playVideo(this,'4BZ5CGzmhoQ')">
+      <img src="https://img.youtube.com/vi/4BZ5CGzmhoQ/maxresdefault.jpg" alt="WWE Mayhem gameplay">
+      <div class="play-btn"></div>
     </div>
   </div>
 
@@ -276,9 +325,9 @@
       </ul>
       <a href="https://youtu.be/mcWo1bSMCYA" target="_blank" class="watch-link">▶ Watch episode clips</a>
     </div>
-    <div class="project-video">
-      <iframe src="https://www.youtube.com/embed/mcWo1bSMCYA?autoplay=1&mute=1&loop=1&playlist=mcWo1bSMCYA&start=5&end=35&controls=0&modestbranding=1&rel=0"
-        allow="autoplay; encrypted-media" allowfullscreen loading="lazy"></iframe>
+    <div class="project-video" onclick="playVideo(this,'mcWo1bSMCYA')">
+      <img src="https://img.youtube.com/vi/mcWo1bSMCYA/maxresdefault.jpg" alt="Puss in Boots">
+      <div class="play-btn"></div>
     </div>
   </div>
 
@@ -290,9 +339,9 @@
       </ul>
       <a href="https://youtu.be/sMvsAvWe5Uo" target="_blank" class="watch-link">▶ Watch episode clips</a>
     </div>
-    <div class="project-video">
-      <iframe src="https://www.youtube.com/embed/sMvsAvWe5Uo?autoplay=1&mute=1&loop=1&playlist=sMvsAvWe5Uo&start=5&end=35&controls=0&modestbranding=1&rel=0"
-        allow="autoplay; encrypted-media" allowfullscreen loading="lazy"></iframe>
+    <div class="project-video" onclick="playVideo(this,'sMvsAvWe5Uo')">
+      <img src="https://img.youtube.com/vi/sMvsAvWe5Uo/maxresdefault.jpg" alt="Sheriff Callie's Wild West">
+      <div class="play-btn"></div>
     </div>
   </div>
 
@@ -304,9 +353,9 @@
       </ul>
       <a href="https://youtu.be/uTQ3CHBA9TA" target="_blank" class="watch-link">▶ Watch episode clips</a>
     </div>
-    <div class="project-video">
-      <iframe src="https://www.youtube.com/embed/uTQ3CHBA9TA?autoplay=1&mute=1&loop=1&playlist=uTQ3CHBA9TA&start=5&end=35&controls=0&modestbranding=1&rel=0"
-        allow="autoplay; encrypted-media" allowfullscreen loading="lazy"></iframe>
+    <div class="project-video" onclick="playVideo(this,'uTQ3CHBA9TA')">
+      <img src="https://img.youtube.com/vi/uTQ3CHBA9TA/maxresdefault.jpg" alt="Beware of Batman">
+      <div class="play-btn"></div>
     </div>
   </div>
 
@@ -318,9 +367,9 @@
       </ul>
       <a href="https://youtu.be/IhSob1-nc84" target="_blank" class="watch-link">▶ Watch episode clips</a>
     </div>
-    <div class="project-video">
-      <iframe src="https://www.youtube.com/embed/IhSob1-nc84?autoplay=1&mute=1&loop=1&playlist=IhSob1-nc84&start=5&end=35&controls=0&modestbranding=1&rel=0"
-        allow="autoplay; encrypted-media" allowfullscreen loading="lazy"></iframe>
+    <div class="project-video" onclick="playVideo(this,'IhSob1-nc84')">
+      <img src="https://img.youtube.com/vi/IhSob1-nc84/maxresdefault.jpg" alt="Tronji">
+      <div class="play-btn"></div>
     </div>
   </div>
 
@@ -332,9 +381,9 @@
       </ul>
       <a href="https://youtu.be/sZcgnklduKg" target="_blank" class="watch-link">▶ Watch episode clips</a>
     </div>
-    <div class="project-video">
-      <iframe src="https://www.youtube.com/embed/sZcgnklduKg?autoplay=1&mute=1&loop=1&playlist=sZcgnklduKg&start=5&end=35&controls=0&modestbranding=1&rel=0"
-        allow="autoplay; encrypted-media" allowfullscreen loading="lazy"></iframe>
+    <div class="project-video" onclick="playVideo(this,'sZcgnklduKg')">
+      <img src="https://img.youtube.com/vi/sZcgnklduKg/maxresdefault.jpg" alt="Cosmic Quantum Ray">
+      <div class="play-btn"></div>
     </div>
   </div>
 
@@ -346,9 +395,9 @@
       </ul>
       <a href="https://www.youtube.com/watch?v=_Wsd9daARR4" target="_blank" class="watch-link">▶ Watch episode clips</a>
     </div>
-    <div class="project-video">
-      <iframe src="https://www.youtube.com/embed/_Wsd9daARR4?autoplay=1&mute=1&loop=1&playlist=_Wsd9daARR4&start=5&end=35&controls=0&modestbranding=1&rel=0"
-        allow="autoplay; encrypted-media" allowfullscreen loading="lazy"></iframe>
+    <div class="project-video" onclick="playVideo(this,'_Wsd9daARR4')">
+      <img src="https://img.youtube.com/vi/_Wsd9daARR4/maxresdefault.jpg" alt="321 Penguins">
+      <div class="play-btn"></div>
     </div>
   </div>
 
@@ -362,6 +411,11 @@
   <script>
     function toggleNav() {
       document.getElementById('navLinks').classList.toggle('open');
+    }
+
+    function playVideo(el, videoId) {
+      el.innerHTML = '<iframe src="https://www.youtube.com/embed/' + videoId + '?autoplay=1&rel=0&modestbranding=1" allow="autoplay; encrypted-media" allowfullscreen></iframe>';
+      el.style.cursor = 'default';
     }
   </script>
 </body>
