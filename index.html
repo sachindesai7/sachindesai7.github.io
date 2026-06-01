@@ -331,6 +331,21 @@
       el.innerHTML = '<iframe src="https://www.youtube.com/embed/' + videoId + '?autoplay=1&rel=0&modestbranding=1" allow="autoplay; encrypted-media" allowfullscreen></iframe>';
       el.style.cursor = 'default';
     }
+
+    // Desktop: autoplay all videos. Mobile: keep thumbnails, tap to play
+    document.addEventListener('DOMContentLoaded', function() {
+      var isMobile = window.innerWidth <= 768 || navigator.maxTouchPoints > 1;
+      if (isMobile) return; // mobile keeps thumbnails
+      document.querySelectorAll('.project-video[onclick]').forEach(function(el) {
+        var match = el.getAttribute('onclick').match(/'([^']+)'\)/);
+        if (!match) return;
+        var videoId = match[1];
+        el.innerHTML = '<iframe src="https://www.youtube.com/embed/' + videoId +
+          '?autoplay=1&mute=1&loop=1&playlist=' + videoId +
+          '&controls=1&rel=0&modestbranding=1" allow="autoplay; encrypted-media" allowfullscreen></iframe>';
+        el.style.cursor = 'default';
+      });
+    });
   </script>
 </body>
 </html>
