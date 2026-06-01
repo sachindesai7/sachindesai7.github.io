@@ -5,12 +5,146 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>About Me — Sachin Desai</title>
   <link rel="stylesheet" href="style.css" />
+  <style>
+    .about-hero {
+      display: flex;
+      align-items: center;
+      gap: 4rem;
+      max-width: 1000px;
+      margin: 4rem auto;
+      padding: 0 2rem;
+    }
+
+    .about-photo {
+      flex-shrink: 0;
+      width: 320px;
+      height: 320px;
+      border-radius: 50%;
+      overflow: hidden;
+      border: 4px solid var(--accent);
+    }
+
+    .about-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+    }
+
+    .about-photo .no-photo {
+      width: 100%;
+      height: 100%;
+      background: #222;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 5rem;
+    }
+
+    .about-text h1 {
+      font-size: 3rem;
+      color: #fff;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+
+    .about-text h2 {
+      font-size: 1.2rem;
+      color: var(--accent);
+      font-weight: 600;
+      margin-bottom: 1.5rem;
+      letter-spacing: 1px;
+    }
+
+    .about-text p {
+      color: #bbb;
+      line-height: 1.85;
+      font-size: 0.97rem;
+      margin-bottom: 0.6rem;
+    }
+
+    .about-footer-strip {
+      background: var(--bg2);
+      border-top: 1px solid var(--border);
+      padding: 2.5rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      gap: 2rem;
+      max-width: 1000px;
+      margin: 2rem auto 0;
+    }
+
+    .footer-col h4 {
+      color: #fff;
+      font-size: 0.9rem;
+      font-weight: 700;
+      margin-bottom: 0.8rem;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    .footer-col p, .footer-col a {
+      color: var(--muted);
+      font-size: 0.88rem;
+      display: block;
+      line-height: 1.9;
+      text-decoration: none;
+    }
+
+    .footer-col a:hover {
+      color: var(--accent);
+    }
+
+    .linkedin-icon {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 36px;
+      height: 36px;
+      background: #0a66c2;
+      border-radius: 6px;
+      color: #fff;
+      font-weight: 700;
+      font-size: 0.9rem;
+      text-decoration: none;
+      margin-top: 0.3rem;
+      transition: opacity 0.2s;
+    }
+
+    .linkedin-icon:hover {
+      opacity: 0.8;
+    }
+
+    @media (max-width: 700px) {
+      .about-hero {
+        flex-direction: column;
+        text-align: center;
+        gap: 2rem;
+        margin: 2rem auto;
+      }
+      .about-photo {
+        width: 220px;
+        height: 220px;
+      }
+      .about-text h1 { font-size: 2rem; }
+      .about-footer-strip {
+        flex-direction: column;
+        text-align: center;
+      }
+    }
+  </style>
 </head>
 <body>
 
   <nav>
     <a href="index.html" class="nav-brand">
-      <span>Sachin Desai</span>
+      <img src="images/profile.jpg" alt="Sachin Desai">
+      <div>
+        <span>Sachin Desai</span>
+        <small style="display:block;color:var(--muted);font-size:0.7rem;font-weight:400;">3D/2D Animation and Technical Artist</small>
+      </div>
     </a>
     <ul class="nav-links" id="navLinks">
       <li><a href="index.html">3D Animation</a></li>
@@ -24,53 +158,56 @@
     </div>
   </nav>
 
-  <div class="about-wrap">
+  <!-- Hero: Photo + Text side by side -->
+  <div class="about-hero">
 
-    <h2>About Me</h2>
-
-    <p>
-      I'm Sachin Desai, a 3D/2D Animator and Technical Artist with experience
-      in game animation, character rigging, motion capture, and pipeline tools.
-      I've worked on shipped mobile titles including WWE Mayhem, Deer Hunter,
-      Captain Laser Hawk, and Clash of Beast.
-    </p>
-
-    <p>
-      My work spans the full animation pipeline — from initial rigging and
-      character setup through game integration in Unity and Unreal Engine.
-      I also build Maya tools in Python to streamline production workflows.
-    </p>
-
-    <!-- Contact -->
-    <ul class="contact-list">
-      <li>
-        <span class="icon">📞</span>
-        <span>+91 98202 13275</span>
-      </li>
-      <li>
-        <span class="icon">🔗</span>
-        <a href="https://www.linkedin.com/in/sachindesai7" target="_blank">
-          linkedin.com/in/sachindesai7
-        </a>
-      </li>
-      <li>
-        <span class="icon">💻</span>
-        <a href="https://github.com/sachindesai7" target="_blank">
-          github.com/sachindesai7
-        </a>
-      </li>
-    </ul>
-
-    <!-- Download buttons — replace href with actual file paths once uploaded -->
-    <div class="btn-row">
-      <a href="files/Sachin_Desai_Resume.pdf" class="btn btn-primary" download>
-        ⬇ Download Resume
-      </a>
-      <a href="files/Sachin_Desai_CoverLetter.pdf" class="btn btn-outline" download>
-        ⬇ Download Cover Letter
-      </a>
+    <div class="about-photo">
+      <img src="images/profile.jpg" alt="Sachin Desai" onerror="this.parentElement.innerHTML='<div class=\'no-photo\'>👤</div>'">
     </div>
 
+    <div class="about-text">
+      <h1>Welcome</h1>
+      <h2>About Me</h2>
+      <p>Hey there! Welcome to my portfolio. My little corner of the internet.</p>
+      <p>I'm Sachin, a 3D animator, rigger &amp; technical artist who's been bringing
+         characters to life since 2006. These days you'll find me in Abu Dhabi, making
+         beasts, wrestlers, Disney heroes, and everything in between feel alive inside
+         games at Ubisoft.</p>
+      <p>This site is where I share my journey, the projects I'm proud of, and the
+         little (and big) things I've learned along the way. Have a look around, watch
+         the reels, and if something catches your eye, say hello — I'd love to chat!</p>
+      <p>Enjoy the stay! 💫</p>
+
+      <div class="btn-row" style="margin-top:1.8rem;">
+        <a href="files/Sachin_Desai_Resume.pdf" class="btn btn-primary" download>
+          ⬇ Download Resume
+        </a>
+        <a href="files/Sachin_Desai_Cover_Letter.pdf" class="btn btn-outline" download>
+          ⬇ Download Cover Letter
+        </a>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Contact strip -->
+  <div class="about-footer-strip">
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <p>India &nbsp;+91-9820213275</p>
+      <a href="mailto:sachindesai7@gmail.com">sachindesai7@gmail.com</a>
+    </div>
+
+    <div class="footer-col">
+      <h4>Download</h4>
+      <a href="files/Sachin_Desai_Resume.pdf" download>⬇ Resume</a>
+      <a href="files/Sachin_Desai_Cover_Letter.pdf" download>⬇ Cover Letter</a>
+    </div>
+
+    <div class="footer-col">
+      <h4>Follow Me</h4>
+      <a href="https://www.linkedin.com/in/sachindesai7" target="_blank" class="linkedin-icon">in</a>
+    </div>
   </div>
 
   <footer>
