@@ -322,6 +322,19 @@ footer a {
   text-decoration: none;
 }
 
+/* ── MOBILE VIDEO FIX ── */
+@media (max-width: 768px) {
+  .project-video {
+    width: 100% !important;
+    flex: none !important;
+    min-height: 200px;
+  }
+  /* Simpler nav menu on mobile */
+  .nav-links a.active {
+    background: transparent !important;
+  }
+}
+
 /* ── RESPONSIVE ── */
 @media (max-width: 640px) {
   .nav-links {
