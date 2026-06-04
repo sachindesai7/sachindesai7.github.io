@@ -11,6 +11,10 @@
 - **Previous:** Ex-EA · Ex-Ubisoft Abu Dhabi (since 2006)
 - **LinkedIn:** https://linkedin.com/in/sachindesai7
 
+## Agent Onboarding (auto-loaded)
+- **[AGENTS.md](AGENTS.md)** — cross-tool onboarding + house rules + change workflow. Read first.
+- **[CLAUDE.md](CLAUDE.md)** — Claude Code entry point (points to AGENTS.md).
+
 ## Context Files (read only what's needed)
 | File | When to read |
 |---|---|
@@ -29,4 +33,4 @@
 | about.html | Bio, photo, resume/cover letter download |
 
 ## Last Updated
-2026-06-04 — Built from scratch during Claude Code session
+2026-06-04 — Added AGENTS.md + CLAUDE.md auto-load files for cross-tool agent onboarding
