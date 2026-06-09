@@ -34,6 +34,7 @@
 | FBX Exporter | batch_fbx_exporter_pro.py | Batch export Maya assets to FBX |
 | LOD Generator | maya_lod_qem_purepy.py | Auto-generate LOD meshes (pure Python, no plugins) |
 | Virus Cleaner | maya_virus_cleaner.py | Remove Maya file viruses |
+| Figma Asset Exporter | figma_exporter/ (zip on Drive) | Export Figma/FigJam images to local folders, no API token |
 
 - Download links use direct file hosting: `files/filename.py` with `download` attribute
 - GitHub view links: `https://github.com/sachindesai7/maya-tools/blob/main/filename.py`

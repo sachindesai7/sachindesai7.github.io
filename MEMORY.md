@@ -33,4 +33,4 @@
 | about.html | Bio, photo, resume/cover letter download |
 
 ## Last Updated
-2026-06-04 — Added AGENTS.md + CLAUDE.md auto-load files for cross-tool agent onboarding
+2026-06-09 — Added Figma Asset Exporter tool to tech-art.html (video Yu6FB1wDGT0, Drive zip download)

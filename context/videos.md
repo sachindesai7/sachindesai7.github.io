@@ -23,6 +23,7 @@ Thumbnail + click to play.
 | FBX Exporter Tool | zBSz3j1xEdM |
 | LOD Generator Tool | GI4z2T1pGm8 |
 | Maya Virus Cleaner | fw6gGDpFjx4 |
+| Figma Asset Exporter | Yu6FB1wDGT0 |
 | Rigging Demoreel | GG7JzALkBxI |
 | Feature Mockup (Unity) | aNIix2QZL2Q |
 
