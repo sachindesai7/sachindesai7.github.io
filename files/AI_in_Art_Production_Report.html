@@ -1,0 +1,731 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI in Art Production — Internal Assessment</title>
+  <style>
+    :root {
+      --bg: #0a0a14;
+      --surface: #12121e;
+      --surface2: #1a1a2a;
+      --border: #252538;
+      --text: #dde6ff;
+      --muted: #7a84a0;
+      --accent: #7060e0;
+      --accent2: #4090e0;
+      --green: #40c080;
+      --amber: #e0a040;
+      --red: #e84060;
+      --blue: #4090e0;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { background: var(--bg); color: var(--text); font-family: 'Segoe UI', system-ui, sans-serif; line-height: 1.6; }
+
+    /* NAV */
+    .top-nav {
+      position: sticky; top: 0; z-index: 100;
+      background: rgba(10,10,20,0.97); backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--border);
+      padding: 0 32px; display: flex; align-items: center;
+      overflow-x: auto; height: 46px; gap: 0;
+    }
+    .top-nav a {
+      color: var(--muted); text-decoration: none; font-size: 11.5px;
+      font-weight: 600; padding: 0 13px; height: 46px;
+      display: flex; align-items: center; white-space: nowrap;
+      border-bottom: 2px solid transparent;
+      transition: color 0.15s, border-color 0.15s; letter-spacing: 0.02em;
+    }
+    .top-nav a:hover { color: var(--text); border-bottom-color: var(--accent); }
+
+    /* PAGE HEADER */
+    .page-header {
+      background: linear-gradient(135deg, #0d0d1e 0%, #18103e 50%, #0d1a30 100%);
+      padding: 52px 52px 44px; border-bottom: 1px solid var(--border);
+    }
+    .page-header .eyebrow {
+      font-size: 10.5px; font-weight: 700; letter-spacing: 0.14em;
+      color: var(--accent); text-transform: uppercase; margin-bottom: 12px;
+    }
+    .page-header h1 {
+      font-size: 2.3rem; font-weight: 800; line-height: 1.2; margin-bottom: 12px;
+      background: linear-gradient(135deg, #fff 0%, #b8ccff 100%);
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+    }
+    .page-header .subtitle {
+      color: var(--muted); font-size: 0.95rem; max-width: 720px; line-height: 1.65;
+    }
+    .tag-row { display: flex; gap: 8px; margin-top: 20px; flex-wrap: wrap; }
+    .tag {
+      display: inline-block; padding: 4px 10px; border-radius: 4px;
+      font-size: 10px; font-weight: 700; letter-spacing: 0.07em; text-transform: uppercase;
+    }
+    .tag-p { background: rgba(112,96,224,0.18); color: #a090f0; border: 1px solid rgba(112,96,224,0.28); }
+    .tag-b { background: rgba(64,144,224,0.15); color: #7eb8f8; border: 1px solid rgba(64,144,224,0.25); }
+    .tag-g { background: rgba(232,184,64,0.13); color: #e0c050; border: 1px solid rgba(232,184,64,0.25); }
+    .meta-row { display: flex; gap: 18px; margin-top: 22px; font-size: 11.5px; color: var(--muted); flex-wrap: wrap; }
+    .meta-row strong { color: var(--text); font-weight: 600; }
+
+    /* SECTION WRAPPERS */
+    .wrap { max-width: 1160px; margin: 0 auto; padding: 44px 52px; }
+    .wrap-game { max-width: 1160px; margin: 0 auto; padding: 0 52px 56px; }
+    hr.div { border: none; border-top: 1px solid var(--border); }
+
+    /* SECTION HEADERS */
+    .eyebrow-sm {
+      font-size: 10px; font-weight: 700; letter-spacing: 0.14em;
+      text-transform: uppercase; color: var(--accent); margin-bottom: 6px;
+    }
+    .sec-heading { font-size: 1.75rem; font-weight: 800; color: #fff; margin-bottom: 8px; line-height: 1.25; }
+    .sec-sub { color: var(--muted); font-size: 0.9rem; margin-bottom: 36px; max-width: 720px; }
+
+    /* PIPELINE FLOW */
+    .loop {
+      display: flex; align-items: center; background: var(--surface);
+      border: 1px solid var(--border); border-radius: 12px;
+      padding: 22px 28px; margin: 28px 0; overflow-x: auto; gap: 0;
+    }
+    .ls { display: flex; flex-direction: column; align-items: center; text-align: center; flex: 1; min-width: 110px; }
+    .ls .ico {
+      width: 46px; height: 46px; border-radius: 50%;
+      display: flex; align-items: center; justify-content: center; font-size: 20px; margin-bottom: 8px;
+      border: 1px solid;
+    }
+    .ls.green .ico { background: rgba(64,192,128,0.15); border-color: rgba(64,192,128,0.4); }
+    .ls.amber .ico { background: rgba(224,160,64,0.15); border-color: rgba(224,160,64,0.4); }
+    .ls.red .ico { background: rgba(232,64,96,0.15); border-color: rgba(232,64,96,0.4); }
+    .ls.blue .ico { background: rgba(64,144,224,0.15); border-color: rgba(64,144,224,0.4); }
+    .ls .lbl { font-size: 0.78rem; font-weight: 700; color: var(--text); margin-bottom: 2px; }
+    .ls .sub { font-size: 0.68rem; color: var(--muted); }
+    .la { flex-shrink: 0; width: 24px; text-align: center; color: var(--muted); font-size: 18px; }
+
+    /* INTRO BOXES */
+    .intro-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-top: 28px; }
+    .ib { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 22px; }
+    .ib .il { font-size: 10px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); margin-bottom: 8px; }
+    .ib h3 { font-size: 0.95rem; font-weight: 700; color: var(--text); margin-bottom: 8px; }
+    .ib p { font-size: 0.82rem; color: var(--muted); line-height: 1.65; }
+
+    /* STAGE CARD (was GAME CARD) */
+    .game-card {
+      border: 1px solid var(--border); border-radius: 14px;
+      overflow: hidden; background: var(--surface);
+    }
+    .gh {
+      border-left: 4px solid var(--gc, var(--accent));
+      padding: 24px 30px; display: flex; align-items: flex-start;
+      gap: 20px; background: var(--surface2); border-bottom: 1px solid var(--border);
+    }
+    .gh .gtb { flex: 1; }
+    .gh h2 { font-size: 1.45rem; font-weight: 800; color: #fff; margin-bottom: 6px; }
+    .gm { display: flex; gap: 10px; flex-wrap: wrap; align-items: center; font-size: 11.5px; color: var(--muted); }
+    .gm strong { color: var(--text); }
+    .gtags { display: flex; gap: 5px; flex-wrap: wrap; margin-top: 8px; }
+    .gtag {
+      display: inline-block; padding: 2px 8px; border-radius: 3px;
+      font-size: 9.5px; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase;
+      background: rgba(255,255,255,0.05); color: var(--muted); border: 1px solid rgba(255,255,255,0.09);
+    }
+    .rev { display: flex; flex-direction: column; align-items: flex-end; text-align: right; flex-shrink: 0; }
+    .rev .ra { font-size: 1.45rem; font-weight: 800; color: var(--gc, var(--accent)); }
+    .rev .rl { font-size: 10px; color: var(--muted); white-space: nowrap; letter-spacing: 0.05em; text-transform: uppercase; }
+
+    /* STAGE BODY (was GAME BODY) */
+    .gb { display: grid; grid-template-columns: 1.1fr 1fr; }
+    .sc { padding: 28px 30px; border-right: 1px solid var(--border); }
+    .mc { padding: 28px 28px; display: flex; flex-direction: column; }
+    .ct {
+      font-size: 9.5px; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase;
+      color: var(--muted); margin-bottom: 16px; padding-bottom: 8px; border-bottom: 1px solid var(--border);
+    }
+
+    /* SYSTEMS / WORKFLOW */
+    .si { margin-bottom: 18px; }
+    .si:last-child { margin-bottom: 0; }
+    .sn { font-size: 0.84rem; font-weight: 700; color: var(--gc, var(--accent)); margin-bottom: 4px; }
+    .sd { font-size: 0.82rem; color: #b0bcd8; line-height: 1.6; }
+
+    /* CAVEATS / MONETIZATION */
+    .mi { display: flex; gap: 10px; margin-bottom: 13px; align-items: flex-start; }
+    .mi:last-child { margin-bottom: 0; }
+    .md { width: 5px; height: 5px; border-radius: 50%; background: var(--gc, var(--accent)); flex-shrink: 0; margin-top: 8px; }
+    .mt { font-size: 0.8rem; color: #a8b4d0; line-height: 1.6; }
+    .mt strong { color: var(--text); font-weight: 600; }
+    .mc-foot { padding-top: 10px; margin-top: 12px; font-size: 0.73rem; color: var(--muted); line-height: 1.5; border-top: 1px solid var(--border); }
+
+    /* BOND / SAVINGS BAR */
+    .bond {
+      border-top: 1px solid var(--border); padding: 16px 28px;
+      display: flex; align-items: center; gap: 18px; background: rgba(0,0,0,0.12);
+    }
+    .bl { min-width: 160px; }
+    .bl .blab { font-size: 9.5px; font-weight: 700; letter-spacing: 0.13em; text-transform: uppercase; color: var(--muted); margin-bottom: 4px; }
+    .bl .btit { font-size: 0.87rem; font-weight: 700; color: var(--text); }
+    .bdots { display: flex; gap: 4px; }
+    .bdot { width: 10px; height: 10px; border-radius: 2px; }
+    .bdot.on { background: var(--gc, var(--accent)); }
+    .bdot.off { background: var(--border); }
+    .bdesc { font-size: 0.78rem; color: var(--muted); flex: 1; line-height: 1.5; }
+
+    /* INSIGHT */
+    .insight {
+      margin: 0 30px 28px;
+      background: rgba(112,96,224,0.07); border: 1px solid rgba(112,96,224,0.2);
+      border-left: 3px solid var(--gc, var(--accent)); border-radius: 8px; padding: 14px 18px;
+    }
+    .insight .ilab { font-size: 9.5px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gc, var(--accent)); margin-bottom: 6px; }
+    .insight p { font-size: 0.82rem; color: var(--text); line-height: 1.6; }
+
+    /* COMPARISON TABLE */
+    .ctab { width: 100%; border-collapse: collapse; font-size: 0.81rem; margin-top: 14px; }
+    .ctab th { text-align: left; padding: 10px 14px; font-size: 9.5px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); background: var(--surface2); border-bottom: 1px solid var(--border); }
+    .ctab td { padding: 10px 14px; border-bottom: 1px solid rgba(37,37,56,0.7); color: #a4b0cc; vertical-align: top; }
+    .ctab tr:last-child td { border-bottom: none; }
+    .ctab .gc2 { font-weight: 600; color: var(--text); }
+    .pill { display: inline-block; padding: 2px 8px; border-radius: 3px; font-size: 9.5px; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; }
+    .pill-g { background: rgba(64,192,128,0.15); color: #60d090; border: 1px solid rgba(64,192,128,0.3); }
+    .pill-a { background: rgba(224,160,64,0.15); color: #f0c060; border: 1px solid rgba(224,160,64,0.3); }
+    .pill-r { background: rgba(232,64,96,0.15); color: #f86080; border: 1px solid rgba(232,64,96,0.3); }
+    .pill-b { background: rgba(64,144,224,0.15); color: #7eb8f8; border: 1px solid rgba(64,144,224,0.3); }
+
+    /* PATTERNS GRID */
+    .pgrid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-top: 6px; }
+    .pc { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 22px; }
+    .pc .pi { font-size: 26px; margin-bottom: 12px; display: block; }
+    .pc h3 { font-size: 0.92rem; font-weight: 700; color: var(--text); margin-bottom: 8px; }
+    .pc p { font-size: 0.81rem; color: var(--muted); line-height: 1.6; }
+    .pex { display: flex; flex-wrap: wrap; gap: 4px; margin-top: 12px; }
+    .px { font-size: 9.5px; padding: 2px 7px; border-radius: 3px; background: rgba(112,96,224,0.12); color: #9880f0; font-weight: 600; border: 1px solid rgba(112,96,224,0.2); }
+
+    /* PRINCIPLES / RECOMMENDATIONS */
+    .pgrid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 6px; }
+    .pcard { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 22px; display: flex; gap: 16px; align-items: flex-start; }
+    .pnum { font-size: 2rem; font-weight: 900; color: rgba(112,96,224,0.32); line-height: 1; flex-shrink: 0; min-width: 36px; }
+    .pcard h3 { font-size: 0.92rem; font-weight: 700; color: var(--text); margin-bottom: 8px; }
+    .pcard p { font-size: 0.81rem; color: var(--muted); line-height: 1.6; }
+
+    /* FOOTER */
+    .sources { background: var(--surface); border-top: 1px solid var(--border); padding: 36px 52px; }
+    .sources h3 { font-size: 0.78rem; font-weight: 700; color: var(--muted); margin-bottom: 14px; letter-spacing: 0.09em; text-transform: uppercase; }
+    .sgrid { display: grid; grid-template-columns: 1fr 1fr; gap: 4px 32px; }
+    .src { font-size: 0.73rem; color: var(--muted); padding: 5px 0; border-bottom: 1px solid rgba(37,37,56,0.5); }
+
+    .stage-sep { height: 28px; }
+
+    @media (max-width: 880px) {
+      .gb { grid-template-columns: 1fr; }
+      .sc { border-right: none; border-bottom: 1px solid var(--border); }
+      .intro-grid, .pgrid, .pgrid2 { grid-template-columns: 1fr; }
+      .loop { flex-wrap: wrap; gap: 12px; }
+      .la { display: none; }
+      .ls { flex: 0 0 calc(50% - 6px); }
+      .page-header, .wrap, .wrap-game, .sources { padding-left: 24px; padding-right: 24px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="top-nav">
+  <a href="#overview">Overview</a>
+  <a href="#concept">Concept Art</a>
+  <a href="#modeling">3D Modeling</a>
+  <a href="#rigging">Rigging & Animation</a>
+  <a href="#engine">Game Engine</a>
+  <a href="#patterns">Cross-Cutting Patterns</a>
+  <a href="#recommendations">Final Recommendations</a>
+</nav>
+
+<!-- HEADER -->
+<header class="page-header">
+  <div class="eyebrow">Internal Assessment · Production Strategy</div>
+  <h1>AI in Art Production</h1>
+  <p class="subtitle">An honest, production-grounded evaluation of where AI tooling delivers — and where it doesn't — across the four critical stages of game art creation. Built for short-cycle development teams making real green-light decisions.</p>
+  <div class="tag-row">
+    <span class="tag tag-p">4 Pipeline Stages</span>
+    <span class="tag tag-b">Tools · Workflows · Risks</span>
+    <span class="tag tag-g">Realistic Time Savings</span>
+  </div>
+  <div class="meta-row">
+    <div><strong>Author:</strong> Sachin Desai · Principal Animator & Technical Artist</div>
+    <div><strong>Date:</strong> 27 May 2026</div>
+    <div><strong>Audience:</strong> Green Light Team · Studio Leadership</div>
+  </div>
+</header>
+
+<!-- OVERVIEW -->
+<section class="wrap" id="overview">
+  <div class="eyebrow-sm">The Pipeline at a Glance</div>
+  <div class="sec-heading">Where AI Helps — and Where It Doesn't</div>
+  <p class="sec-sub">The art pipeline has four stages. AI maturity is wildly uneven across them. The realistic compounding saving across the full pipeline is <strong style="color:#fff">20–25%</strong> — meaningful, but well short of the 50%+ vendors claim.</p>
+
+  <div class="loop">
+    <div class="ls green">
+      <div class="ico">🎨</div>
+      <div class="lbl">Concept Art</div>
+      <div class="sub">Strong · 50–70%</div>
+    </div>
+    <div class="la">→</div>
+    <div class="ls amber">
+      <div class="ico">🧊</div>
+      <div class="lbl">3D Modeling</div>
+      <div class="sub">Hybrid · 30–40%</div>
+    </div>
+    <div class="la">→</div>
+    <div class="ls red">
+      <div class="ico">🦴</div>
+      <div class="lbl">Rigging & Animation</div>
+      <div class="sub">Manual · &lt;10%</div>
+    </div>
+    <div class="la">→</div>
+    <div class="ls blue">
+      <div class="ico">⚙️</div>
+      <div class="lbl">Game Engine</div>
+      <div class="sub">Stay on Unity</div>
+    </div>
+  </div>
+
+  <div class="intro-grid">
+    <div class="ib">
+      <div class="il">Why This Report</div>
+      <h3>Decision Support, Not Hype</h3>
+      <p>Vendor demos and conference talks consistently overstate what AI can do in production. This report is grounded in our actual hands-on evaluation of the tools across real assets — not the marketing slides.</p>
+    </div>
+    <div class="ib">
+      <div class="il">Method</div>
+      <h3>Tools Tested on Live Assets</h3>
+      <p>We ran characters, props, environments, and animations through the major AI tooling at each stage, then compared output to standard manual pipelines. Results below reflect what shipped to a game-ready bar, not what looked good in a turntable.</p>
+    </div>
+    <div class="ib">
+      <div class="il">Bottom Line</div>
+      <h3>AI Accelerates the Front</h3>
+      <p>AI compresses the ideation and base-asset stages. Craft stages — clean topology, deformation-ready rigs, signature animation, engine integration — remain manual. Plan accordingly.</p>
+    </div>
+  </div>
+</section>
+
+<hr class="div">
+
+<!-- ======================== CONCEPT ART ======================== -->
+<div class="stage-sep"></div>
+<section class="wrap-game" id="concept">
+  <div class="game-card" style="--gc: #40c080;">
+    <div class="gh">
+      <div class="gtb">
+        <h2>🎨 Stage 01 · Concept Art</h2>
+        <div class="gm"><strong>ChatGPT (GPT Image)</strong> · <strong>Google Gemini (Nano Banana / Imagen)</strong> · <strong>Midjourney</strong> · <strong>Stable Diffusion SDXL/3.5</strong> · <strong>FLUX.1/2</strong> · <strong>ComfyUI</strong></div>
+        <div class="gtags">
+          <span class="gtag">Image Generation</span><span class="gtag">Style Reference</span>
+          <span class="gtag">LoRA Fine-Tunes</span><span class="gtag">Hosted + Local Hybrid</span>
+        </div>
+      </div>
+      <div class="rev"><div class="ra">50–70%</div><div class="rl">time saved</div></div>
+    </div>
+
+    <div class="gb">
+      <div class="sc">
+        <div class="ct">Recommended Workflow</div>
+
+        <div class="si">
+          <div class="sn">⬡ Stage 1 — Exploration & Finalization</div>
+          <div class="sd">Use frontier hosted models (ChatGPT, Gemini, optionally Midjourney for stylistic range) to lock art direction and produce hero references. These models excel at the <em>finalization</em> stage — iterating on a near-final asset until it lands. Token cost is the trade-off; expensive at production volume but worth it for direction work.</div>
+        </div>
+
+        <div class="si">
+          <div class="sn">⬡ Stage 2 — Scaled Production</div>
+          <div class="sd">Once the style is locked, switch to local open-weight models — Stable Diffusion (SDXL / SD 3.5) and FLUX.1 / FLUX.2 — orchestrated through workflow engines like ComfyUI (the industry standard for node-based pipelines), InvokeAI, or design-side integrations like Figma Weave. These pipelines enforce style consistency at scale and let you pin exact output specs: file format, resolution, aspect ratio, pixel-art constraints.</div>
+        </div>
+
+        <div class="si">
+          <div class="sn">⭐ Why The Split Matters</div>
+          <div class="sd">Frontier models for direction-setting quality; local models for cost-controlled, consistent volume. The two-stage split is the entire reason this stage hits 50–70% savings instead of breaking even on token costs.</div>
+        </div>
+      </div>
+
+      <div class="mc">
+        <div class="ct">Caveats Worth Naming</div>
+        <div class="mi"><div class="md"></div><div class="mt"><strong>Style consistency across 200+ assets is the hard part.</strong> Frontier models produce individual great pieces; holding a coherent style requires LoRA fine-tunes, IP-Adapter / Style-Adapter references, or trained character/setting LoRAs. ComfyUI handles this, but it's pipeline engineering, not push-button.</div></div>
+        <div class="mi"><div class="md"></div><div class="mt"><strong>Character consistency &gt; environment consistency.</strong> A character appearing in 30 poses across 30 scenes is the genuine technical challenge. Worth calling out separately from "concept art."</div></div>
+        <div class="mi"><div class="md"></div><div class="mt"><strong>IP / copyright posture matters.</strong> Hosted frontier models train on scraped data with unclear licensing. For commercial production, the safer path is open-weight models fine-tuned on assets you own.</div></div>
+        <div class="mi"><div class="md"></div><div class="mt"><strong>Human art direction is the bottleneck, not the model.</strong> AI scales an art director's taste. Without that taste curating the output, the volume is noise. Don't read this stage as "AI replaces artists" — it scales them.</div></div>
+        <div class="mc-foot">Production-ready for ideation, mood boards, and style locks · Requires human curation throughout</div>
+      </div>
+    </div>
+
+    <div class="bond">
+      <div class="bl"><div class="blab">AI Maturity at this Stage</div><div class="btit">Production-Ready</div></div>
+      <div class="bdots">
+        <div class="bdot on"></div><div class="bdot on"></div><div class="bdot on"></div><div class="bdot on"></div><div class="bdot off"></div>
+      </div>
+      <div class="bdesc">Strong enough to use across our active projects today. The remaining gap (1 dot) is style-consistency tooling — still requires technical artist effort to dial in LoRAs and adapters per project.</div>
+    </div>
+
+    <div class="insight">
+      <div class="ilab">Design Insight</div>
+      <p>The split between hosted-for-exploration and local-for-production is the actual workflow innovation here. Studios that try to do everything on hosted models burn token budget; studios that try to do everything locally lack the finalization quality. <strong>Run both, sequentially, by stage.</strong></p>
+    </div>
+  </div>
+</section>
+
+<!-- ======================== 3D MODELING ======================== -->
+<div class="stage-sep"></div>
+<section class="wrap-game" id="modeling">
+  <div class="game-card" style="--gc: #e0a040;">
+    <div class="gh">
+      <div class="gtb">
+        <h2>🧊 Stage 02 · 3D Modeling</h2>
+        <div class="gm"><strong>3D AI Studio</strong> (Rodin / Hunyuan3D / Tripo / Meshy) · <strong>ComfyUI + Trellis</strong> (Microsoft Research) · <strong>Maya / Blender / ZBrush</strong> for cleanup</div>
+        <div class="gtags">
+          <span class="gtag">Image-to-3D</span><span class="gtag">PBR Textures</span>
+          <span class="gtag">Hybrid Required</span><span class="gtag">Retopo Manual</span>
+        </div>
+      </div>
+      <div class="rev"><div class="ra">30–40%</div><div class="rl">characters · 40–60% props</div></div>
+    </div>
+
+    <div class="gb">
+      <div class="sc">
+        <div class="ct">Recommended Workflow</div>
+
+        <div class="si">
+          <div class="sn">⬡ Best-In-Class Tool</div>
+          <div class="sd"><strong>3D AI Studio</strong> is the standout — produces good-enough base meshes with textures and, critically, lets you run multiple backends (Rodin, Hunyuan3D, Tripo, Meshy) in parallel and compare results before committing. That comparison flexibility is what separates it from single-model competitors.</div>
+        </div>
+
+        <div class="si">
+          <div class="sn">⬡ Free Local Alternative</div>
+          <div class="sd"><strong>ComfyUI + Trellis</strong> (Microsoft Research's open-source image-to-3D model) delivers comparable quality, runs on your own GPU, and avoids per-generation token cost. Good baseline if budget is the constraint.</div>
+        </div>
+
+        <div class="si">
+          <div class="sn">⬡ Hybrid Pipeline</div>
+          <div class="sd"><strong>Step 1:</strong> AI generates a high-detail source mesh with PBR textures from a reference image in minutes. <strong>Step 2:</strong> A trained 3D artist handles retopology, UV layout, skin-friendly edge flow, and final texture cleanup in Maya / Blender / ZBrush. The AI handles the sculpt; the human handles the craft.</div>
+        </div>
+
+        <div class="si">
+          <div class="sn">⭐ Where It Shines</div>
+          <div class="sd">High-detail base mesh with PBR textures from a single reference image, in minutes. For props and environments, near-final usability with minimal cleanup. For characters, a strong starting point that still needs manual retopo.</div>
+        </div>
+      </div>
+
+      <div class="mc">
+        <div class="ct">Caveats Worth Naming</div>
+        <div class="mi"><div class="md"></div><div class="mt"><strong>Topology is not rig-friendly.</strong> Polygons aren't laid out along deformation lines, edge flow is irregular, quad/tri distribution is inconsistent. Direct rigging is not viable.</div></div>
+        <div class="mi"><div class="md"></div><div class="mt"><strong>Polycount targets are wrong.</strong> Output meshes are typically 50K–200K polys when mobile needs 5K–15K. The retopo stage solves this but is real work.</div></div>
+        <div class="mi"><div class="md"></div><div class="mt"><strong>30–40% is conservative for environment props.</strong> Static props, rocks, debris, foliage, simple structures — these go much faster because they don't need clean topology. A barrel doesn't need edge loops; a character does. Savings vary wildly by asset type.</div></div>
+        <div class="mi"><div class="md"></div><div class="mt"><strong>UV unwrapping is still the weakest link.</strong> AI-generated UVs break when you need tileable materials, swappable skins, or proper PBR channels for engine work.</div></div>
+        <div class="mi"><div class="md"></div><div class="mt"><strong>Animation-ready rigs are 100% manual.</strong> The mesh stage saves time. The rigging stage is unchanged.</div></div>
+        <div class="mc-foot">Production-viable as a hybrid · Standalone AI output is not game-ready</div>
+      </div>
+    </div>
+
+    <div class="bond">
+      <div class="bl"><div class="blab">AI Maturity at this Stage</div><div class="btit">Hybrid Required</div></div>
+      <div class="bdots">
+        <div class="bdot on"></div><div class="bdot on"></div><div class="bdot on"></div><div class="bdot off"></div><div class="bdot off"></div>
+      </div>
+      <div class="bdesc">Strong enough to be a real time-saver, but only inside a hybrid pipeline with human retopo and UV cleanup. The two missing dots are clean topology and game-budget polycount control — both still craft work.</div>
+    </div>
+
+    <div class="insight">
+      <div class="ilab">Design Insight</div>
+      <p>The asset type matters more than the tool. <strong>Environment props</strong> are nearly solved by AI today. <strong>Characters</strong> are accelerated but still demand experienced 3D artists. Plan team composition and scoping around this split — don't budget for "AI does the 3D" across the whole project.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ======================== RIGGING & ANIMATION ======================== -->
+<div class="stage-sep"></div>
+<section class="wrap-game" id="rigging">
+  <div class="game-card" style="--gc: #e84060;">
+    <div class="gh">
+      <div class="gtb">
+        <h2>🦴 Stage 03 · Rigging & Animation</h2>
+        <div class="gm"><strong>Meshy / Tripo / AccuRIG 2</strong> (rigging) · <strong>Plask / Move.ai / RADiCAL</strong> (mocap cleanup) · <strong>Mixamo</strong> (animation library) · <strong>Maya — Advanced Skeleton / Rapid Rig</strong> (manual)</div>
+        <div class="gtags">
+          <span class="gtag">Auto-Rigging</span><span class="gtag">Animation Generation</span>
+          <span class="gtag">Mocap Cleanup</span><span class="gtag">Tiered Strategy</span>
+        </div>
+      </div>
+      <div class="rev"><div class="ra">&lt;10%</div><div class="rl">net saving</div></div>
+    </div>
+
+    <div class="gb">
+      <div class="sc">
+        <div class="ct">The Honest Assessment</div>
+
+        <div class="si">
+          <div class="sn">⬡ Rigging — Not Production-Ready</div>
+          <div class="sd">Across auto-rigging services (Meshy, Tripo, AccuRIG 2), none produced production-ready rigs or skin weights. Output rigs are usable for previs or background characters at best; they fail under deformation testing the moment you push a hero pose.</div>
+        </div>
+
+        <div class="si">
+          <div class="sn">⬡ Animation Retargeting — Broken</div>
+          <div class="sd">Retargeting AI-generated animations onto custom rigs produced consistently poor results: broken IK chains, sliding feet, snapped joints. The structural reason — coordinate systems differ across tools (Maya Y-up/Z-forward, Blender Z-up/Y-forward, Unreal Z-up left-handed, Unity Y-up) — and AI tools don't handle conversion cleanly.</div>
+        </div>
+
+        <div class="si">
+          <div class="sn">⭐ What Actually Works</div>
+          <div class="sd"><strong>Mocap-from-video tools</strong> (Plask, Move.ai, RADiCAL) are the strongest AI-adjacent tech here — and notably, they're cleaning up captured motion, not generating it. <strong>Engine retargeting</strong> (Unity Humanoid, Unreal IK Retargeter) handles cross-rig reuse well — build to engine-side retargeting. <strong>Procedural animation</strong> (IK, foot planting, ragdoll, additive layers) still beats AI for most gameplay needs.</div>
+        </div>
+      </div>
+
+      <div class="mc">
+        <div class="ct">Recommended Tiered Strategy</div>
+        <div class="mi"><div class="md"></div><div class="mt"><strong>Tier 1 — Mixamo / Asset Packs.</strong> Background characters, crowd, generic enemies, NPCs, prototyping. Unlocks 3,000+ free motions plus Unity Humanoid compatibility.</div></div>
+        <div class="mi"><div class="md"></div><div class="mt"><strong>Tier 2 — Mocap-Cleaned with AI.</strong> Cinematics and mid-tier gameplay needs. Plask / Move.ai / RADiCAL clean captured motion to production quality for humanoid biped work.</div></div>
+        <div class="mi"><div class="md"></div><div class="mt"><strong>Tier 3 — Hand-Keyframed by Senior Animators.</strong> Hero combat, signature actions, anything the player sees thousands of times. <em>Archero 2-style projects:</em> the feel comes from transition windows between idle → attack → reposition. Hand work is unavoidable for the core loop.</div></div>
+        <div class="mi"><div class="md"></div><div class="mt"><strong>Outbound-style projects (zombie shooter).</strong> Commercial asset packs absorb 60–70% of the enemy variety load. Custom work concentrates on vehicle, player POV, and weapon feel.</div></div>
+        <div class="mc-foot">Tiered model reads as production strategy · Avoid "AI generates animations" as a single approach</div>
+      </div>
+    </div>
+
+    <div class="bond">
+      <div class="bl"><div class="blab">AI Maturity at this Stage</div><div class="btit">Not Production-Ready</div></div>
+      <div class="bdots">
+        <div class="bdot on"></div><div class="bdot off"></div><div class="bdot off"></div><div class="bdot off"></div><div class="bdot off"></div>
+      </div>
+      <div class="bdesc">The single dot is mocap cleanup — the only mature AI-adjacent tech in this stage. Auto-rigging, animation generation, and DCC-to-DCC retargeting are all still manual craft work.</div>
+    </div>
+
+    <div class="insight">
+      <div class="ilab">Design Insight</div>
+      <p>The "AI animation" promise is the most over-marketed claim in the current AI cycle. Vendor demos are cherry-picked single shots — generic walk cycles, idle loops. <strong>Shipped games need layered combat sets, blendable locomotion trees, hit reactions with weight transfer.</strong> None of that ships from AI tools today. Plan for manual craft + asset packs at this stage; treat any AI animation tool as a research experiment, not a production dependency.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ======================== GAME ENGINE ======================== -->
+<div class="stage-sep"></div>
+<section class="wrap-game" id="engine">
+  <div class="game-card" style="--gc: #4090e0;">
+    <div class="gh">
+      <div class="gtb">
+        <h2>⚙️ Stage 04 · Game Engine</h2>
+        <div class="gm"><strong>Unity</strong> (current) · <strong>Godot 4.x</strong> (evaluated) · <strong>Unreal Engine 5</strong> (considered)</div>
+        <div class="gtags">
+          <span class="gtag">Engine Selection</span><span class="gtag">Risk Assessment</span>
+          <span class="gtag">Ecosystem Depth</span><span class="gtag">Tooling Debt</span>
+        </div>
+      </div>
+      <div class="rev"><div class="ra">Unity</div><div class="rl">recommendation</div></div>
+    </div>
+
+    <div class="gb">
+      <div class="sc">
+        <div class="ct">Why Not Godot — Right Now</div>
+
+        <div class="si">
+          <div class="sn">⬡ Schedule Risk</div>
+          <div class="sd">Switching engines mid-cycle imposes an estimated <strong>15–25% schedule overhead</strong> for workflow reconstruction. On a 6–7 month target, that's roughly <strong>4–8 weeks of slip</strong> — the difference between shipping on plan and missing a launch window. Engine learning compounds with every workflow we already had institutional knowledge of: scene structure, asset import, builds, deployment, debugging.</div>
+        </div>
+
+        <div class="si">
+          <div class="sn">⬡ Expertise Gap</div>
+          <div class="sd">When Unity hits a hard problem (shader breaking on a specific GPU, build failing for a platform, memory spike in a scene), the team can debug it directly. With Godot, the same class of problem becomes a research project. Smaller community = fewer Stack Overflow answers, fewer Asset Store debug threads.</div>
+        </div>
+
+        <div class="si">
+          <div class="sn">⬡ Asset Ecosystem</div>
+          <div class="sd">For short-cycle delivery, <strong>buying VFX, animation, and shader packs is a force multiplier, not a shortcut.</strong> Unity Asset Store and Unreal Marketplace are deep, mature, and license-clear. Godot's Asset Library exists but is not yet at parity. For a studio whose competitive edge is speed-of-shipping, this is structural.</div>
+        </div>
+
+        <div class="si">
+          <div class="sn">⬡ Hiring & Tooling Debt</div>
+          <div class="sd">Senior Godot engineers in India (and globally) are an order of magnitude rarer than Unity engineers. One departure can stall a milestone. Plus: our custom tooling — Maya batch FBX exporter, LOD generator, virus-cleaning utility — currently targets Unity's import paths. Switching = rebuilding the tooling layer.</div>
+        </div>
+      </div>
+
+      <div class="mc">
+        <div class="ct">Engine Comparison</div>
+        <table class="ctab">
+          <thead>
+            <tr><th>Engine</th><th>Fit</th><th>Cost</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="gc2">Unity</td>
+              <td><span class="pill pill-g">Recommended</span></td>
+              <td>~$2,200/seat/yr</td>
+            </tr>
+            <tr>
+              <td class="gc2">Godot 4.x</td>
+              <td><span class="pill pill-a">Future</span></td>
+              <td>Free</td>
+            </tr>
+            <tr>
+              <td class="gc2">Unreal 5</td>
+              <td><span class="pill pill-r">Not Now</span></td>
+              <td>5% royalty &gt;$1M</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div style="margin-top: 18px;">
+          <div class="mi"><div class="md"></div><div class="mt"><strong>Godot's real upsides:</strong> free, open-source (no Unity Runtime Fee–style licensing risk), lightweight, capable for 2D and mid-tier 3D. Acknowledging this matters — staying on Unity is a current-state decision, not a permanent commitment.</div></div>
+          <div class="mi"><div class="md"></div><div class="mt"><strong>Unreal's real downsides:</strong> learning curve is <em>steeper</em> than Godot's, not gentler. Blueprint + C++ + render pipeline complexity is not a 6–7 month-cycle fit unless the team has Unreal experience.</div></div>
+          <div class="mi"><div class="md"></div><div class="mt"><strong>The middle path:</strong> Unity for production, sandbox/prototype Godot track in parallel. Builds team familiarity without migration risk.</div></div>
+        </div>
+
+        <div class="mc-foot">We've monitored Unity's licensing posture since the 2023 Runtime Fee episode · Engine risk reviewed annually</div>
+      </div>
+    </div>
+
+    <div class="bond">
+      <div class="bl"><div class="blab">Recommendation</div><div class="btit">Stay on Unity</div></div>
+      <div class="bdots">
+        <div class="bdot on"></div><div class="bdot on"></div><div class="bdot on"></div><div class="bdot on"></div><div class="bdot on"></div>
+      </div>
+      <div class="bdesc">Stay on Unity for the current and next two cycles. Revisit Godot in 12–18 months — when our team has bandwidth to evaluate outside an active project, or when Godot's ecosystem closes the current gap.</div>
+    </div>
+
+    <div class="insight">
+      <div class="ilab">Decision Framing</div>
+      <p>This is not "we don't want to learn." It's <strong>risk-priced engineering judgment.</strong> The cost saving from Godot is real (~$13K/yr for a 6-person studio) but does not outweigh 4–8 weeks of schedule slip on a 6–7 month cycle. Re-evaluate annually — the calculation may change.</p>
+    </div>
+  </div>
+</section>
+
+<hr class="div">
+
+<!-- CROSS-CUTTING PATTERNS -->
+<section class="wrap" id="patterns">
+  <div class="eyebrow-sm">Across All Four Stages</div>
+  <div class="sec-heading">Cross-Cutting Patterns</div>
+  <p class="sec-sub">Eight patterns that hold across the whole AI-art space — useful as a lens when evaluating any new tool that lands on your desk.</p>
+
+  <div class="pgrid">
+    <div class="pc">
+      <span class="pi">⚡</span>
+      <h3>AI Accelerates the Front of the Pipeline</h3>
+      <p>Ideation, base-sculpts, concept references, prop generation — these are where AI is genuinely strong. Craft stages (clean topology, deformation rigs, signature animation) are still manual. Map your saving expectations to the front half of the pipeline, not the whole thing.</p>
+    </div>
+
+    <div class="pc">
+      <span class="pi">🎯</span>
+      <h3>Human Direction Is the Bottleneck</h3>
+      <p>The tools scale taste; they do not replace it. Studios without a strong art director get high-volume noise. Studios with one get a 2–3× force multiplier. The hire that matters most is the curator, not the prompt engineer.</p>
+    </div>
+
+    <div class="pc">
+      <span class="pi">🔁</span>
+      <h3>Hosted for Direction, Local for Volume</h3>
+      <p>Every working production pipeline we tested uses this split: frontier hosted models (ChatGPT, Gemini) for finalization and direction; local open-weight models (SDXL, FLUX, Trellis) for cost-controlled volume. Studios doing all-hosted burn tokens; all-local studios miss quality bars.</p>
+    </div>
+
+    <div class="pc">
+      <span class="pi">🎨</span>
+      <h3>Style Consistency Is Pipeline Engineering</h3>
+      <p>Hitting visual consistency across 200+ assets requires LoRA fine-tunes, IP-Adapters, ComfyUI graphs. This is technical-artist work, not a tool feature. Budget the engineering hours, not just the tool licenses.</p>
+    </div>
+
+    <div class="pc">
+      <span class="pi">📦</span>
+      <h3>Asset Packs Beat AI for Speed</h3>
+      <p>For short-cycle delivery, a polished Unity Asset Store pack still ships faster than AI-generated equivalents — especially for animations, VFX, and shaders. AI helps where no packs exist. Don't overbuild AI pipelines for problems the marketplace already solved.</p>
+    </div>
+
+    <div class="pc">
+      <span class="pi">⚖️</span>
+      <h3>IP & Licensing Are Real Risks</h3>
+      <p>Hosted frontier models train on unclear data. Commercial production should prefer open-weight models fine-tuned on assets we own — both for legal defensibility and to keep our studio's style from leaking into competitors' training data. The legal team needs to be in the room for this conversation.</p>
+    </div>
+
+    <div class="pc">
+      <span class="pi">🔧</span>
+      <h3>Engine Retargeting Is Solved; DCC Retargeting Is Not</h3>
+      <p>Unity Humanoid avatar and Unreal IK Retargeter handle cross-rig animation reuse cleanly. Maya-to-Blender or Maya-to-Unreal retargeting outside an engine is still fragile because of coordinate-system differences. Build pipelines that route retargeting through the engine wherever possible.</p>
+    </div>
+
+    <div class="pc">
+      <span class="pi">📉</span>
+      <h3>Vendor Claims Are 2–3× Inflated</h3>
+      <p>Every vendor promises 50–80% time savings. Real-world hybrid pipelines deliver 20–30% across a full project. The gap is the craft stages they don't show in demos. Discount any vendor "X% faster" claim by ~60% when budgeting.</p>
+    </div>
+
+    <div class="pc">
+      <span class="pi">🔄</span>
+      <h3>Half-Life of Tool Recommendations: 6–9 Months</h3>
+      <p>The space moves fast. Any specific tool recommendation in this report (3D AI Studio, Trellis, FLUX) has a 6–9 month relevance window before the leader shifts. Re-evaluate quarterly. Lock the workflow patterns; let the tools rotate underneath them.</p>
+    </div>
+  </div>
+</section>
+
+<hr class="div">
+
+<!-- FINAL RECOMMENDATIONS -->
+<section class="wrap" id="recommendations">
+  <div class="eyebrow-sm">For the Green Light Team</div>
+  <div class="sec-heading">Final Recommendations</div>
+  <p class="sec-sub">Five actions to take from this assessment — ordered by leverage.</p>
+
+  <div class="pgrid2">
+    <div class="pcard">
+      <div class="pnum">01</div>
+      <div>
+        <h3>Adopt the Hybrid AI + Human Pipeline</h3>
+        <p>Across all four stages. Realistic blended saving is <strong>20–25% per project</strong> — significant, but well short of vendor claims of 50%+. Bake this number into greenlight schedules, not the marketing number. Plan production around real savings, not aspirational ones.</p>
+      </div>
+    </div>
+
+    <div class="pcard">
+      <div class="pnum">02</div>
+      <div>
+        <h3>Hire a ComfyUI / LoRA Pipeline Lead</h3>
+        <p>This is the single highest-leverage hire for art-production scaling right now. One technical artist who owns the ComfyUI graphs, LoRA training, and style-consistency tooling unlocks the entire concept-art stage savings for the whole studio. The role pays for itself in one project cycle.</p>
+      </div>
+    </div>
+
+    <div class="pcard">
+      <div class="pnum">03</div>
+      <div>
+        <h3>Stay on Unity for the Next Two Cycles</h3>
+        <p>Revisit engine choice in 12–18 months. Consider a parallel Godot prototype track to build team familiarity without migration risk. Re-evaluate annually. The cost saving from Godot is real but does not outweigh the time-to-ship cost in our current context.</p>
+      </div>
+    </div>
+
+    <div class="pcard">
+      <div class="pnum">04</div>
+      <div>
+        <h3>Treat AI Animation Claims with Skepticism</h3>
+        <p>Build rigging and animation pipelines around manual craft, asset packs (Mixamo, Unity Asset Store), and mocap-cleanup tools (Plask, Move.ai). Treat any "AI generates animations" tool as a research experiment, not a production dependency. The vendor demos are cherry-picked — shipped games need more.</p>
+      </div>
+    </div>
+
+    <div class="pcard">
+      <div class="pnum">05</div>
+      <div>
+        <h3>Re-Evaluate This Assessment Quarterly</h3>
+        <p>The tooling space is moving fast enough that any specific tool recommendation has a 6–9 month half-life. Lock the workflow patterns (hosted-for-direction + local-for-volume, hybrid 3D, tiered animation, Unity-for-now) — let the tools underneath rotate as the market evolves.</p>
+      </div>
+    </div>
+
+    <div class="pcard">
+      <div class="pnum">06</div>
+      <div>
+        <h3>Treat AI as Multiplier, Not Replacement</h3>
+        <p>The honest framing for leadership: AI doesn't reduce headcount in our model. It scales the output of our existing artists by ~25%. That's the case for adopting it — and the case against pitching it as a cost-cutting story to investors or hiring decisions.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="div">
+
+<!-- SOURCES -->
+<footer class="sources">
+  <h3>Tools Evaluated & References</h3>
+  <div class="sgrid">
+    <div class="src"><strong>Concept Art:</strong> ChatGPT (GPT Image), Google Gemini (Nano Banana / Imagen), Midjourney, Stable Diffusion SDXL / SD 3.5, FLUX.1 / FLUX.2, ComfyUI, InvokeAI, Figma Weave</div>
+    <div class="src"><strong>3D Modeling:</strong> 3D AI Studio (Rodin, Hunyuan3D, Tripo, Meshy), Microsoft Research Trellis, Maya, Blender, ZBrush</div>
+    <div class="src"><strong>Rigging & Animation:</strong> Meshy, Tripo, AccuRIG 2, Mixamo, Plask, Move.ai, RADiCAL, Advanced Skeleton, Rapid Rig Modular</div>
+    <div class="src"><strong>Game Engines:</strong> Unity 6, Godot 4.x, Unreal Engine 5</div>
+    <div class="src"><strong>Internal Custom Tools Referenced:</strong> Maya Batch FBX Exporter, LOD Generation Tool, Batch Virus-Cleaning Utility (all Lila Games proprietary)</div>
+    <div class="src"><strong>Industry Context:</strong> GDC 2026 State of the Game Industry Report (28% global / 33% US developer layoff rate over 2 years; 36% reporting AI usage)</div>
+    <div class="src" style="grid-column: 1 / -1; border-bottom: none; padding-top: 14px;">All assessments are based on hands-on evaluation of tools across real production assets in our studio environment. Time-saving percentages are conservative estimates blending character, prop, and environment work. Specific tool recommendations have a 6–9 month half-life; workflow patterns are more durable. This is a working document — questions, pushback, and additions welcome.</div>
+  </div>
+</footer>
+
+</body>
+</html>
