@@ -505,6 +505,60 @@
     </div>
   </div>
 
+  <!-- ── COMFYUI + TRELLIS ── -->
+  <div class="game-header" style="margin-top:3rem;">
+    <span class="game-tag">Local AI · 3D Research</span>
+    <h2>ComfyUI + Trellis 2.0</h2>
+    <p>Explored running a fully <strong style="color:#fff;">local AI 3D generation pipeline</strong> — no cloud, no API costs, no data leaving the studio. Using Microsoft Research's Trellis 2.0 image-to-3D model inside a ComfyUI node graph, a single reference image is converted into a detailed 3D mesh with PBR textures in minutes. The result is then brought into Blender to compare the raw AI mesh against a manually retopologised version — measuring the real gap between what the model gives you and what production actually needs.</p>
+    <p style="margin-top:0.8rem;">
+      <span style="color:var(--muted);font-size:0.85rem;font-weight:600;letter-spacing:1px;text-transform:uppercase;">3D Generation —</span>
+      <span style="color:#aaa;font-size:0.85rem;"> Trellis 2.0 (Microsoft Research) &nbsp;·&nbsp; ComfyUI</span>
+      &nbsp;&nbsp;
+      <span style="color:var(--muted);font-size:0.85rem;font-weight:600;letter-spacing:1px;text-transform:uppercase;">Cleanup —</span>
+      <span style="color:#aaa;font-size:0.85rem;"> Blender &nbsp;·&nbsp; Manual Retopo</span>
+    </p>
+  </div>
+
+  <div class="style-section-heading">
+    <h3>01 — Image to 3D with ComfyUI + Trellis</h3>
+  </div>
+
+  <div class="project-row">
+    <div class="project-info">
+      <ul>
+        <li>Trellis 2.0 runs entirely locally on GPU — zero per-generation cost once set up</li>
+        <li>ComfyUI node graph controls the full pipeline: image input → mesh → texture → export</li>
+        <li>Generates high-detail source mesh with PBR textures from a single reference image</li>
+        <li>Output in minutes vs. hours for a hand-modelled equivalent base mesh</li>
+        <li>No internet connection required — suitable for NDA-protected studio assets</li>
+      </ul>
+    </div>
+    <div class="project-video" onclick="playVideo(this,'xc6uKEJ1wl0')">
+      <img src="https://img.youtube.com/vi/xc6uKEJ1wl0/maxresdefault.jpg" alt="ComfyUI Trellis 3D generation" onerror="this.src='https://img.youtube.com/vi/xc6uKEJ1wl0/hqdefault.jpg'">
+      <div class="play-btn"></div>
+    </div>
+  </div>
+
+  <div class="style-section-heading">
+    <h3>02 — Retopo vs Original · Blender Comparison</h3>
+  </div>
+
+  <div class="project-row">
+    <div class="project-info">
+      <ul>
+        <li>Raw AI mesh: 80K–150K polys, no edge-flow, not deformation-safe</li>
+        <li>Retopologised mesh: ~8K polys, clean quads, animation-ready edge loops</li>
+        <li>AI handles the sculpt and surface detail — human handles the craft layer</li>
+        <li>Hybrid saves ~35–40% compared to building the full character from scratch</li>
+        <li>Validates the hybrid pipeline as viable for game-ready character production</li>
+      </ul>
+    </div>
+    <div class="project-video" onclick="playVideo(this,'My7RJah7eZY')">
+      <img src="https://img.youtube.com/vi/My7RJah7eZY/maxresdefault.jpg" alt="Blender retopo vs AI mesh comparison" onerror="this.src='https://img.youtube.com/vi/My7RJah7eZY/hqdefault.jpg'">
+      <div class="play-btn"></div>
+    </div>
+  </div>
+
   <!-- ── AI REPORT ── -->
   <div class="game-header" style="margin-top:3rem;">
     <span class="game-tag">Internal Report · May 2026</span>
