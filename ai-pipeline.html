@@ -559,6 +559,88 @@
     </div>
   </div>
 
+  <!-- ── ONLINE 3D AI MODELS ── -->
+  <div class="game-header" style="margin-top:3rem;">
+    <span class="game-tag">3D Model Testing · 3daistudio.com</span>
+    <h2>Online AI 3D Model Generation</h2>
+    <p>Tested the full image-to-3D-to-rig workflow using <strong style="color:#fff;">3daistudio.com</strong> — a single platform that runs multiple AI model generators (Tripo, Meshy and others) side by side, letting you compare results before committing to one. The workflow starts with AI-generated reference images and ends with a rigged, posable character — entirely inside online tools, no local GPU required.</p>
+    <p style="margin-top:0.5rem;font-size:0.9rem;color:#888;line-height:1.7;">
+      <strong style="color:#ccc;">Workflow:</strong> Generate front + side view images in ChatGPT or Gemini → feed both views into 3daistudio.com → run Tripo and Meshy in parallel and pick the best result → auto-rig the chosen mesh inside the same platform → export game-ready.
+    </p>
+    <p style="margin-top:0.8rem;">
+      <span style="color:var(--muted);font-size:0.85rem;font-weight:600;letter-spacing:1px;text-transform:uppercase;">Images —</span>
+      <span style="color:#aaa;font-size:0.85rem;"> ChatGPT &nbsp;·&nbsp; Gemini</span>
+      &nbsp;&nbsp;
+      <span style="color:var(--muted);font-size:0.85rem;font-weight:600;letter-spacing:1px;text-transform:uppercase;">3D + Rigging —</span>
+      <span style="color:#aaa;font-size:0.85rem;"> Tripo &nbsp;·&nbsp; Meshy &nbsp;·&nbsp; 3daistudio.com</span>
+    </p>
+  </div>
+
+  <!-- Reference images -->
+  <div class="style-section-heading">
+    <h3>01 — AI Reference Images (Front + Side)</h3>
+  </div>
+
+  <div class="project-row">
+    <div class="project-info">
+      <ul>
+        <li>Character designed entirely using ChatGPT / Gemini image generation</li>
+        <li>Front view and side view created separately to give the 3D model generator full spatial data</li>
+        <li>Two-view input dramatically improves mesh accuracy over single-image generation</li>
+        <li>No concept artist involved — full character sheet produced in under 30 minutes</li>
+      </ul>
+    </div>
+    <div style="flex:1.6;display:flex;gap:0.75rem;">
+      <div style="flex:1;aspect-ratio:1/1;border-radius:8px;overflow:hidden;border:1px solid var(--border);background:#000;cursor:zoom-in;" onclick="openLightbox('images/online-llm/ref-front.png')">
+        <img src="images/online-llm/ref-front.png" alt="Character front view" style="width:100%;height:100%;object-fit:cover;display:block;transition:transform 0.3s,opacity 0.3s;" onmouseover="this.style.transform='scale(1.03)';this.style.opacity='0.8'" onmouseout="this.style.transform='scale(1)';this.style.opacity='1'">
+      </div>
+      <div style="flex:1;aspect-ratio:1/1;border-radius:8px;overflow:hidden;border:1px solid var(--border);background:#000;cursor:zoom-in;" onclick="openLightbox('images/online-llm/ref-side.png')">
+        <img src="images/online-llm/ref-side.png" alt="Character side view" style="width:100%;height:100%;object-fit:cover;display:block;transition:transform 0.3s,opacity 0.3s;" onmouseover="this.style.transform='scale(1.03)';this.style.opacity='0.8'" onmouseout="this.style.transform='scale(1)';this.style.opacity='1'">
+      </div>
+    </div>
+  </div>
+
+  <!-- Model generation video -->
+  <div class="style-section-heading">
+    <h3>02 — 3D Model Generation · Tripo vs Meshy</h3>
+  </div>
+
+  <div class="project-row">
+    <div class="project-info">
+      <ul>
+        <li>Both Tripo and Meshy run simultaneously from the same reference — pick the best output</li>
+        <li>Full PBR textured mesh generated in 2–4 minutes per model</li>
+        <li>3daistudio.com comparison view lets you judge topology, surface detail and texture quality side by side</li>
+        <li>Props and environment assets reach near-game-ready quality; characters need retopo</li>
+        <li>No local GPU needed — runs fully in the browser on any machine</li>
+      </ul>
+    </div>
+    <div class="project-video" onclick="playVideo(this,'qoW8k4lHF0Y')">
+      <img src="https://img.youtube.com/vi/qoW8k4lHF0Y/maxresdefault.jpg" alt="Tripo Meshy 3D model generation" onerror="this.src='https://img.youtube.com/vi/qoW8k4lHF0Y/hqdefault.jpg'">
+      <div class="play-btn"></div>
+    </div>
+  </div>
+
+  <!-- Rigging video -->
+  <div class="style-section-heading">
+    <h3>03 — Auto-Rigging the AI Mesh</h3>
+  </div>
+
+  <div class="project-row">
+    <div class="project-info">
+      <ul>
+        <li>Auto-rig applied inside 3daistudio.com — no external DCC needed for initial pose testing</li>
+        <li>Humanoid skeleton mapped automatically to the AI-generated mesh</li>
+        <li>Good enough for previs, pitch videos and prototype gameplay — not production-hero quality</li>
+        <li>Entire image-to-rigged-character pipeline completed in under an hour, online only</li>
+      </ul>
+    </div>
+    <div class="project-video" onclick="playVideo(this,'nZBzfFqP7yI')">
+      <img src="https://img.youtube.com/vi/nZBzfFqP7yI/maxresdefault.jpg" alt="Auto-rigging AI 3D model" onerror="this.src='https://img.youtube.com/vi/nZBzfFqP7yI/hqdefault.jpg'">
+      <div class="play-btn"></div>
+    </div>
+  </div>
+
   <!-- ── AI REPORT ── -->
   <div class="game-header" style="margin-top:3rem;">
     <span class="game-tag">Internal Report · May 2026</span>
