@@ -208,6 +208,45 @@
 
     .lightbox-close:hover { opacity: 1; }
 
+    /* Portrait video (YouTube Shorts 9:16) */
+    .project-video-portrait {
+      flex: 0 0 260px;
+      aspect-ratio: 9/16;
+      border-radius: 8px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      background: #000;
+      position: relative;
+      cursor: pointer;
+    }
+
+    .project-video-portrait img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.3s, opacity 0.3s;
+    }
+
+    .project-video-portrait:hover img {
+      transform: scale(1.03);
+      opacity: 0.75;
+    }
+
+    .project-video-portrait:hover .play-btn {
+      background: #ff0000;
+      transform: translate(-50%, -50%) scale(1.1);
+    }
+
+    .project-video-portrait iframe {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%;
+      height: 100%;
+      display: block;
+      border: none;
+    }
+
     /* Section divider */
     .style-divider {
       max-width: 1100px;
@@ -384,6 +423,85 @@
       <img class="gallery-img" src="images/outbound/dragon-hunter/dh-03.png" alt="Dragon Hunter concept 3" onclick="openLightbox(this.src)">
       <img class="gallery-img" src="images/outbound/dragon-hunter/dh-04.png" alt="Dragon Hunter concept 4" onclick="openLightbox(this.src)">
       <img class="gallery-img" src="images/outbound/dragon-hunter/dh-05.png" alt="Dragon Hunter concept 5" onclick="openLightbox(this.src)">
+    </div>
+  </div>
+
+  <!-- ── BALL X PIT ── -->
+  <div class="game-header" style="margin-top:3rem;">
+    <span class="game-tag">AI Art Exploration</span>
+    <h2>Ball X Pit</h2>
+    <p>Casual arcade game concept — player launches balls to clear waves of enemies and obstacles across increasingly challenging levels. Two distinct art styles were explored using AI image generation to define the game's visual tone and target audience.</p>
+    <p style="margin-top:0.8rem;">
+      <span style="color:var(--muted);font-size:0.85rem;font-weight:600;letter-spacing:1px;text-transform:uppercase;">Images —</span>
+      <span style="color:#aaa;font-size:0.85rem;"> ChatGPT &nbsp;·&nbsp; Gemini &nbsp;·&nbsp; Claude</span>
+      &nbsp;&nbsp;
+      <span style="color:var(--muted);font-size:0.85rem;font-weight:600;letter-spacing:1px;text-transform:uppercase;">Video —</span>
+      <span style="color:#aaa;font-size:0.85rem;"> Seedance 2.0</span>
+    </p>
+  </div>
+
+  <!-- Gummy Blaster -->
+  <div class="style-section-heading">
+    <h3>Style 01 — Gummy Blaster</h3>
+  </div>
+
+  <div class="project-row">
+    <div class="project-info">
+      <ul>
+        <li>Bright, candy-pop art style with vibrant gummy colours</li>
+        <li>Cheerful enemies — gummy bears, jelly blobs and candy creatures</li>
+        <li>High-contrast UI with bold outlines and playful typography</li>
+        <li>Targets casual players and younger audiences</li>
+        <li>Gameplay mockups, key art, store icons and UI frames generated with AI</li>
+      </ul>
+    </div>
+    <div class="project-video-portrait" onclick="playVideo(this,'AXJtELfmXVo')">
+      <img src="https://img.youtube.com/vi/AXJtELfmXVo/maxresdefault.jpg" alt="Ball X Pit Gummy Blaster" onerror="this.src='https://img.youtube.com/vi/AXJtELfmXVo/hqdefault.jpg'">
+      <div class="play-btn"></div>
+    </div>
+  </div>
+
+  <div class="image-gallery">
+    <div class="image-gallery-grid">
+      <img class="gallery-img" src="images/ballxpit/gummy-blaster/gb-01.jpg" alt="Gummy Blaster concept 1" onclick="openLightbox(this.src)">
+      <img class="gallery-img" src="images/ballxpit/gummy-blaster/gb-02.jpg" alt="Gummy Blaster concept 2" onclick="openLightbox(this.src)">
+      <img class="gallery-img" src="images/ballxpit/gummy-blaster/gb-03.jpg" alt="Gummy Blaster concept 3" onclick="openLightbox(this.src)">
+      <img class="gallery-img" src="images/ballxpit/gummy-blaster/gb-04.jpg" alt="Gummy Blaster concept 4" onclick="openLightbox(this.src)">
+      <img class="gallery-img" src="images/ballxpit/gummy-blaster/gb-05.jpg" alt="Gummy Blaster concept 5" onclick="openLightbox(this.src)">
+      <img class="gallery-img" src="images/ballxpit/gummy-blaster/gb-06.jpg" alt="Gummy Blaster concept 6" onclick="openLightbox(this.src)">
+    </div>
+  </div>
+
+  <hr class="style-divider">
+
+  <!-- Jungle Pixel -->
+  <div class="style-section-heading">
+    <h3>Style 02 — Jungle Pixel</h3>
+  </div>
+
+  <div class="project-row">
+    <div class="project-info">
+      <ul>
+        <li>Retro pixel art aesthetic set in a lush jungle environment</li>
+        <li>Pixelated animals and tribal enemies with chiptune-inspired UI</li>
+        <li>Deep greens, earthy browns and warm highlight palette</li>
+        <li>Targets nostalgic and mid-core players who enjoy pixel art games</li>
+        <li>Gameplay mockups, key art, store icons and UI frames generated with AI</li>
+      </ul>
+    </div>
+    <div class="project-video-portrait" onclick="playVideo(this,'MzrTzJqk5DU')">
+      <img src="https://img.youtube.com/vi/MzrTzJqk5DU/maxresdefault.jpg" alt="Ball X Pit Jungle Pixel" onerror="this.src='https://img.youtube.com/vi/MzrTzJqk5DU/hqdefault.jpg'">
+      <div class="play-btn"></div>
+    </div>
+  </div>
+
+  <div class="image-gallery">
+    <div class="image-gallery-grid">
+      <img class="gallery-img" src="images/ballxpit/jungle-pixel/jp-01.jpg" alt="Jungle Pixel concept 1" onclick="openLightbox(this.src)">
+      <img class="gallery-img" src="images/ballxpit/jungle-pixel/jp-02.jpg" alt="Jungle Pixel concept 2" onclick="openLightbox(this.src)">
+      <img class="gallery-img" src="images/ballxpit/jungle-pixel/jp-03.jpg" alt="Jungle Pixel concept 3" onclick="openLightbox(this.src)">
+      <img class="gallery-img" src="images/ballxpit/jungle-pixel/jp-04.jpg" alt="Jungle Pixel concept 4" onclick="openLightbox(this.src)">
+      <img class="gallery-img" src="images/ballxpit/jungle-pixel/jp-05.jpg" alt="Jungle Pixel concept 5" onclick="openLightbox(this.src)">
     </div>
   </div>
 
