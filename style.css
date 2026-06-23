@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Rajdhani:wght@400;600;700&display=swap');
+
 * {
   margin: 0;
   padding: 0;
@@ -8,6 +10,7 @@
   --bg: #111;
   --bg2: #1a1a1a;
   --accent: #e8a020;
+  --accent2: #00b4d8;
   --text: #e0e0e0;
   --muted: #888;
   --border: #2a2a2a;
@@ -16,14 +19,14 @@
 body {
   background: var(--bg);
   color: var(--text);
-  font-family: 'Segoe UI', Arial, sans-serif;
+  font-family: 'Rajdhani', 'Segoe UI', Arial, sans-serif;
   min-height: 100vh;
 }
 
 /* ── NAV ── */
 nav {
   background: #0d0d0d;
-  border-bottom: 1px solid var(--border);
+  border-bottom: 2px solid var(--accent);
   position: sticky;
   top: 0;
   z-index: 100;
@@ -32,6 +35,17 @@ nav {
   justify-content: space-between;
   padding: 0 2rem;
   height: 60px;
+}
+
+nav::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: rgba(0, 180, 216, 0.45);
+  pointer-events: none;
 }
 
 .nav-brand {
@@ -68,7 +82,8 @@ nav {
   font-size: 0.88rem;
   padding: 0.45rem 0.85rem;
   border-radius: 4px;
-  transition: color 0.2s, background 0.2s;
+  border-bottom: 2px solid transparent;
+  transition: color 0.2s, background 0.2s, border-bottom-color 0.2s;
   letter-spacing: 0.3px;
 }
 
@@ -76,6 +91,7 @@ nav {
 .nav-links a.active {
   color: var(--accent);
   background: rgba(232, 160, 32, 0.08);
+  border-bottom-color: var(--accent2);
 }
 
 .hamburger {
@@ -371,4 +387,185 @@ footer a {
     grid-template-columns: 1fr;
     padding: 1rem;
   }
+}
+
+/* ══════════════════════════════════════
+   CYBERPUNK PANEL STYLES
+   ══════════════════════════════════════ */
+
+/* ── ROW ALTERNATING BACKGROUNDS ── */
+.project-row.row-odd {
+  background: #110e08;
+  border-left: 3px solid rgba(232, 160, 32, 0.5);
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+  border-radius: 2px;
+}
+
+.project-row.row-even {
+  background: #080d11;
+  border-left: 3px solid rgba(0, 180, 216, 0.4);
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+  border-radius: 2px;
+}
+
+.project-row.row-odd::after,
+.project-row.row-even::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  border-radius: 2px;
+}
+
+.project-row.row-odd  { position: relative; }
+.project-row.row-even { position: relative; }
+
+.project-row.row-odd::after {
+  background: radial-gradient(ellipse at 80% 50%, rgba(232, 160, 32, 0.04) 0%, transparent 60%);
+}
+
+.project-row.row-even::after {
+  background: radial-gradient(ellipse at 20% 50%, rgba(0, 180, 216, 0.04) 0%, transparent 60%);
+}
+
+/* ── VIDEO PANEL — COMIC BORDERS ── */
+.project-video {
+  border: 2px solid var(--accent) !important;
+  border-radius: 0 !important;
+  box-shadow: 5px 5px 0 #1a1508 !important;
+}
+
+.project-row.row-even .project-video {
+  border-color: var(--accent2) !important;
+  box-shadow: 5px 5px 0 #080d14 !important;
+}
+
+.project-video::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0 18px 18px 0;
+  border-color: transparent var(--accent) transparent transparent;
+  z-index: 2;
+}
+
+.project-row.row-even .project-video::before {
+  border-color: transparent var(--accent2) transparent transparent;
+}
+
+/* ── PLAY BUTTON — CHAMFERED ── */
+.play-btn {
+  border-radius: 0 !important;
+  border: 2px solid var(--accent) !important;
+  clip-path: polygon(0 0, 90% 0, 100% 10%, 100% 100%, 10% 100%, 0 90%) !important;
+  width: 50px !important;
+  height: 50px !important;
+  background: rgba(0, 0, 0, 0.75) !important;
+}
+
+.play-btn::after {
+  border-color: transparent transparent transparent var(--accent) !important;
+  border-width: 8px 0 8px 15px !important;
+}
+
+.project-video:hover .play-btn {
+  background: rgba(232, 160, 32, 0.2) !important;
+  transform: translate(-50%, -50%) scale(1.05) !important;
+}
+
+.project-row.row-even .play-btn {
+  border-color: var(--accent2) !important;
+}
+
+.project-row.row-even .play-btn::after {
+  border-color: transparent transparent transparent var(--accent2) !important;
+}
+
+.project-row.row-even .project-video:hover .play-btn {
+  background: rgba(0, 180, 216, 0.2) !important;
+}
+
+/* ── TYPOGRAPHY ── */
+.project-info h3 {
+  font-family: 'Bebas Neue', sans-serif !important;
+  letter-spacing: 2px !important;
+  font-weight: 400 !important;
+  font-size: 1.7rem !important;
+}
+
+.project-info h3 span {
+  font-family: 'Rajdhani', sans-serif !important;
+  color: var(--accent) !important;
+  letter-spacing: 1.5px !important;
+  text-transform: uppercase !important;
+  font-size: 0.72rem !important;
+  display: block !important;
+  margin-top: 3px !important;
+  font-weight: 600 !important;
+}
+
+.project-row.row-even .project-info h3 span {
+  color: var(--accent2) !important;
+}
+
+/* ── CUSTOM BULLETS ── */
+.project-info ul {
+  list-style: none !important;
+  padding-left: 1.2rem !important;
+}
+
+.project-info ul li {
+  position: relative;
+}
+
+.project-info ul li::before {
+  content: '▸';
+  position: absolute;
+  left: -1rem;
+  color: var(--accent);
+  font-size: 0.8rem;
+  line-height: inherit;
+}
+
+.project-row.row-even .project-info ul li::before {
+  color: var(--accent2);
+}
+
+/* ── NAV BRAND SUBTITLE ── */
+.nav-brand-subtitle {
+  color: #4a8fa0 !important;
+}
+
+/* ── IMAGE GALLERY — SECTION COLOR MATCH (AI Pipeline) ── */
+.image-gallery.row-odd {
+  background: #110e08;
+  border-left: 3px solid rgba(232, 160, 32, 0.5);
+  padding-top: 0.5rem;
+  padding-bottom: 1.5rem;
+}
+
+.image-gallery.row-even {
+  background: #080d11;
+  border-left: 3px solid rgba(0, 180, 216, 0.4);
+  padding-top: 0.5rem;
+  padding-bottom: 1.5rem;
+}
+
+/* Close gap between project-row and following image-gallery */
+.project-row.row-odd.has-gallery,
+.project-row.row-even.has-gallery {
+  margin-bottom: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+/* Style-section-heading matches section color */
+.style-section-heading.row-even h3 {
+  color: var(--accent2) !important;
+  border-left-color: var(--accent2) !important;
 }

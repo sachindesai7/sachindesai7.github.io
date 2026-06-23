@@ -165,7 +165,7 @@
       <img src="images/header_profile.jpg" alt="Sachin Desai">
       <div>
         <span>Sachin Desai</span>
-        <small style="display:block;color:var(--muted);font-size:0.7rem;font-weight:400;">3D/2D Animation and Technical Artist</small>
+        <small style="display:block;color:#4a8fa0;font-size:0.7rem;font-weight:400;">3D/2D Animation and Technical Artist</small>
       </div>
     </a>
     <ul class="nav-links" id="navLinks">
@@ -353,6 +353,10 @@
 
     // Desktop: autoplay all videos. Mobile: keep thumbnails, tap to play
     document.addEventListener('DOMContentLoaded', function() {
+      document.querySelectorAll('.project-row').forEach(function(row, i) {
+        row.classList.add(i % 2 === 0 ? 'row-odd' : 'row-even');
+      });
+
       var isMobile = window.innerWidth <= 768;
       if (isMobile) return; // mobile keeps thumbnails
       document.querySelectorAll('.project-video[onclick]').forEach(function(el) {
