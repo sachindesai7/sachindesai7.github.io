@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI & Pipeline — Sachin Desai</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .project-row {
+      display: flex;
+      align-items: flex-start;
+      gap: 3rem;
+      max-width: 1100px;
+      margin: 0 auto 2.5rem;
+      padding: 0 2rem;
+    }
+
+    .project-row:nth-child(even) {
+      flex-direction: row-reverse;
+    }
+
+    .project-info {
+      flex: 1;
+      padding-top: 0.5rem;
+    }
+
+    .project-info h2 {
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 0.2rem;
+    }
+
+    .project-info h2 span {
+      font-size: 0.95rem;
+      font-weight: 400;
+      color: var(--muted);
+    }
+
+    .project-info h3 {
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--accent);
+      margin: 2rem 0 0.3rem;
+    }
+
+    .project-info p {
+      color: #aaa;
+      font-size: 0.93rem;
+      line-height: 1.75;
+      margin-top: 0.6rem;
+    }
+
+    .project-info ul {
+      list-style: disc;
+      padding-left: 1.2rem;
+      color: #aaa;
+      font-size: 0.93rem;
+      line-height: 1.85;
+      margin-top: 0.8rem;
+    }
+
+    .project-info ul li {
+      margin-bottom: 0.4rem;
+    }
+
+    .style-label {
+      display: inline-block;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--accent);
+      border: 1px solid var(--accent);
+      border-radius: 3px;
+      padding: 0.15rem 0.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    /* Video block */
+    .project-video {
+      flex: 1.6;
+      aspect-ratio: 16/9;
+      border-radius: 8px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      background: #000;
+      position: relative;
+      cursor: pointer;
+    }
+
+    .project-video img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.3s, opacity 0.3s;
+    }
+
+    .project-video:hover img {
+      transform: scale(1.03);
+      opacity: 0.75;
+    }
+
+    .play-btn {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 64px;
+      height: 64px;
+      background: rgba(0,0,0,0.7);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      pointer-events: none;
+      transition: background 0.2s, transform 0.2s;
+    }
+
+    .project-video:hover .play-btn {
+      background: #ff0000;
+      transform: translate(-50%, -50%) scale(1.1);
+    }
+
+    .play-btn::after {
+      content: '';
+      display: block;
+      width: 0;
+      height: 0;
+      border-style: solid;
+      border-width: 11px 0 11px 20px;
+      border-color: transparent transparent transparent #fff;
+      margin-left: 4px;
+    }
+
+    .project-video iframe {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%;
+      height: 100%;
+      display: block;
+      border: none;
+    }
+
+    /* Image gallery */
+    .image-gallery {
+      max-width: 1100px;
+      margin: 0 auto 4rem;
+      padding: 0 2rem;
+    }
+
+    .image-gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0.75rem;
+    }
+
+    .gallery-img {
+      width: 100%;
+      aspect-ratio: 16/9;
+      object-fit: cover;
+      border-radius: 6px;
+      border: 1px solid var(--border);
+      display: block;
+      cursor: zoom-in;
+      transition: transform 0.25s, border-color 0.25s;
+    }
+
+    .gallery-img:hover {
+      transform: scale(1.02);
+      border-color: var(--accent);
+    }
+
+    /* Lightbox */
+    .lightbox {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.92);
+      z-index: 999;
+      align-items: center;
+      justify-content: center;
+      cursor: zoom-out;
+    }
+
+    .lightbox.open {
+      display: flex;
+    }
+
+    .lightbox img {
+      max-width: 92vw;
+      max-height: 90vh;
+      border-radius: 6px;
+      object-fit: contain;
+    }
+
+    .lightbox-close {
+      position: absolute;
+      top: 1.2rem;
+      right: 1.5rem;
+      color: #fff;
+      font-size: 2rem;
+      cursor: pointer;
+      line-height: 1;
+      opacity: 0.7;
+    }
+
+    .lightbox-close:hover { opacity: 1; }
+
+    /* Section divider */
+    .style-divider {
+      max-width: 1100px;
+      margin: 0.5rem auto 2.5rem;
+      padding: 0 2rem;
+      border: none;
+      border-top: 1px solid var(--border);
+    }
+
+    /* Game header */
+    .game-header {
+      max-width: 1100px;
+      margin: 2rem auto 1.5rem;
+      padding: 0 2rem;
+    }
+
+    .game-header h2 {
+      font-size: 2rem;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 0.5rem;
+    }
+
+    .game-header p {
+      color: #aaa;
+      font-size: 0.95rem;
+      line-height: 1.75;
+      max-width: 780px;
+    }
+
+    .game-tag {
+      display: inline-block;
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: #111;
+      background: var(--accent);
+      border-radius: 3px;
+      padding: 0.2rem 0.6rem;
+      margin-bottom: 0.7rem;
+    }
+
+    .style-section-heading {
+      max-width: 1100px;
+      margin: 2.5rem auto 1rem;
+      padding: 0 2rem;
+    }
+
+    .style-section-heading h3 {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--accent);
+      letter-spacing: 1px;
+      border-left: 3px solid var(--accent);
+      padding-left: 0.75rem;
+    }
+
+    @media (max-width: 768px) {
+      .project-row,
+      .project-row:nth-child(even) {
+        flex-direction: column;
+        gap: 1.2rem;
+        margin-bottom: 2rem;
+      }
+
+      .image-gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 480px) {
+      .image-gallery-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="index.html" class="nav-brand">
+      <img src="images/header_profile.jpg" alt="Sachin Desai">
+      <div>
+        <span>Sachin Desai</span>
+        <small style="display:block;color:var(--muted);font-size:0.7rem;font-weight:400;">3D/2D Animation and Technical Artist</small>
+      </div>
+    </a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">3D Animation</a></li>
+      <li><a href="tech-art.html">Tech Art</a></li>
+      <li><a href="2d-animation.html">2D Animation</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="ai-pipeline.html" class="active">AI & Pipeline</a></li>
+      <li><a href="about.html">About Me</a></li>
+    </ul>
+    <div class="hamburger" onclick="toggleNav()">
+      <span></span><span></span><span></span>
+    </div>
+  </nav>
+
+  <!-- ── OUTBOUND ── -->
+  <div class="game-header">
+    <span class="game-tag">AI Art Exploration</span>
+    <h2>Outbound</h2>
+    <p>Zombie hunter game concept — player navigates a constant-shooter vehicle through extraction zones, looting and surviving. Game progression includes vehicle upgrades, weapon upgrades, pilot unlocks and zone escalation. Two AI-generated art styles explored to find the game's visual identity.</p>
+  </div>
+
+  <!-- Wild Wild West -->
+  <div class="style-section-heading">
+    <h3>Style 01 — Wild Wild West</h3>
+  </div>
+
+  <div class="project-row">
+    <div class="project-info">
+      <ul>
+        <li>Semi-realistic cartoony western aesthetic</li>
+        <li>Iron Sheriff stagecoach-tank as the player vehicle</li>
+        <li>Dusty desert environments with warm amber palette</li>
+        <li>Undead outlaw enemies, wanted-poster UI framing</li>
+        <li>Key art, gameplay mockups, UI frames and app icon generated with AI</li>
+      </ul>
+    </div>
+    <div class="project-video" onclick="playVideo(this,'ebJL4rr6Eq8')">
+      <img src="https://img.youtube.com/vi/ebJL4rr6Eq8/maxresdefault.jpg" alt="Outbound Wild Wild West" onerror="this.src='https://img.youtube.com/vi/ebJL4rr6Eq8/hqdefault.jpg'">
+      <div class="play-btn"></div>
+    </div>
+  </div>
+
+  <div class="image-gallery">
+    <div class="image-gallery-grid">
+      <img class="gallery-img" src="images/outbound/wild-wild-west/ww-01.png" alt="Wild Wild West concept 1" onclick="openLightbox(this.src)">
+      <img class="gallery-img" src="images/outbound/wild-wild-west/ww-02.jpg" alt="Wild Wild West concept 2" onclick="openLightbox(this.src)">
+      <img class="gallery-img" src="images/outbound/wild-wild-west/ww-03.png" alt="Wild Wild West concept 3" onclick="openLightbox(this.src)">
+      <img class="gallery-img" src="images/outbound/wild-wild-west/ww-04.png" alt="Wild Wild West concept 4" onclick="openLightbox(this.src)">
+      <img class="gallery-img" src="images/outbound/wild-wild-west/ww-05.jpg" alt="Wild Wild West concept 5" onclick="openLightbox(this.src)">
+    </div>
+  </div>
+
+  <hr class="style-divider">
+
+  <!-- Dragon Hunter -->
+  <div class="style-section-heading">
+    <h3>Style 02 — Dragon Hunter</h3>
+  </div>
+
+  <div class="project-row">
+    <div class="project-info">
+      <ul>
+        <li>Dark fantasy semi-realistic art style</li>
+        <li>Dragon Forge war chariot as the player vehicle</li>
+        <li>Volcanic, ruined fortress environments — deep red and ember palette</li>
+        <li>Dragon and demon enemies with arcane energy weapons</li>
+        <li>Key art, gameplay mockups, UI frames and app icon generated with AI</li>
+      </ul>
+    </div>
+    <div class="project-video" onclick="playVideo(this,'mRAIBY3tS2M')">
+      <img src="https://img.youtube.com/vi/mRAIBY3tS2M/maxresdefault.jpg" alt="Outbound Dragon Hunter" onerror="this.src='https://img.youtube.com/vi/mRAIBY3tS2M/hqdefault.jpg'">
+      <div class="play-btn"></div>
+    </div>
+  </div>
+
+  <div class="image-gallery">
+    <div class="image-gallery-grid">
+      <img class="gallery-img" src="images/outbound/dragon-hunter/dh-01.png" alt="Dragon Hunter concept 1" onclick="openLightbox(this.src)">
+      <img class="gallery-img" src="images/outbound/dragon-hunter/dh-02.png" alt="Dragon Hunter concept 2" onclick="openLightbox(this.src)">
+      <img class="gallery-img" src="images/outbound/dragon-hunter/dh-03.png" alt="Dragon Hunter concept 3" onclick="openLightbox(this.src)">
+      <img class="gallery-img" src="images/outbound/dragon-hunter/dh-04.png" alt="Dragon Hunter concept 4" onclick="openLightbox(this.src)">
+      <img class="gallery-img" src="images/outbound/dragon-hunter/dh-05.png" alt="Dragon Hunter concept 5" onclick="openLightbox(this.src)">
+    </div>
+  </div>
+
+  <!-- Lightbox -->
+  <div class="lightbox" id="lightbox" onclick="closeLightbox()">
+    <span class="lightbox-close" onclick="closeLightbox()">&#x2715;</span>
+    <img id="lightboxImg" src="" alt="">
+  </div>
+
+  <footer>
+    &copy; 2026 Sachin Desai &nbsp;·&nbsp;
+    <a href="https://www.linkedin.com/in/sachindesai7" target="_blank">LinkedIn</a>
+    &nbsp;·&nbsp;
+    <a href="about.html">Contact</a>
+  </footer>
+
+  <script>
+    function toggleNav() {
+      document.getElementById('navLinks').classList.toggle('open');
+    }
+    document.querySelectorAll('.nav-links a').forEach(function(link) {
+      link.addEventListener('click', function() {
+        document.getElementById('navLinks').classList.remove('open');
+      });
+    });
+    document.addEventListener('click', function(e) {
+      var nav = document.getElementById('navLinks');
+      var hamburger = document.querySelector('.hamburger');
+      if (!nav.contains(e.target) && !hamburger.contains(e.target)) {
+        nav.classList.remove('open');
+      }
+    });
+
+    function playVideo(el, videoId) {
+      el.innerHTML = '<iframe src="https://www.youtube.com/embed/' + videoId + '?autoplay=1&rel=0&modestbranding=1" allow="autoplay; encrypted-media" allowfullscreen></iframe>';
+      el.style.cursor = 'default';
+    }
+
+    document.addEventListener('DOMContentLoaded', function() {
+      var isMobile = window.innerWidth <= 768;
+      if (isMobile) return;
+      document.querySelectorAll('.project-video[onclick]').forEach(function(el) {
+        var match = el.getAttribute('onclick').match(/'([^']+)'\)/);
+        if (!match) return;
+        var videoId = match[1];
+        el.innerHTML = '<iframe src="https://www.youtube.com/embed/' + videoId +
+          '?autoplay=1&mute=1&loop=1&playlist=' + videoId +
+          '&controls=1&rel=0&modestbranding=1" allow="autoplay; encrypted-media" allowfullscreen></iframe>';
+        el.style.cursor = 'default';
+      });
+    });
+
+    function openLightbox(src) {
+      document.getElementById('lightboxImg').src = src;
+      document.getElementById('lightbox').classList.add('open');
+    }
+
+    function closeLightbox() {
+      document.getElementById('lightbox').classList.remove('open');
+      document.getElementById('lightboxImg').src = '';
+    }
+
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') closeLightbox();
+    });
+  </script>
+</body>
+</html>
