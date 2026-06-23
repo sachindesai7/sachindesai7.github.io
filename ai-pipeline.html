@@ -543,7 +543,7 @@
     document.addEventListener('DOMContentLoaded', function() {
       var isMobile = window.innerWidth <= 768;
       if (isMobile) return;
-      document.querySelectorAll('.project-video[onclick]').forEach(function(el) {
+      document.querySelectorAll('.project-video[onclick], .project-video-portrait[onclick]').forEach(function(el) {
         var match = el.getAttribute('onclick').match(/'([^']+)'\)/);
         if (!match) return;
         var videoId = match[1];
