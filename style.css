@@ -542,6 +542,58 @@ footer a {
   color: #4a8fa0 !important;
 }
 
+/* ── LANGUAGE SWITCHER ── */
+.lang-switcher {
+  display: flex;
+  align-items: center;
+  margin-left: 0.75rem;
+  flex-shrink: 0;
+}
+
+.lang-btn {
+  background: transparent;
+  border: 1px solid rgba(232, 160, 32, 0.35);
+  color: var(--muted);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  padding: 0.28rem 0.55rem;
+  cursor: pointer;
+  font-family: 'Rajdhani', inherit;
+  transition: background 0.18s, color 0.18s, border-color 0.18s;
+  line-height: 1;
+}
+
+.lang-btn:first-child {
+  border-right: none;
+  border-radius: 3px 0 0 3px;
+}
+
+.lang-btn:last-child {
+  border-radius: 0 3px 3px 0;
+}
+
+.lang-btn--active {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #111;
+}
+
+.lang-btn:not(.lang-btn--active):hover {
+  color: var(--accent);
+  border-color: var(--accent);
+}
+
+@media (max-width: 640px) {
+  .lang-switcher {
+    margin-left: 0.5rem;
+  }
+  .lang-btn {
+    font-size: 0.68rem;
+    padding: 0.25rem 0.45rem;
+  }
+}
+
 /* ── IMAGE GALLERY — SECTION COLOR MATCH (AI Pipeline) ── */
 .image-gallery.row-odd {
   background: #110e08;

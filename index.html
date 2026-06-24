@@ -165,17 +165,21 @@
       <img src="images/header_profile.jpg" alt="Sachin Desai">
       <div>
         <span>Sachin Desai</span>
-        <small style="display:block;color:#4a8fa0;font-size:0.7rem;font-weight:400;">3D/2D Animation and Technical Artist</small>
+        <small style="display:block;color:#4a8fa0;font-size:0.7rem;font-weight:400;" data-en="3D/2D Animation and Technical Artist" data-ja="3D/2Dアニメーター・テクニカルアーティスト">3D/2D Animation and Technical Artist</small>
       </div>
     </a>
     <ul class="nav-links" id="navLinks">
-      <li><a href="index.html" class="active">3D Animation</a></li>
-      <li><a href="tech-art.html">Tech Art</a></li>
-      <li><a href="2d-animation.html">2D Animation</a></li>
-      <li><a href="projects.html">Projects</a></li>
-      <li><a href="ai-pipeline.html">AI & Pipeline</a></li>
-      <li><a href="about.html">About Me</a></li>
+      <li><a href="index.html" class="active"><span data-en="3D Animation" data-ja="3Dアニメーション">3D Animation</span></a></li>
+      <li><a href="tech-art.html"><span data-en="Tech Art" data-ja="テクニカルアート">Tech Art</span></a></li>
+      <li><a href="2d-animation.html"><span data-en="2D Animation" data-ja="2Dアニメーション">2D Animation</span></a></li>
+      <li><a href="projects.html"><span data-en="Projects" data-ja="プロジェクト">Projects</span></a></li>
+      <li><a href="ai-pipeline.html"><span data-en="AI &amp; Pipeline" data-ja="AI &amp; パイプライン">AI &amp; Pipeline</span></a></li>
+      <li><a href="about.html"><span data-en="About Me" data-ja="私について">About Me</span></a></li>
     </ul>
+    <div class="lang-switcher">
+      <button class="lang-btn lang-btn--active" data-lang="en" aria-pressed="true">EN</button>
+      <button class="lang-btn" data-lang="ja" aria-pressed="false">JA</button>
+    </div>
     <div class="hamburger" onclick="toggleNav()">
       <span></span><span></span><span></span>
     </div>
@@ -184,13 +188,13 @@
   <!-- LILA Black -->
   <div class="project-row" style="margin-top:2rem;">
     <div class="project-info">
-      <h3>LILA Black <span>— Animation, Game Integration, Tech Art</span></h3>
+      <h3>LILA Black <span data-en="— Animation, Game Integration, Tech Art" data-ja="— アニメーション、ゲーム統合、テクニカルアート">— Animation, Game Integration, Tech Art</span></h3>
       <ul>
-        <li>Extraction Shooter — animated player characters, creatures and NPCs</li>
-        <li>Created locomotion cycles, combat moves and special animations</li>
-        <li>Integrated and tested in-engine at Lila Games</li>
+        <li data-en="Extraction Shooter — animated player characters, creatures and NPCs" data-ja="エクストラクションシューター — プレイヤーキャラクター、クリーチャー、NPCのアニメーション制作">Extraction Shooter — animated player characters, creatures and NPCs</li>
+        <li data-en="Created locomotion cycles, combat moves and special animations" data-ja="ロコモーションサイクル、戦闘モーション、スペシャルアニメーションの制作">Created locomotion cycles, combat moves and special animations</li>
+        <li data-en="Integrated and tested in-engine at Lila Games" data-ja="Lila Gamesにてエンジン内で統合・テスト">Integrated and tested in-engine at Lila Games</li>
       </ul>
-      <a href="https://youtu.be/SOLzU9LYnXw" target="_blank" class="watch-link">▶ Watch animation work</a>
+      <a href="https://youtu.be/SOLzU9LYnXw" target="_blank" class="watch-link" data-en="▶ Watch animation work" data-ja="▶ アニメーション作品を見る">▶ Watch animation work</a>
     </div>
     <div class="project-video" onclick="playVideo(this,'SOLzU9LYnXw')">
       <img src="https://img.youtube.com/vi/SOLzU9LYnXw/maxresdefault.jpg" alt="LILA Black Animation"
@@ -202,13 +206,13 @@
   <!-- Captain Laser Hawk -->
   <div class="project-row" style="margin-top:2rem;">
     <div class="project-info">
-      <h3>Captain Laser Hawk <span>— Animation, Rigging, Game Integration, Tech Art</span></h3>
+      <h3>Captain Laser Hawk <span data-en="— Animation, Rigging, Game Integration, Tech Art" data-ja="— アニメーション、リギング、ゲーム統合、テクニカルアート">— Animation, Rigging, Game Integration, Tech Art</span></h3>
       <ul>
-        <li>Top-down multiplayer shooter — rigged biped characters</li>
-        <li>Created victory poses, emotes and locomotive cycles</li>
-        <li>Integrated and tested in-engine</li>
+        <li data-en="Top-down multiplayer shooter — rigged biped characters" data-ja="トップダウン型マルチプレイヤーシューター — 二足歩行キャラクターのリグ制作">Top-down multiplayer shooter — rigged biped characters</li>
+        <li data-en="Created victory poses, emotes and locomotive cycles" data-ja="勝利ポーズ、エモート、移動サイクルの制作">Created victory poses, emotes and locomotive cycles</li>
+        <li data-en="Integrated and tested in-engine" data-ja="エンジン内で統合・テスト">Integrated and tested in-engine</li>
       </ul>
-      <a href="https://youtu.be/a3jojm-xbZM" target="_blank" class="watch-link">▶ Watch video</a>
+      <a href="https://youtu.be/a3jojm-xbZM" target="_blank" class="watch-link" data-en="▶ Watch video" data-ja="▶ 動画を見る">▶ Watch video</a>
     </div>
     <div class="project-video" onclick="playVideo(this,'a3jojm-xbZM')">
       <img src="https://img.youtube.com/vi/a3jojm-xbZM/maxresdefault.jpg" alt="Captain Laser Hawk" onerror="this.src='https://img.youtube.com/vi/a3jojm-xbZM/hqdefault.jpg'">
@@ -219,13 +223,13 @@
   <!-- Clash of Beast (2 videos) -->
   <div class="project-row">
     <div class="project-info">
-      <h3>Clash of Beast <span>— Animation, Rigging, Game Integration, Tech Art</span></h3>
+      <h3>Clash of Beast <span data-en="— Animation, Rigging, Game Integration, Tech Art" data-ja="— アニメーション、リギング、ゲーム統合、テクニカルアート">— Animation, Rigging, Game Integration, Tech Art</span></h3>
       <ul>
-        <li>Mobile strategy — rigged &amp; animated dozens of creatures/beasts and environmental assets</li>
-        <li>Created feature mockup using Unity Cinemachine and spell VFX integrations</li>
-        <li>Built and tested bundles in Unity in close collaboration with design and dev team</li>
+        <li data-en="Mobile strategy — rigged &amp; animated dozens of creatures/beasts and environmental assets" data-ja="モバイルストラテジー — 多数のクリーチャー/ビーストと環境アセットのリグ・アニメーション制作">Mobile strategy — rigged &amp; animated dozens of creatures/beasts and environmental assets</li>
+        <li data-en="Created feature mockup using Unity Cinemachine and spell VFX integrations" data-ja="Unity CinemachineとスペルVFX統合によるフィーチャーモックアップ制作">Created feature mockup using Unity Cinemachine and spell VFX integrations</li>
+        <li data-en="Built and tested bundles in Unity in close collaboration with design and dev team" data-ja="デザイン・開発チームと密に連携しUnityでバンドルをビルド・テスト">Built and tested bundles in Unity in close collaboration with design and dev team</li>
       </ul>
-      <a href="https://youtu.be/l-sVlzuFMvU" target="_blank" class="watch-link">▶ Watch videos</a>
+      <a href="https://youtu.be/l-sVlzuFMvU" target="_blank" class="watch-link" data-en="▶ Watch videos" data-ja="▶ 動画を見る">▶ Watch videos</a>
     </div>
     <div class="video-stack">
       <div class="project-video" onclick="playVideo(this,'l-sVlzuFMvU')">
@@ -242,12 +246,12 @@
   <!-- Deer Hunter -->
   <div class="project-row">
     <div class="project-info">
-      <h3>Deer Hunter <span>— Animation, Game Integration</span></h3>
+      <h3>Deer Hunter <span data-en="— Animation, Game Integration" data-ja="— アニメーション、ゲーム統合">— Animation, Game Integration</span></h3>
       <ul>
-        <li>First-person shooting cycles</li>
-        <li>Wild animal animations</li>
+        <li data-en="First-person shooting cycles" data-ja="一人称視点の射撃サイクル">First-person shooting cycles</li>
+        <li data-en="Wild animal animations" data-ja="野生動物のアニメーション">Wild animal animations</li>
       </ul>
-      <a href="https://youtu.be/7hwnC-gsl-U" target="_blank" class="watch-link">▶ Watch video</a>
+      <a href="https://youtu.be/7hwnC-gsl-U" target="_blank" class="watch-link" data-en="▶ Watch video" data-ja="▶ 動画を見る">▶ Watch video</a>
     </div>
     <div class="project-video" onclick="playVideo(this,'7hwnC-gsl-U')">
       <img src="https://img.youtube.com/vi/7hwnC-gsl-U/maxresdefault.jpg" alt="Deer Hunter" onerror="this.src='https://img.youtube.com/vi/7hwnC-gsl-U/hqdefault.jpg'">
@@ -258,11 +262,11 @@
   <!-- WWE Mayhem -->
   <div class="project-row">
     <div class="project-info">
-      <h3>WWE Mayhem <span>— Animation, Game Integration</span></h3>
+      <h3>WWE Mayhem <span data-en="— Animation, Game Integration" data-ja="— アニメーション、ゲーム統合">— Animation, Game Integration</span></h3>
       <ul>
-        <li>Sole animator for all exaggerated attack, combo, defense and special moves for wrestlers</li>
+        <li data-en="Sole animator for all exaggerated attack, combo, defense and special moves for wrestlers" data-ja="レスラーの誇張されたアタック、コンボ、防御、スペシャルムーブをすべて単独でアニメーション">Sole animator for all exaggerated attack, combo, defense and special moves for wrestlers</li>
       </ul>
-      <a href="https://youtu.be/f5peGpKzl94" target="_blank" class="watch-link">▶ Watch video</a>
+      <a href="https://youtu.be/f5peGpKzl94" target="_blank" class="watch-link" data-en="▶ Watch video" data-ja="▶ 動画を見る">▶ Watch video</a>
     </div>
     <div class="project-video" onclick="playVideo(this,'f5peGpKzl94')">
       <img src="https://img.youtube.com/vi/f5peGpKzl94/maxresdefault.jpg" alt="WWE Mayhem" onerror="this.src='https://img.youtube.com/vi/f5peGpKzl94/hqdefault.jpg'">
@@ -273,12 +277,12 @@
   <!-- Mocap and VR Demoreel -->
   <div class="project-row">
     <div class="project-info">
-      <h3>Mocap and VR Demoreel</h3>
+      <h3 data-en="Mocap and VR Demoreel" data-ja="モーキャプ＆VRデモリール">Mocap and VR Demoreel</h3>
       <ul>
-        <li>Motion capture performance cleanup and retargeting</li>
-        <li>VR character animation and interaction systems</li>
+        <li data-en="Motion capture performance cleanup and retargeting" data-ja="モーションキャプチャのパフォーマンスクリーンアップとリターゲット">Motion capture performance cleanup and retargeting</li>
+        <li data-en="VR character animation and interaction systems" data-ja="VRキャラクターアニメーションとインタラクションシステム">VR character animation and interaction systems</li>
       </ul>
-      <a href="https://youtu.be/CZTYiUbLDJo" target="_blank" class="watch-link">▶ Watch demoreel</a>
+      <a href="https://youtu.be/CZTYiUbLDJo" target="_blank" class="watch-link" data-en="▶ Watch demoreel" data-ja="▶ デモリールを見る">▶ Watch demoreel</a>
     </div>
     <div class="project-video" onclick="playVideo(this,'CZTYiUbLDJo')">
       <img src="https://img.youtube.com/vi/CZTYiUbLDJo/maxresdefault.jpg" alt="Mocap VR Demoreel" onerror="this.src='https://img.youtube.com/vi/CZTYiUbLDJo/hqdefault.jpg'">
@@ -289,12 +293,12 @@
   <!-- Unity Animation -->
   <div class="project-row">
     <div class="project-info">
-      <h3>Unity Animation</h3>
+      <h3 data-en="Unity Animation" data-ja="Unityアニメーション">Unity Animation</h3>
       <ul>
-        <li>Character and prop animation built and integrated inside Unity</li>
-        <li>Animation state machines, blend trees and in-engine testing</li>
+        <li data-en="Character and prop animation built and integrated inside Unity" data-ja="Unity内でキャラクターとプロップのアニメーションを制作・統合">Character and prop animation built and integrated inside Unity</li>
+        <li data-en="Animation state machines, blend trees and in-engine testing" data-ja="アニメーションステートマシン、ブレンドツリー、エンジン内テスト">Animation state machines, blend trees and in-engine testing</li>
       </ul>
-      <a href="https://youtu.be/EzmqlBVfVls" target="_blank" class="watch-link">▶ Watch video</a>
+      <a href="https://youtu.be/EzmqlBVfVls" target="_blank" class="watch-link" data-en="▶ Watch video" data-ja="▶ 動画を見る">▶ Watch video</a>
     </div>
     <div class="project-video" onclick="playVideo(this,'EzmqlBVfVls')">
       <img src="https://img.youtube.com/vi/EzmqlBVfVls/maxresdefault.jpg" alt="Unity Animation" onerror="this.src='https://img.youtube.com/vi/EzmqlBVfVls/hqdefault.jpg'">
@@ -305,12 +309,12 @@
   <!-- Character Animation Reel -->
   <div class="project-row">
     <div class="project-info">
-      <h3>Character Animation Reel <span>— TV Series</span></h3>
+      <h3>Character Animation Reel <span data-en="— TV Series" data-ja="— TVシリーズ">— TV Series</span></h3>
       <ul>
-        <li>Character animation demoreel for TV series productions</li>
-        <li>Showcases acting, body mechanics and facial animation</li>
+        <li data-en="Character animation demoreel for TV series productions" data-ja="TVシリーズ制作のキャラクターアニメーションデモリール">Character animation demoreel for TV series productions</li>
+        <li data-en="Showcases acting, body mechanics and facial animation" data-ja="演技、ボディメカニクス、フェイシャルアニメーションを披露">Showcases acting, body mechanics and facial animation</li>
       </ul>
-      <a href="https://youtu.be/GO5D99TCI_4" target="_blank" class="watch-link">▶ Watch demoreel</a>
+      <a href="https://youtu.be/GO5D99TCI_4" target="_blank" class="watch-link" data-en="▶ Watch demoreel" data-ja="▶ デモリールを見る">▶ Watch demoreel</a>
     </div>
     <div class="project-video" onclick="playVideo(this,'GO5D99TCI_4')">
       <img src="https://img.youtube.com/vi/GO5D99TCI_4/maxresdefault.jpg" alt="Character Animation Reel" onerror="this.src='https://img.youtube.com/vi/GO5D99TCI_4/hqdefault.jpg'">
@@ -322,9 +326,10 @@
     &copy; 2026 Sachin Desai &nbsp;·&nbsp;
     <a href="https://www.linkedin.com/in/sachindesai7" target="_blank">LinkedIn</a>
     &nbsp;·&nbsp;
-    <a href="about.html">Contact</a>
+    <a href="about.html" data-en="Contact" data-ja="お問い合わせ">Contact</a>
   </footer>
 
+  <script src="i18n.js"></script>
   <script>
     function toggleNav() {
       document.getElementById('navLinks').classList.toggle('open');

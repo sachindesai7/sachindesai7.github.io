@@ -218,17 +218,21 @@
       <img src="images/header_profile.jpg" alt="Sachin Desai">
       <div>
         <span>Sachin Desai</span>
-        <small style="display:block;color:#4a8fa0;font-size:0.7rem;font-weight:400;">3D/2D Animation and Technical Artist</small>
+        <small style="display:block;color:#4a8fa0;font-size:0.7rem;font-weight:400;" data-en="3D/2D Animation and Technical Artist" data-ja="3D/2Dアニメーター・テクニカルアーティスト">3D/2D Animation and Technical Artist</small>
       </div>
     </a>
     <ul class="nav-links" id="navLinks">
-      <li><a href="index.html">3D Animation</a></li>
-      <li><a href="tech-art.html" class="active">Tech Art</a></li>
-      <li><a href="2d-animation.html">2D Animation</a></li>
-      <li><a href="projects.html">Projects</a></li>
-      <li><a href="ai-pipeline.html">AI & Pipeline</a></li>
-      <li><a href="about.html">About Me</a></li>
+      <li><a href="index.html"><span data-en="3D Animation" data-ja="3Dアニメーション">3D Animation</span></a></li>
+      <li><a href="tech-art.html" class="active"><span data-en="Tech Art" data-ja="テクニカルアート">Tech Art</span></a></li>
+      <li><a href="2d-animation.html"><span data-en="2D Animation" data-ja="2Dアニメーション">2D Animation</span></a></li>
+      <li><a href="projects.html"><span data-en="Projects" data-ja="プロジェクト">Projects</span></a></li>
+      <li><a href="ai-pipeline.html"><span data-en="AI &amp; Pipeline" data-ja="AI &amp; パイプライン">AI &amp; Pipeline</span></a></li>
+      <li><a href="about.html"><span data-en="About Me" data-ja="私について">About Me</span></a></li>
     </ul>
+    <div class="lang-switcher">
+      <button class="lang-btn lang-btn--active" data-lang="en" aria-pressed="true">EN</button>
+      <button class="lang-btn" data-lang="ja" aria-pressed="false">JA</button>
+    </div>
     <div class="hamburger" onclick="toggleNav()">
       <span></span><span></span><span></span>
     </div>
@@ -239,15 +243,15 @@
   <!-- Rigging Demoreel -->
   <div class="project-row" style="margin-top:2rem; padding-top:0;">
     <div class="project-info">
-      <h3>Rigging Demoreel <span>— Maya, 3dsMax</span></h3>
+      <h3>Rigging Demoreel <span data-en="— Maya, 3dsMax" data-ja="— Maya、3ds Max">— Maya, 3dsMax</span></h3>
       <ul>
-        <li>Character and creature rigs built in Maya and 3ds Max</li>
-        <li>Full body rigs with IK/FK switching, facial controls and deformers</li>
-        <li>Creature rigs including complex spine and limb setups</li>
-        <li>Production-ready rigs used in shipped game titles</li>
+        <li data-en="Character and creature rigs built in Maya and 3ds Max" data-ja="MayaとMax 3dsで制作したキャラクター・クリーチャーリグ">Character and creature rigs built in Maya and 3ds Max</li>
+        <li data-en="Full body rigs with IK/FK switching, facial controls and deformers" data-ja="IK/FK切り替え、フェイシャルコントロール、デフォーマーを備えたフルボディリグ">Full body rigs with IK/FK switching, facial controls and deformers</li>
+        <li data-en="Creature rigs including complex spine and limb setups" data-ja="複雑なスパイン・四肢セットアップを含むクリーチャーリグ">Creature rigs including complex spine and limb setups</li>
+        <li data-en="Production-ready rigs used in shipped game titles" data-ja="出荷済みゲームタイトルで使用したプロダクション品質のリグ">Production-ready rigs used in shipped game titles</li>
       </ul>
       <div class="btn-group">
-        <a href="https://youtu.be/GG7JzALkBxI" target="_blank" class="watch-link">▶ Watch full demoreel</a>
+        <a href="https://youtu.be/GG7JzALkBxI" target="_blank" class="watch-link" data-en="▶ Watch full demoreel" data-ja="▶ フルデモリールを見る">▶ Watch full demoreel</a>
       </div>
     </div>
     <div class="project-video" onclick="playVideo(this,'GG7JzALkBxI')">
@@ -259,17 +263,17 @@
   <!-- LOD Generator -->
   <div class="project-row">
     <div class="project-info">
-      <h3>LOD Generator Tool <span>— Maya, Python</span></h3>
+      <h3>LOD Generator Tool <span data-en="— Maya, Python" data-ja="— Maya、Python">— Maya, Python</span></h3>
       <ul>
-        <li>Automatically generates Level of Detail (LOD) meshes in Maya</li>
-        <li>Uses QEM (Quadric Error Metrics) algorithm — pure Python, no plugins needed</li>
-        <li>Reduces polygon count at each LOD level for game optimization</li>
-        <li>Outputs ready-to-integrate LOD meshes for Unity / Unreal</li>
+        <li data-en="Automatically generates Level of Detail (LOD) meshes in Maya" data-ja="MayaでLOD（レベル・オブ・ディテール）メッシュを自動生成">Automatically generates Level of Detail (LOD) meshes in Maya</li>
+        <li data-en="Uses QEM (Quadric Error Metrics) algorithm — pure Python, no plugins needed" data-ja="QEM（二次誤差メトリクス）アルゴリズム使用 — 純Python、プラグイン不要">Uses QEM (Quadric Error Metrics) algorithm — pure Python, no plugins needed</li>
+        <li data-en="Reduces polygon count at each LOD level for game optimization" data-ja="各LODレベルでゲーム最適化のためポリゴン数を削減">Reduces polygon count at each LOD level for game optimization</li>
+        <li data-en="Outputs ready-to-integrate LOD meshes for Unity / Unreal" data-ja="Unity / Unrealに統合可能なLODメッシュを出力">Outputs ready-to-integrate LOD meshes for Unity / Unreal</li>
       </ul>
       <div class="btn-group">
-        <a href="files/maya_lod_qem_purepy.py" class="download-btn" download="maya_lod_qem_purepy.py">⬇ Download</a>
+        <a href="files/maya_lod_qem_purepy.py" class="download-btn" download="maya_lod_qem_purepy.py" data-en="⬇ Download" data-ja="⬇ ダウンロード">⬇ Download</a>
         <a href="https://github.com/sachindesai7/maya-tools/blob/main/maya_lod_qem_purepy.py"
-           target="_blank" class="github-btn">⌥ View on GitHub</a>
+           target="_blank" class="github-btn" data-en="⌥ View on GitHub" data-ja="⌥ GitHubで見る">⌥ View on GitHub</a>
       </div>
     </div>
     <div class="project-video" onclick="playVideo(this,'GI4z2T1pGm8')">
@@ -281,17 +285,17 @@
   <!-- FBX Exporter -->
   <div class="project-row">
     <div class="project-info">
-      <h3>FBX Exporter Tool <span>— Maya, Python</span></h3>
+      <h3>FBX Exporter Tool <span data-en="— Maya, Python" data-ja="— Maya、Python">— Maya, Python</span></h3>
       <ul>
-        <li>Batch exports multiple Maya assets to FBX in one click</li>
-        <li>Custom UI built with PyQt inside Maya</li>
-        <li>Supports custom export paths, naming conventions and settings</li>
-        <li>Saves hours of manual export work in production pipelines</li>
+        <li data-en="Batch exports multiple Maya assets to FBX in one click" data-ja="複数のMayaアセットをワンクリックでFBXに一括エクスポート">Batch exports multiple Maya assets to FBX in one click</li>
+        <li data-en="Custom UI built with PyQt inside Maya" data-ja="Maya内でPyQtを使ったカスタムUIを構築">Custom UI built with PyQt inside Maya</li>
+        <li data-en="Supports custom export paths, naming conventions and settings" data-ja="カスタムエクスポートパス、命名規則、設定をサポート">Supports custom export paths, naming conventions and settings</li>
+        <li data-en="Saves hours of manual export work in production pipelines" data-ja="プロダクションパイプラインでの手動エクスポート作業を大幅に削減">Saves hours of manual export work in production pipelines</li>
       </ul>
       <div class="btn-group">
-        <a href="files/batch_fbx_exporter_pro.py" class="download-btn" download="batch_fbx_exporter_pro.py">⬇ Download</a>
+        <a href="files/batch_fbx_exporter_pro.py" class="download-btn" download="batch_fbx_exporter_pro.py" data-en="⬇ Download" data-ja="⬇ ダウンロード">⬇ Download</a>
         <a href="https://github.com/sachindesai7/maya-tools/blob/main/batch_fbx_exporter_pro.py"
-           target="_blank" class="github-btn">⌥ View on GitHub</a>
+           target="_blank" class="github-btn" data-en="⌥ View on GitHub" data-ja="⌥ GitHubで見る">⌥ View on GitHub</a>
       </div>
     </div>
     <div class="project-video" onclick="playVideo(this,'zBSz3j1xEdM')">
@@ -303,14 +307,14 @@
   <!-- Feature Mockup -->
   <div class="project-row">
     <div class="project-info">
-      <h3>Feature Mockup <span>— Unity, Cinemachine</span></h3>
+      <h3>Feature Mockup <span data-en="— Unity, Cinemachine" data-ja="— Unity、Cinemachine">— Unity, Cinemachine</span></h3>
       <ul>
-        <li>Created a feature mockup using in-game assets and Cinemachine in Unity</li>
-        <li>Demonstrates camera sequencing, lighting and VFX integration</li>
-        <li>Used to pitch and visualise game features to design teams</li>
+        <li data-en="Created a feature mockup using in-game assets and Cinemachine in Unity" data-ja="ゲーム内アセットとCinemachineを使ったフィーチャーモックアップを制作">Created a feature mockup using in-game assets and Cinemachine in Unity</li>
+        <li data-en="Demonstrates camera sequencing, lighting and VFX integration" data-ja="カメラシーケンス、ライティング、VFX統合をデモ">Demonstrates camera sequencing, lighting and VFX integration</li>
+        <li data-en="Used to pitch and visualise game features to design teams" data-ja="デザインチームへのゲーム機能のピッチ・ビジュアライズに使用">Used to pitch and visualise game features to design teams</li>
       </ul>
       <div class="btn-group">
-        <a href="https://youtu.be/aNIix2QZL2Q" target="_blank" class="watch-link">▶ Watch mockup</a>
+        <a href="https://youtu.be/aNIix2QZL2Q" target="_blank" class="watch-link" data-en="▶ Watch mockup" data-ja="▶ モックアップを見る">▶ Watch mockup</a>
       </div>
     </div>
     <div class="project-video" onclick="playVideo(this,'aNIix2QZL2Q')">
@@ -322,17 +326,17 @@
   <!-- Figma Asset Exporter -->
   <div class="project-row">
     <div class="project-info">
-      <h3>Figma Asset Exporter <span>— Python, Figma Plugin</span></h3>
+      <h3>Figma Asset Exporter <span data-en="— Python, Figma Plugin" data-ja="— Python、Figmaプラグイン">— Python, Figma Plugin</span></h3>
       <ul>
-        <li>Exports images from Figma / FigJam boards directly to a local folder</li>
-        <li>Two-component tool: Figma plugin + lightweight Python server (no pip needed)</li>
-        <li>Auto-organizes exports into nested folders by section and subsection</li>
-        <li>No API token required — plugin talks to local server on localhost:7788</li>
+        <li data-en="Exports images from Figma / FigJam boards directly to a local folder" data-ja="FigmaおよびFigJamボードから画像をローカルフォルダへ直接エクスポート">Exports images from Figma / FigJam boards directly to a local folder</li>
+        <li data-en="Two-component tool: Figma plugin + lightweight Python server (no pip needed)" data-ja="Figmaプラグイン + 軽量Pythonサーバーの2コンポーネント（pip不要）">Two-component tool: Figma plugin + lightweight Python server (no pip needed)</li>
+        <li data-en="Auto-organizes exports into nested folders by section and subsection" data-ja="エクスポートをセクション・サブセクション別フォルダに自動整理">Auto-organizes exports into nested folders by section and subsection</li>
+        <li data-en="No API token required — plugin talks to local server on localhost:7788" data-ja="APIトークン不要 — プラグインがlocalhost:7788のローカルサーバーに通信">No API token required — plugin talks to local server on localhost:7788</li>
       </ul>
       <div class="btn-group">
-        <a href="https://drive.google.com/uc?export=download&id=1ECuVWG7cGUngJ2GuEK3Rfb7LvmR9va5s" class="download-btn" target="_blank">⬇ Download</a>
+        <a href="https://drive.google.com/uc?export=download&id=1ECuVWG7cGUngJ2GuEK3Rfb7LvmR9va5s" class="download-btn" target="_blank" data-en="⬇ Download" data-ja="⬇ ダウンロード">⬇ Download</a>
         <a href="https://github.com/sachindesai7/maya-tools/tree/main/pipeline/figma_exporter"
-           target="_blank" class="github-btn">⌥ View on GitHub</a>
+           target="_blank" class="github-btn" data-en="⌥ View on GitHub" data-ja="⌥ GitHubで見る">⌥ View on GitHub</a>
       </div>
     </div>
     <div class="project-video" onclick="playVideo(this,'Yu6FB1wDGT0')">
@@ -344,17 +348,17 @@
   <!-- Virus Cleaner -->
   <div class="project-row">
     <div class="project-info">
-      <h3>Maya Virus Cleaner Tool <span>— Python</span></h3>
+      <h3>Maya Virus Cleaner Tool <span data-en="— Python" data-ja="— Python">— Python</span></h3>
       <ul>
-        <li>Detects and removes common Maya file viruses and corrupted scripts</li>
-        <li>Scans and cleans Maya ASCII/Binary files automatically</li>
-        <li>Prevents infected files from spreading across a production pipeline</li>
-        <li>Saved multiple projects from data corruption in studio environments</li>
+        <li data-en="Detects and removes common Maya file viruses and corrupted scripts" data-ja="一般的なMayaファイルウイルスと破損スクリプトを検出・除去">Detects and removes common Maya file viruses and corrupted scripts</li>
+        <li data-en="Scans and cleans Maya ASCII/Binary files automatically" data-ja="MayaのASCII/バイナリファイルを自動スキャン・クリーニング">Scans and cleans Maya ASCII/Binary files automatically</li>
+        <li data-en="Prevents infected files from spreading across a production pipeline" data-ja="感染ファイルがプロダクションパイプラインに広がるのを防止">Prevents infected files from spreading across a production pipeline</li>
+        <li data-en="Saved multiple projects from data corruption in studio environments" data-ja="スタジオ環境でのデータ破損から複数のプロジェクトを救済">Saved multiple projects from data corruption in studio environments</li>
       </ul>
       <div class="btn-group">
-        <a href="files/maya_virus_cleaner.py" class="download-btn" download="maya_virus_cleaner.py">⬇ Download</a>
+        <a href="files/maya_virus_cleaner.py" class="download-btn" download="maya_virus_cleaner.py" data-en="⬇ Download" data-ja="⬇ ダウンロード">⬇ Download</a>
         <a href="https://github.com/sachindesai7/maya-tools/blob/main/maya_virus_cleaner.py"
-           target="_blank" class="github-btn">⌥ View on GitHub</a>
+           target="_blank" class="github-btn" data-en="⌥ View on GitHub" data-ja="⌥ GitHubで見る">⌥ View on GitHub</a>
       </div>
     </div>
     <div class="project-video" onclick="playVideo(this,'fw6gGDpFjx4')">
@@ -367,9 +371,10 @@
     &copy; 2026 Sachin Desai &nbsp;·&nbsp;
     <a href="https://www.linkedin.com/in/sachindesai7" target="_blank">LinkedIn</a>
     &nbsp;·&nbsp;
-    <a href="about.html">Contact</a>
+    <a href="about.html" data-en="Contact" data-ja="お問い合わせ">Contact</a>
   </footer>
 
+  <script src="i18n.js"></script>
   <script>
     function toggleNav() {
       document.getElementById('navLinks').classList.toggle('open');

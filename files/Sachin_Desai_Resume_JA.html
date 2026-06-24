@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>職務経歴書 — Sachin Desai</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap');
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Noto Sans JP', 'Hiragino Sans', 'Meiryo', sans-serif;
+      background: #fff;
+      color: #1a1a1a;
+      font-size: 10pt;
+      line-height: 1.7;
+    }
+
+    .page {
+      max-width: 210mm;
+      margin: 0 auto;
+      padding: 18mm 20mm;
+    }
+
+    /* Header */
+    .resume-header {
+      border-bottom: 3px solid #e8a020;
+      padding-bottom: 14px;
+      margin-bottom: 20px;
+    }
+
+    .resume-header h1 {
+      font-size: 22pt;
+      font-weight: 700;
+      color: #1a1a1a;
+      letter-spacing: 2px;
+    }
+
+    .resume-header .title-en {
+      font-size: 10pt;
+      color: #666;
+      margin-top: 2px;
+      letter-spacing: 1px;
+    }
+
+    .resume-header .title-ja {
+      font-size: 11pt;
+      font-weight: 500;
+      color: #e8a020;
+      margin-top: 4px;
+    }
+
+    .contact-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      margin-top: 10px;
+      font-size: 9pt;
+      color: #444;
+    }
+
+    .contact-row span { display: flex; align-items: center; gap: 4px; }
+
+    /* Section */
+    .section { margin-bottom: 22px; }
+
+    .section-title {
+      font-size: 10pt;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: #e8a020;
+      border-bottom: 1px solid #e8a020;
+      padding-bottom: 4px;
+      margin-bottom: 10px;
+    }
+
+    /* Summary */
+    .summary p {
+      color: #333;
+      font-size: 9.5pt;
+      line-height: 1.8;
+    }
+
+    /* Experience */
+    .job { margin-bottom: 16px; }
+
+    .job-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      gap: 4px;
+      margin-bottom: 2px;
+    }
+
+    .job-company {
+      font-weight: 700;
+      font-size: 10.5pt;
+      color: #1a1a1a;
+    }
+
+    .job-period {
+      font-size: 8.5pt;
+      color: #888;
+      white-space: nowrap;
+    }
+
+    .job-role {
+      font-size: 9.5pt;
+      font-weight: 500;
+      color: #e8a020;
+      margin-bottom: 6px;
+    }
+
+    .job ul {
+      list-style: none;
+      padding-left: 1em;
+    }
+
+    .job ul li {
+      font-size: 9pt;
+      color: #333;
+      position: relative;
+      margin-bottom: 3px;
+    }
+
+    .job ul li::before {
+      content: '▸';
+      position: absolute;
+      left: -1em;
+      color: #e8a020;
+    }
+
+    /* Skills grid */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+    }
+
+    .skill-group h4 {
+      font-size: 9pt;
+      font-weight: 700;
+      color: #1a1a1a;
+      margin-bottom: 4px;
+      letter-spacing: 0.5px;
+    }
+
+    .skill-group p {
+      font-size: 8.5pt;
+      color: #555;
+      line-height: 1.6;
+    }
+
+    /* Projects table */
+    .project-table { width: 100%; border-collapse: collapse; }
+    .project-table th {
+      background: #f5f5f5;
+      font-size: 8.5pt;
+      font-weight: 700;
+      padding: 5px 8px;
+      text-align: left;
+      border: 1px solid #ddd;
+      color: #333;
+    }
+    .project-table td {
+      font-size: 8.5pt;
+      padding: 5px 8px;
+      border: 1px solid #ddd;
+      color: #444;
+      vertical-align: top;
+    }
+    .project-table tr:nth-child(even) td { background: #fafafa; }
+
+    /* Footer */
+    .resume-footer {
+      margin-top: 24px;
+      padding-top: 10px;
+      border-top: 1px solid #ddd;
+      text-align: right;
+      font-size: 8pt;
+      color: #999;
+    }
+
+    @media print {
+      body { font-size: 9pt; }
+      .page { padding: 10mm 14mm; }
+      a { color: inherit; text-decoration: none; }
+    }
+  </style>
+</head>
+<body>
+<div class="page">
+
+  <!-- Header -->
+  <div class="resume-header">
+    <h1>SACHIN DESAI</h1>
+    <div class="title-en">3D/2D Animator · Rigger · Technical Artist</div>
+    <div class="title-ja">3D/2Dアニメーター · リガー · テクニカルアーティスト</div>
+    <div class="contact-row">
+      <span>📧 sachindesai7@gmail.com</span>
+      <span>📱 +91-9820213275</span>
+      <span>🔗 linkedin.com/in/sachindesai7</span>
+      <span>🌐 sachindesai7.github.io</span>
+    </div>
+  </div>
+
+  <!-- Summary -->
+  <div class="section summary">
+    <div class="section-title">職務要約</div>
+    <p>2006年よりゲーム・TVアニメーション業界で活躍するアニメーター・テクニカルアーティストです。EA、Ubisoft Abu Dhabiなどの著名スタジオでの勤務を経て、現在はLila Games（バンガロール）にてエクストラクションシューターゲームの開発に携わっています。キャラクターリグ、アニメーション制作、Pythonを使ったパイプラインツール開発まで幅広く対応できます。DreamWorks、Cartoon Network、Disney JuniorのTVシリーズにもキャラクターアニメーターとして参加した実績があります。</p>
+  </div>
+
+  <!-- Work Experience -->
+  <div class="section">
+    <div class="section-title">職歴</div>
+
+    <div class="job">
+      <div class="job-header">
+        <span class="job-company">Lila Games — バンガロール、インド</span>
+        <span class="job-period">2021年頃〜現在</span>
+      </div>
+      <div class="job-role">シニアテクニカルアーティスト / アニメーター</div>
+      <ul>
+        <li>抽出シューターゲーム「LILA Black: Extraction Raiders」のキャラクターリグ・アニメーション担当</li>
+        <li>LODジェネレーター、FBXエクスポーター、FigmaアセットエクスポーターなどのパイプラインツールをPython/PyQtで開発</li>
+        <li>Mayaウイルスクリーナーツールの開発によりスタジオ環境でのデータ破損を防止</li>
+        <li>UnityとCinemachineを使ったフィーチャーモックアップの制作</li>
+        <li>AI画像・3D生成パイプライン（ComfyUI + Trellis 2.0）の研究・導入検証</li>
+        <li>AIがアート制作パイプラインに与える影響を評価した社内レポートをスタジオリーダーシップに提出</li>
+      </ul>
+    </div>
+
+    <div class="job">
+      <div class="job-header">
+        <span class="job-company">Ubisoft Abu Dhabi — アブダビ、UAE</span>
+        <span class="job-period">〜2021年頃</span>
+      </div>
+      <div class="job-role">テクニカルアーティスト / アニメーター</div>
+      <ul>
+        <li>5,000万人以上のプレイヤーを誇るサンドボックスMMO「Growtopia」の2Dスプライトシートパイプライン全般を担当</li>
+        <li>アセット統合、マーケティング・ストアアセットの制作と最適化</li>
+        <li>バンドル作成、ブランチマージ、トラブルシューティングを実施</li>
+      </ul>
+    </div>
+
+    <div class="job">
+      <div class="job-header">
+        <span class="job-company">Electronic Arts (EA)</span>
+        <span class="job-period">以前</span>
+      </div>
+      <div class="job-role">アニメーター / テクニカルアーティスト</div>
+      <ul>
+        <li>モバイルゲームのキャラクターリグ・アニメーション制作</li>
+        <li>エンジン統合・テストを含むプロダクションパイプラインへの貢献</li>
+      </ul>
+    </div>
+
+    <div class="job">
+      <div class="job-header">
+        <span class="job-company">モバイルゲーム制作（各社）</span>
+        <span class="job-period">2010年〜</span>
+      </div>
+      <div class="job-role">アニメーター / リガー</div>
+      <ul>
+        <li>WWE Universe / WWE Mayhem — レスラーの複雑な攻撃・コンボ・特殊技を単独でアニメート</li>
+        <li>Disney Sorcerer's Arena — ディズニーキャラクターのリグ・アニメーション（特殊技・通常技）</li>
+        <li>Deer Hunter — 一人称視点シューティングサイクル・野生動物アニメーション</li>
+        <li>Clash of Beast — 多数のクリーチャー/ビーストや環境アセットをリグ&アニメート</li>
+        <li>Laser Hawk — 二足歩行キャラクターリグ、勝利ポーズ、エモート、移動サイクルを制作</li>
+      </ul>
+    </div>
+
+    <div class="job">
+      <div class="job-header">
+        <span class="job-company">TVアニメーション制作（各社）</span>
+        <span class="job-period">2006年〜</span>
+      </div>
+      <div class="job-role">キャラクターアニメーター</div>
+      <ul>
+        <li>The Adventures of Puss in Boots（DreamWorks） — キャラクターアニメーター</li>
+        <li>Sheriff Callie's Wild West（Disney Junior） — キャラクターアニメーター</li>
+        <li>Beware of Batman（Cartoon Network） — キャラクターアニメーター</li>
+        <li>Tronji、Cosmic Quantum Ray、321 Penguins — キャラクターアニメーター</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Technical Skills -->
+  <div class="section">
+    <div class="section-title">スキル・使用ツール</div>
+    <div class="skills-grid">
+      <div class="skill-group">
+        <h4>3Dソフトウェア</h4>
+        <p>Autodesk Maya<br>Autodesk 3ds Max<br>Blender</p>
+      </div>
+      <div class="skill-group">
+        <h4>2D / スプライト</h4>
+        <p>Spine (Esoteric Software)<br>Adobe Photoshop<br>Figma</p>
+      </div>
+      <div class="skill-group">
+        <h4>ゲームエンジン</h4>
+        <p>Unity (Cinemachineを含む)<br>Unreal Engine (基礎)</p>
+      </div>
+      <div class="skill-group">
+        <h4>プログラミング</h4>
+        <p>Python<br>PyQt (Maya UI開発)<br>MEL (Maya Embedded Language)</p>
+      </div>
+      <div class="skill-group">
+        <h4>AIツール</h4>
+        <p>ComfyUI + Trellis 2.0<br>ChatGPT / Gemini / Claude<br>Tripo / Meshy (3D生成)</p>
+      </div>
+      <div class="skill-group">
+        <h4>その他</h4>
+        <p>Git / バージョン管理<br>FBXパイプライン<br>LOD最適化</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Key Tools Projects -->
+  <div class="section">
+    <div class="section-title">開発ツール・プロジェクト</div>
+    <table class="project-table">
+      <thead>
+        <tr>
+          <th>ツール名</th>
+          <th>技術</th>
+          <th>概要</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>LODジェネレーター</td>
+          <td>Maya, Python</td>
+          <td>QEM（二次誤差メトリクス）アルゴリズムを使ったLODメッシュ自動生成ツール。プラグイン不要。</td>
+        </tr>
+        <tr>
+          <td>FBXエクスポーター</td>
+          <td>Maya, Python, PyQt</td>
+          <td>複数アセットを一括FBXエクスポート。カスタムUI付き。プロダクションパイプラインの工数を大幅削減。</td>
+        </tr>
+        <tr>
+          <td>Figmaアセットエクスポーター</td>
+          <td>Python, Figmaプラグイン</td>
+          <td>FigmaボードからローカルフォルダへAPIトークン不要で画像を直接エクスポート。</td>
+        </tr>
+        <tr>
+          <td>Mayaウイルスクリーナー</td>
+          <td>Python</td>
+          <td>MayaファイルのウイルスをMayaビジュアル上で検出・除去し、スタジオ全体への感染拡大を防止。</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+
+</div>
+</body>
+</html>

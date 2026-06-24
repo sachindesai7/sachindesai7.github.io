@@ -325,24 +325,28 @@
     }
   </style>
 </head>
-<body>
+<body data-title-en="AI &amp; Pipeline — Sachin Desai" data-title-ja="AI &amp; パイプライン — Sachin Desai">
 
   <nav>
     <a href="index.html" class="nav-brand">
       <img src="images/header_profile.jpg" alt="Sachin Desai">
       <div>
         <span>Sachin Desai</span>
-        <small style="display:block;color:#4a8fa0;font-size:0.7rem;font-weight:400;">3D/2D Animation and Technical Artist</small>
+        <small style="display:block;font-size:0.7rem;font-weight:400;" class="nav-brand-subtitle" data-en="3D/2D Animation and Technical Artist" data-ja="3D/2Dアニメーター・テクニカルアーティスト">3D/2D Animation and Technical Artist</small>
       </div>
     </a>
     <ul class="nav-links" id="navLinks">
-      <li><a href="index.html">3D Animation</a></li>
-      <li><a href="tech-art.html">Tech Art</a></li>
-      <li><a href="2d-animation.html">2D Animation</a></li>
-      <li><a href="projects.html">Projects</a></li>
-      <li><a href="ai-pipeline.html" class="active">AI & Pipeline</a></li>
-      <li><a href="about.html">About Me</a></li>
+      <li><a href="index.html"><span data-en="3D Animation" data-ja="3Dアニメーション">3D Animation</span></a></li>
+      <li><a href="tech-art.html"><span data-en="Tech Art" data-ja="テクニカルアート">Tech Art</span></a></li>
+      <li><a href="2d-animation.html"><span data-en="2D Animation" data-ja="2Dアニメーション">2D Animation</span></a></li>
+      <li><a href="projects.html"><span data-en="Projects" data-ja="プロジェクト">Projects</span></a></li>
+      <li><a href="ai-pipeline.html" class="active"><span data-en="AI &amp; Pipeline" data-ja="AI &amp; パイプライン">AI &amp; Pipeline</span></a></li>
+      <li><a href="about.html"><span data-en="About Me" data-ja="私について">About Me</span></a></li>
     </ul>
+    <div class="lang-switcher">
+      <button class="lang-btn lang-btn--active" data-lang="en" aria-pressed="true">EN</button>
+      <button class="lang-btn" data-lang="ja" aria-pressed="false">JA</button>
+    </div>
     <div class="hamburger" onclick="toggleNav()">
       <span></span><span></span><span></span>
     </div>
@@ -350,9 +354,9 @@
 
   <!-- ── OUTBOUND ── -->
   <div class="game-header">
-    <span class="game-tag">AI Art Exploration</span>
+    <span class="game-tag" data-en="AI Art Exploration" data-ja="AIアート探求">AI Art Exploration</span>
     <h2>Outbound</h2>
-    <p>Zombie hunter game concept — player navigates a constant-shooter vehicle through extraction zones, looting and surviving. Game progression includes vehicle upgrades, weapon upgrades, pilot unlocks and zone escalation. Two AI-generated art styles explored to find the game's visual identity.</p>
+    <p data-en="Zombie hunter game concept — player navigates a constant-shooter vehicle through extraction zones, looting and surviving. Game progression includes vehicle upgrades, weapon upgrades, pilot unlocks and zone escalation. Two AI-generated art styles explored to find the game's visual identity." data-ja="ゾンビハンターゲームのコンセプト — プレイヤーは常時射撃型の車両で抽出ゾーンを進みながら、戦利品を集め生き延びます。ゲームの進行には車両・武器のアップグレード、パイロットのアンロック、ゾーンのエスカレーションが含まれます。ゲームのビジュアルアイデンティティを探るためにAI生成の2つのアートスタイルを検討しました。">Zombie hunter game concept — player navigates a constant-shooter vehicle through extraction zones, looting and surviving. Game progression includes vehicle upgrades, weapon upgrades, pilot unlocks and zone escalation. Two AI-generated art styles explored to find the game's visual identity.</p>
     <p style="margin-top:0.8rem;">
       <span style="color:var(--muted);font-size:0.85rem;font-weight:600;letter-spacing:1px;text-transform:uppercase;">Images —</span>
       <span style="color:#aaa;font-size:0.85rem;"> ChatGPT &nbsp;·&nbsp; Gemini &nbsp;·&nbsp; Claude</span>
@@ -364,17 +368,17 @@
 
   <!-- Wild Wild West -->
   <div class="style-section-heading">
-    <h3>Style 01 — Wild Wild West</h3>
+    <h3 data-en="Style 01 — Wild Wild West" data-ja="スタイル01 — ワイルド・ウェスト">Style 01 — Wild Wild West</h3>
   </div>
 
   <div class="project-row">
     <div class="project-info">
       <ul>
-        <li>Semi-realistic cartoony western aesthetic</li>
-        <li>Iron Sheriff stagecoach-tank as the player vehicle</li>
-        <li>Dusty desert environments with warm amber palette</li>
-        <li>Undead outlaw enemies, wanted-poster UI framing</li>
-        <li>Key art, gameplay mockups, UI frames and app icon generated with AI</li>
+        <li data-en="Semi-realistic cartoony western aesthetic" data-ja="半リアルなカートゥーン調ウェスタンスタイル">Semi-realistic cartoony western aesthetic</li>
+        <li data-en="Iron Sheriff stagecoach-tank as the player vehicle" data-ja="プレイヤー車両はアイアン・シェリフの幌馬車型タンク">Iron Sheriff stagecoach-tank as the player vehicle</li>
+        <li data-en="Dusty desert environments with warm amber palette" data-ja="温かみのあるアンバーパレットの砂漠環境">Dusty desert environments with warm amber palette</li>
+        <li data-en="Undead outlaw enemies, wanted-poster UI framing" data-ja="アンデッドのアウトロー敵キャラクター、指名手配ポスター風UI">Undead outlaw enemies, wanted-poster UI framing</li>
+        <li data-en="Key art, gameplay mockups, UI frames and app icon generated with AI" data-ja="キーアート、ゲームプレイモックアップ、UIフレーム、アプリアイコンをAIで生成">Key art, gameplay mockups, UI frames and app icon generated with AI</li>
       </ul>
     </div>
     <div class="project-video" onclick="playVideo(this,'ebJL4rr6Eq8')">
@@ -397,17 +401,17 @@
 
   <!-- Dragon Hunter -->
   <div class="style-section-heading">
-    <h3>Style 02 — Dragon Hunter</h3>
+    <h3 data-en="Style 02 — Dragon Hunter" data-ja="スタイル02 — ドラゴンハンター">Style 02 — Dragon Hunter</h3>
   </div>
 
   <div class="project-row">
     <div class="project-info">
       <ul>
-        <li>Dark fantasy semi-realistic art style</li>
-        <li>Dragon Forge war chariot as the player vehicle</li>
-        <li>Volcanic, ruined fortress environments — deep red and ember palette</li>
-        <li>Dragon and demon enemies with arcane energy weapons</li>
-        <li>Key art, gameplay mockups, UI frames and app icon generated with AI</li>
+        <li data-en="Dark fantasy semi-realistic art style" data-ja="ダークファンタジー半リアルなアートスタイル">Dark fantasy semi-realistic art style</li>
+        <li data-en="Dragon Forge war chariot as the player vehicle" data-ja="プレイヤー車両はドラゴン・フォージの戦闘チャリオット">Dragon Forge war chariot as the player vehicle</li>
+        <li data-en="Volcanic, ruined fortress environments — deep red and ember palette" data-ja="火山地帯の廃城環境 — 深紅と残り火のパレット">Volcanic, ruined fortress environments — deep red and ember palette</li>
+        <li data-en="Dragon and demon enemies with arcane energy weapons" data-ja="秘術エネルギー武器を持つドラゴンとデーモンの敵">Dragon and demon enemies with arcane energy weapons</li>
+        <li data-en="Key art, gameplay mockups, UI frames and app icon generated with AI" data-ja="キーアート、ゲームプレイモックアップ、UIフレーム、アプリアイコンをAIで生成">Key art, gameplay mockups, UI frames and app icon generated with AI</li>
       </ul>
     </div>
     <div class="project-video" onclick="playVideo(this,'mRAIBY3tS2M')">
@@ -428,9 +432,9 @@
 
   <!-- ── BALL X PIT ── -->
   <div class="game-header" style="margin-top:3rem;">
-    <span class="game-tag">AI Art Exploration</span>
+    <span class="game-tag" data-en="AI Art Exploration" data-ja="AIアート探求">AI Art Exploration</span>
     <h2>Ball X Pit</h2>
-    <p>Casual arcade game concept — player launches balls to clear waves of enemies and obstacles across increasingly challenging levels. Two distinct art styles were explored using AI image generation to define the game's visual tone and target audience.</p>
+    <p data-en="Casual arcade game concept — player launches balls to clear waves of enemies and obstacles across increasingly challenging levels. Two distinct art styles were explored using AI image generation to define the game's visual tone and target audience." data-ja="カジュアルアーケードゲームのコンセプト — プレイヤーはボールを発射して、難易度が上がる各レベルで敵や障害物の波を一掃します。ゲームのビジュアルトーンとターゲット層を定めるため、AI画像生成で2つのアートスタイルを探求しました。">Casual arcade game concept — player launches balls to clear waves of enemies and obstacles across increasingly challenging levels. Two distinct art styles were explored using AI image generation to define the game's visual tone and target audience.</p>
     <p style="margin-top:0.8rem;">
       <span style="color:var(--muted);font-size:0.85rem;font-weight:600;letter-spacing:1px;text-transform:uppercase;">Images —</span>
       <span style="color:#aaa;font-size:0.85rem;"> ChatGPT &nbsp;·&nbsp; Gemini &nbsp;·&nbsp; Claude</span>
@@ -442,17 +446,17 @@
 
   <!-- Gummy Blaster -->
   <div class="style-section-heading">
-    <h3>Style 01 — Gummy Blaster</h3>
+    <h3 data-en="Style 01 — Gummy Blaster" data-ja="スタイル01 — グミブラスター">Style 01 — Gummy Blaster</h3>
   </div>
 
   <div class="project-row">
     <div class="project-info">
       <ul>
-        <li>Bright, candy-pop art style with vibrant gummy colours</li>
-        <li>Cheerful enemies — gummy bears, jelly blobs and candy creatures</li>
-        <li>High-contrast UI with bold outlines and playful typography</li>
-        <li>Targets casual players and younger audiences</li>
-        <li>Gameplay mockups, key art, store icons and UI frames generated with AI</li>
+        <li data-en="Bright, candy-pop art style with vibrant gummy colours" data-ja="鮮やかなグミカラーのブライト・キャンディポップスタイル">Bright, candy-pop art style with vibrant gummy colours</li>
+        <li data-en="Cheerful enemies — gummy bears, jelly blobs and candy creatures" data-ja="陽気な敵キャラクター — グミベア、ジェリーブロブ、キャンディクリーチャー">Cheerful enemies — gummy bears, jelly blobs and candy creatures</li>
+        <li data-en="High-contrast UI with bold outlines and playful typography" data-ja="太いアウトラインとポップなタイポグラフィのハイコントラストUI">High-contrast UI with bold outlines and playful typography</li>
+        <li data-en="Targets casual players and younger audiences" data-ja="カジュアルプレイヤーと若年層をターゲット">Targets casual players and younger audiences</li>
+        <li data-en="Gameplay mockups, key art, store icons and UI frames generated with AI" data-ja="ゲームプレイモックアップ、キーアート、ストアアイコン、UIフレームをAIで生成">Gameplay mockups, key art, store icons and UI frames generated with AI</li>
       </ul>
     </div>
     <div class="project-video-portrait" onclick="playVideo(this,'AXJtELfmXVo')">
@@ -476,17 +480,17 @@
 
   <!-- Jungle Pixel -->
   <div class="style-section-heading">
-    <h3>Style 02 — Jungle Pixel</h3>
+    <h3 data-en="Style 02 — Jungle Pixel" data-ja="スタイル02 — ジャングルピクセル">Style 02 — Jungle Pixel</h3>
   </div>
 
   <div class="project-row">
     <div class="project-info">
       <ul>
-        <li>Retro pixel art aesthetic set in a lush jungle environment</li>
-        <li>Pixelated animals and tribal enemies with chiptune-inspired UI</li>
-        <li>Deep greens, earthy browns and warm highlight palette</li>
-        <li>Targets nostalgic and mid-core players who enjoy pixel art games</li>
-        <li>Gameplay mockups, key art, store icons and UI frames generated with AI</li>
+        <li data-en="Retro pixel art aesthetic set in a lush jungle environment" data-ja="緑豊かなジャングル環境のレトロピクセルアートスタイル">Retro pixel art aesthetic set in a lush jungle environment</li>
+        <li data-en="Pixelated animals and tribal enemies with chiptune-inspired UI" data-ja="チップチューン調UIとピクセル化された動物・部族の敵">Pixelated animals and tribal enemies with chiptune-inspired UI</li>
+        <li data-en="Deep greens, earthy browns and warm highlight palette" data-ja="深緑、土のブラウン、暖かいハイライトのパレット">Deep greens, earthy browns and warm highlight palette</li>
+        <li data-en="Targets nostalgic and mid-core players who enjoy pixel art games" data-ja="ピクセルアートゲームを好むノスタルジックなミッドコアプレイヤーをターゲット">Targets nostalgic and mid-core players who enjoy pixel art games</li>
+        <li data-en="Gameplay mockups, key art, store icons and UI frames generated with AI" data-ja="ゲームプレイモックアップ、キーアート、ストアアイコン、UIフレームをAIで生成">Gameplay mockups, key art, store icons and UI frames generated with AI</li>
       </ul>
     </div>
     <div class="project-video-portrait" onclick="playVideo(this,'MzrTzJqk5DU')">
@@ -507,9 +511,9 @@
 
   <!-- ── COMFYUI + TRELLIS ── -->
   <div class="game-header" style="margin-top:3rem;">
-    <span class="game-tag">Local AI · 3D Research</span>
+    <span class="game-tag" data-en="Local AI · 3D Research" data-ja="ローカルAI · 3Dリサーチ">Local AI · 3D Research</span>
     <h2>ComfyUI + Trellis 2.0</h2>
-    <p>Explored running a fully <strong style="color:#fff;">local AI 3D generation pipeline</strong> — no cloud, no API costs, no data leaving the studio. Using Microsoft Research's Trellis 2.0 image-to-3D model inside a ComfyUI node graph, a single reference image is converted into a detailed 3D mesh with PBR textures in minutes. The result is then brought into Blender to compare the raw AI mesh against a manually retopologised version — measuring the real gap between what the model gives you and what production actually needs.</p>
+    <p data-html="true" data-en="Explored running a fully <strong style=&quot;color:#fff;&quot;>local AI 3D generation pipeline</strong> — no cloud, no API costs, no data leaving the studio. Using Microsoft Research's Trellis 2.0 image-to-3D model inside a ComfyUI node graph, a single reference image is converted into a detailed 3D mesh with PBR textures in minutes. The result is then brought into Blender to compare the raw AI mesh against a manually retopologised version — measuring the real gap between what the model gives you and what production actually needs." data-ja="クラウドなし、APIコストなし、スタジオ外へのデータ送信なしの完全な<strong style=&quot;color:#fff;&quot;>ローカルAI 3D生成パイプライン</strong>を検証しました。ComfyUIノードグラフ内でMicrosoft ResearchのTrellis 2.0 画像→3Dモデルを使い、1枚のリファレンス画像から詳細な3DメッシュとPBRテクスチャを数分で生成。その結果をBlenderに取り込み、生AIメッシュと手動リトポロジー版を比較し、モデルの出力とプロダクションの実際のニーズのギャップを計測しました。">Explored running a fully <strong style="color:#fff;">local AI 3D generation pipeline</strong> — no cloud, no API costs, no data leaving the studio. Using Microsoft Research's Trellis 2.0 image-to-3D model inside a ComfyUI node graph, a single reference image is converted into a detailed 3D mesh with PBR textures in minutes. The result is then brought into Blender to compare the raw AI mesh against a manually retopologised version — measuring the real gap between what the model gives you and what production actually needs.</p>
     <p style="margin-top:0.8rem;">
       <span style="color:var(--muted);font-size:0.85rem;font-weight:600;letter-spacing:1px;text-transform:uppercase;">3D Generation —</span>
       <span style="color:#aaa;font-size:0.85rem;"> Trellis 2.0 (Microsoft Research) &nbsp;·&nbsp; ComfyUI</span>
@@ -520,17 +524,17 @@
   </div>
 
   <div class="style-section-heading">
-    <h3>01 — Image to 3D with ComfyUI + Trellis</h3>
+    <h3 data-en="01 — Image to 3D with ComfyUI + Trellis" data-ja="01 — ComfyUI + Trellisで画像を3Dへ">01 — Image to 3D with ComfyUI + Trellis</h3>
   </div>
 
   <div class="project-row">
     <div class="project-info">
       <ul>
-        <li>Trellis 2.0 runs entirely locally on GPU — zero per-generation cost once set up</li>
-        <li>ComfyUI node graph controls the full pipeline: image input → mesh → texture → export</li>
-        <li>Generates high-detail source mesh with PBR textures from a single reference image</li>
-        <li>Output in minutes vs. hours for a hand-modelled equivalent base mesh</li>
-        <li>No internet connection required — suitable for NDA-protected studio assets</li>
+        <li data-en="Trellis 2.0 runs entirely locally on GPU — zero per-generation cost once set up" data-ja="Trellis 2.0はGPU上で完全ローカル動作 — セットアップ後は生成コストゼロ">Trellis 2.0 runs entirely locally on GPU — zero per-generation cost once set up</li>
+        <li data-en="ComfyUI node graph controls the full pipeline: image input → mesh → texture → export" data-ja="ComfyUIノードグラフがパイプライン全体を制御：画像入力 → メッシュ → テクスチャ → エクスポート">ComfyUI node graph controls the full pipeline: image input → mesh → texture → export</li>
+        <li data-en="Generates high-detail source mesh with PBR textures from a single reference image" data-ja="1枚のリファレンス画像からPBRテクスチャ付き高精細ソースメッシュを生成">Generates high-detail source mesh with PBR textures from a single reference image</li>
+        <li data-en="Output in minutes vs. hours for a hand-modelled equivalent base mesh" data-ja="手動モデリングの等価ベースメッシュの数時間と比べ数分で出力">Output in minutes vs. hours for a hand-modelled equivalent base mesh</li>
+        <li data-en="No internet connection required — suitable for NDA-protected studio assets" data-ja="インターネット接続不要 — NDA保護のスタジオアセットにも対応">No internet connection required — suitable for NDA-protected studio assets</li>
       </ul>
     </div>
     <div class="project-video" onclick="playVideo(this,'xc6uKEJ1wl0')">
@@ -540,17 +544,17 @@
   </div>
 
   <div class="style-section-heading">
-    <h3>02 — Retopo vs Original · Blender Comparison</h3>
+    <h3 data-en="02 — Retopo vs Original · Blender Comparison" data-ja="02 — リトポ vs 元メッシュ · Blender比較">02 — Retopo vs Original · Blender Comparison</h3>
   </div>
 
   <div class="project-row">
     <div class="project-info">
       <ul>
-        <li>Raw AI mesh: 80K–150K polys, no edge-flow, not deformation-safe</li>
-        <li>Retopologised mesh: ~8K polys, clean quads, animation-ready edge loops</li>
-        <li>AI handles the sculpt and surface detail — human handles the craft layer</li>
-        <li>Hybrid saves ~35–40% compared to building the full character from scratch</li>
-        <li>Validates the hybrid pipeline as viable for game-ready character production</li>
+        <li data-en="Raw AI mesh: 80K–150K polys, no edge-flow, not deformation-safe" data-ja="生AIメッシュ：8万〜15万ポリゴン、エッジフローなし、変形非対応">Raw AI mesh: 80K–150K polys, no edge-flow, not deformation-safe</li>
+        <li data-en="Retopologised mesh: ~8K polys, clean quads, animation-ready edge loops" data-ja="リトポメッシュ：約8千ポリゴン、クリーンなクワッド、アニメーション対応エッジループ">Retopologised mesh: ~8K polys, clean quads, animation-ready edge loops</li>
+        <li data-en="AI handles the sculpt and surface detail — human handles the craft layer" data-ja="AIがスカルプトと表面ディテールを担当 — 人間がクラフト層を担当">AI handles the sculpt and surface detail — human handles the craft layer</li>
+        <li data-en="Hybrid saves ~35–40% compared to building the full character from scratch" data-ja="フルスクラッチ制作と比べてハイブリッドで約35〜40%の時間削減">Hybrid saves ~35–40% compared to building the full character from scratch</li>
+        <li data-en="Validates the hybrid pipeline as viable for game-ready character production" data-ja="ゲーム対応キャラクター制作におけるハイブリッドパイプラインの有効性を実証">Validates the hybrid pipeline as viable for game-ready character production</li>
       </ul>
     </div>
     <div class="project-video" onclick="playVideo(this,'My7RJah7eZY')">
@@ -561,9 +565,9 @@
 
   <!-- ── ONLINE 3D AI MODELS ── -->
   <div class="game-header" style="margin-top:3rem;">
-    <span class="game-tag">3D Model Testing · 3daistudio.com</span>
+    <span class="game-tag" data-en="3D Model Testing · 3daistudio.com" data-ja="3Dモデルテスト · 3daistudio.com">3D Model Testing · 3daistudio.com</span>
     <h2>Online AI 3D Model Generation</h2>
-    <p>Tested the full image-to-3D-to-rig workflow using <strong style="color:#fff;">3daistudio.com</strong> — a single platform that runs multiple AI model generators (Tripo, Meshy and others) side by side, letting you compare results before committing to one. The workflow starts with AI-generated reference images and ends with a rigged, posable character — entirely inside online tools, no local GPU required.</p>
+    <p data-html="true" data-en="Tested the full image-to-3D-to-rig workflow using <strong style=&quot;color:#fff;&quot;>3daistudio.com</strong> — a single platform that runs multiple AI model generators (Tripo, Meshy and others) side by side, letting you compare results before committing to one. The workflow starts with AI-generated reference images and ends with a rigged, posable character — entirely inside online tools, no local GPU required." data-ja="<strong style=&quot;color:#fff;&quot;>3daistudio.com</strong>を使った画像→3D→リグの全ワークフローをテストしました。複数のAIモデルジェネレーター（Tripo、Meshyなど）を並べて比較できる単一プラットフォームです。ワークフローはAI生成リファレンス画像から始まり、リグ済みのポーズ可能なキャラクターで終わります — 全てオンラインツール内、ローカルGPU不要。">Tested the full image-to-3D-to-rig workflow using <strong style="color:#fff;">3daistudio.com</strong> — a single platform that runs multiple AI model generators (Tripo, Meshy and others) side by side, letting you compare results before committing to one. The workflow starts with AI-generated reference images and ends with a rigged, posable character — entirely inside online tools, no local GPU required.</p>
     <p style="margin-top:0.5rem;font-size:0.9rem;color:#888;line-height:1.7;">
       <strong style="color:#ccc;">Workflow:</strong> Generate front + side view images in ChatGPT or Gemini → feed both views into 3daistudio.com → run Tripo and Meshy in parallel and pick the best result → auto-rig the chosen mesh inside the same platform → export game-ready.
     </p>
@@ -578,16 +582,16 @@
 
   <!-- Reference images -->
   <div class="style-section-heading">
-    <h3>01 — AI Reference Images (Front + Side)</h3>
+    <h3 data-en="01 — AI Reference Images (Front + Side)" data-ja="01 — AIリファレンス画像（正面・側面）">01 — AI Reference Images (Front + Side)</h3>
   </div>
 
   <div class="project-row">
     <div class="project-info">
       <ul>
-        <li>Character designed entirely using ChatGPT / Gemini image generation</li>
-        <li>Front view and side view created separately to give the 3D model generator full spatial data</li>
-        <li>Two-view input dramatically improves mesh accuracy over single-image generation</li>
-        <li>No concept artist involved — full character sheet produced in under 30 minutes</li>
+        <li data-en="Character designed entirely using ChatGPT / Gemini image generation" data-ja="ChatGPT / Geminiの画像生成のみでキャラクターをデザイン">Character designed entirely using ChatGPT / Gemini image generation</li>
+        <li data-en="Front view and side view created separately to give the 3D model generator full spatial data" data-ja="3Dモデルジェネレーターに完全な空間データを与えるため正面・側面を別々に作成">Front view and side view created separately to give the 3D model generator full spatial data</li>
+        <li data-en="Two-view input dramatically improves mesh accuracy over single-image generation" data-ja="2ビュー入力により1枚画像生成より大幅にメッシュ精度が向上">Two-view input dramatically improves mesh accuracy over single-image generation</li>
+        <li data-en="No concept artist involved — full character sheet produced in under 30 minutes" data-ja="コンセプトアーティスト不要 — 30分以内にフルキャラクターシートを作成">No concept artist involved — full character sheet produced in under 30 minutes</li>
       </ul>
     </div>
     <div style="flex:1.6;display:flex;gap:0.75rem;">
@@ -602,17 +606,17 @@
 
   <!-- Model generation video -->
   <div class="style-section-heading">
-    <h3>02 — 3D Model Generation · Tripo vs Meshy</h3>
+    <h3 data-en="02 — 3D Model Generation · Tripo vs Meshy" data-ja="02 — 3Dモデル生成 · Tripo vs Meshy">02 — 3D Model Generation · Tripo vs Meshy</h3>
   </div>
 
   <div class="project-row">
     <div class="project-info">
       <ul>
-        <li>Both Tripo and Meshy run simultaneously from the same reference — pick the best output</li>
-        <li>Full PBR textured mesh generated in 2–4 minutes per model</li>
-        <li>3daistudio.com comparison view lets you judge topology, surface detail and texture quality side by side</li>
-        <li>Props and environment assets reach near-game-ready quality; characters need retopo</li>
-        <li>No local GPU needed — runs fully in the browser on any machine</li>
+        <li data-en="Both Tripo and Meshy run simultaneously from the same reference — pick the best output" data-ja="TripoとMeshyを同じリファレンスから同時実行 — ベストな出力を選択">Both Tripo and Meshy run simultaneously from the same reference — pick the best output</li>
+        <li data-en="Full PBR textured mesh generated in 2–4 minutes per model" data-ja="完全PBRテクスチャ付きメッシュをモデルあたり2〜4分で生成">Full PBR textured mesh generated in 2–4 minutes per model</li>
+        <li data-en="3daistudio.com comparison view lets you judge topology, surface detail and texture quality side by side" data-ja="3daistudio.comの比較ビューでトポロジー、表面ディテール、テクスチャ品質を並べて判定">3daistudio.com comparison view lets you judge topology, surface detail and texture quality side by side</li>
+        <li data-en="Props and environment assets reach near-game-ready quality; characters need retopo" data-ja="プロップや環境アセットはほぼゲーム対応品質に到達；キャラクターはリトポが必要">Props and environment assets reach near-game-ready quality; characters need retopo</li>
+        <li data-en="No local GPU needed — runs fully in the browser on any machine" data-ja="ローカルGPU不要 — どのマシンでもブラウザ上で完全動作">No local GPU needed — runs fully in the browser on any machine</li>
       </ul>
     </div>
     <div class="project-video" onclick="playVideo(this,'qoW8k4lHF0Y')">
@@ -623,16 +627,16 @@
 
   <!-- Rigging video -->
   <div class="style-section-heading">
-    <h3>03 — Auto-Rigging the AI Mesh</h3>
+    <h3 data-en="03 — Auto-Rigging the AI Mesh" data-ja="03 — AIメッシュの自動リグ">03 — Auto-Rigging the AI Mesh</h3>
   </div>
 
   <div class="project-row">
     <div class="project-info">
       <ul>
-        <li>Auto-rig applied inside 3daistudio.com — no external DCC needed for initial pose testing</li>
-        <li>Humanoid skeleton mapped automatically to the AI-generated mesh</li>
-        <li>Good enough for previs, pitch videos and prototype gameplay — not production-hero quality</li>
-        <li>Entire image-to-rigged-character pipeline completed in under an hour, online only</li>
+        <li data-en="Auto-rig applied inside 3daistudio.com — no external DCC needed for initial pose testing" data-ja="3daistudio.com内で自動リグ適用 — 初期ポーズテストに外部DCC不要">Auto-rig applied inside 3daistudio.com — no external DCC needed for initial pose testing</li>
+        <li data-en="Humanoid skeleton mapped automatically to the AI-generated mesh" data-ja="ヒューマノイドスケルトンがAI生成メッシュに自動マッピング">Humanoid skeleton mapped automatically to the AI-generated mesh</li>
+        <li data-en="Good enough for previs, pitch videos and prototype gameplay — not production-hero quality" data-ja="プリビズ、ピッチ動画、プロトタイプゲームプレイには十分 — プロダクションヒーロー品質ではない">Good enough for previs, pitch videos and prototype gameplay — not production-hero quality</li>
+        <li data-en="Entire image-to-rigged-character pipeline completed in under an hour, online only" data-ja="画像からリグ済みキャラクターまでのパイプライン全体を1時間以内にオンラインのみで完了">Entire image-to-rigged-character pipeline completed in under an hour, online only</li>
       </ul>
     </div>
     <div class="project-video" onclick="playVideo(this,'nZBzfFqP7yI')">
@@ -643,12 +647,12 @@
 
   <!-- ── AI REPORT ── -->
   <div class="game-header" style="margin-top:3rem;">
-    <span class="game-tag">Internal Report · May 2026</span>
-    <h2>AI in Art Production</h2>
-    <p>A production-grounded assessment of where AI tooling delivers real time savings — and where it doesn't — across the four critical stages of game art creation. Tested on live assets across characters, props, environments and animations. Submitted to studio leadership and the green light team.</p>
+    <span class="game-tag" data-en="Internal Report · May 2026" data-ja="社内レポート · 2026年5月">Internal Report · May 2026</span>
+    <h2 data-en="AI in Art Production" data-ja="アート制作におけるAI">AI in Art Production</h2>
+    <p data-en="A production-grounded assessment of where AI tooling delivers real time savings — and where it doesn't — across the four critical stages of game art creation. Tested on live assets across characters, props, environments and animations. Submitted to studio leadership and the green light team." data-ja="ゲームアート制作の4つの重要ステージにわたって、AIツールが実際の時間削減をもたらすか否かをプロダクション視点で評価したレポートです。キャラクター、プロップ、環境、アニメーションの実際のアセットでテスト。スタジオリーダーシップとグリーンライトチームに提出しました。">A production-grounded assessment of where AI tooling delivers real time savings — and where it doesn't — across the four critical stages of game art creation. Tested on live assets across characters, props, environments and animations. Submitted to studio leadership and the green light team.</p>
     <div style="margin-top:1.2rem;">
-      <a href="files/AI_in_Art_Production_Report.html" class="download-btn" download="AI_in_Art_Production_Report.html" style="display:inline-flex;align-items:center;gap:0.5rem;padding:0.55rem 1.2rem;background:var(--accent);color:#111;font-size:0.82rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;text-decoration:none;border-radius:4px;">⬇ Download Report</a>
-      <a href="files/AI_in_Art_Production_Report.html" target="_blank" style="display:inline-flex;align-items:center;gap:0.5rem;padding:0.55rem 1.2rem;background:transparent;color:var(--text);font-size:0.82rem;font-weight:600;text-decoration:none;border-radius:4px;border:1px solid #444;margin-left:0.8rem;">↗ View in Browser</a>
+      <a href="files/AI_in_Art_Production_Report.html" class="download-btn" download="AI_in_Art_Production_Report.html" style="display:inline-flex;align-items:center;gap:0.5rem;padding:0.55rem 1.2rem;background:var(--accent);color:#111;font-size:0.82rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;text-decoration:none;border-radius:4px;" data-en="⬇ Download Report" data-ja="⬇ レポートをダウンロード">⬇ Download Report</a>
+      <a href="files/AI_in_Art_Production_Report.html" target="_blank" style="display:inline-flex;align-items:center;gap:0.5rem;padding:0.55rem 1.2rem;background:transparent;color:var(--text);font-size:0.82rem;font-weight:600;text-decoration:none;border-radius:4px;border:1px solid #444;margin-left:0.8rem;" data-en="↗ View in Browser" data-ja="↗ ブラウザで見る">↗ View in Browser</a>
     </div>
   </div>
 
@@ -763,9 +767,10 @@
     &copy; 2026 Sachin Desai &nbsp;·&nbsp;
     <a href="https://www.linkedin.com/in/sachindesai7" target="_blank">LinkedIn</a>
     &nbsp;·&nbsp;
-    <a href="about.html">Contact</a>
+    <a href="about.html" data-en="Contact" data-ja="お問い合わせ">Contact</a>
   </footer>
 
+  <script src="i18n.js"></script>
   <script>
     function toggleNav() {
       document.getElementById('navLinks').classList.toggle('open');

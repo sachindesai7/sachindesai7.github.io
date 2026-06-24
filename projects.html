@@ -160,24 +160,28 @@
     }
   </style>
 </head>
-<body>
+<body data-title-en="Projects — Sachin Desai" data-title-ja="プロジェクト — Sachin Desai">
 
   <nav>
     <a href="index.html" class="nav-brand">
       <img src="images/header_profile.jpg" alt="Sachin Desai">
       <div>
         <span>Sachin Desai</span>
-        <small style="display:block;color:#4a8fa0;font-size:0.7rem;font-weight:400;">3D/2D Animation and Technical Artist</small>
+        <small style="display:block;font-size:0.7rem;font-weight:400;" class="nav-brand-subtitle" data-en="3D/2D Animation and Technical Artist" data-ja="3D/2Dアニメーター・テクニカルアーティスト">3D/2D Animation and Technical Artist</small>
       </div>
     </a>
     <ul class="nav-links" id="navLinks">
-      <li><a href="index.html">3D Animation</a></li>
-      <li><a href="tech-art.html">Tech Art</a></li>
-      <li><a href="2d-animation.html">2D Animation</a></li>
-      <li><a href="projects.html" class="active">Projects</a></li>
-      <li><a href="ai-pipeline.html">AI & Pipeline</a></li>
-      <li><a href="about.html">About Me</a></li>
+      <li><a href="index.html"><span data-en="3D Animation" data-ja="3Dアニメーション">3D Animation</span></a></li>
+      <li><a href="tech-art.html"><span data-en="Tech Art" data-ja="テクニカルアート">Tech Art</span></a></li>
+      <li><a href="2d-animation.html"><span data-en="2D Animation" data-ja="2Dアニメーション">2D Animation</span></a></li>
+      <li><a href="projects.html" class="active"><span data-en="Projects" data-ja="プロジェクト">Projects</span></a></li>
+      <li><a href="ai-pipeline.html"><span data-en="AI &amp; Pipeline" data-ja="AI &amp; パイプライン">AI &amp; Pipeline</span></a></li>
+      <li><a href="about.html"><span data-en="About Me" data-ja="私について">About Me</span></a></li>
     </ul>
+    <div class="lang-switcher">
+      <button class="lang-btn lang-btn--active" data-lang="en" aria-pressed="true">EN</button>
+      <button class="lang-btn" data-lang="ja" aria-pressed="false">JA</button>
+    </div>
     <div class="hamburger" onclick="toggleNav()">
       <span></span><span></span><span></span>
     </div>
@@ -189,10 +193,10 @@
     <div class="project-info">
       <h3>LILA Black</h3>
       <ul>
-        <li>BLACK: Extraction Raiders is a free online shooting game where every match is a bet — drop in, fight real players and AI Entities, grab the loot, and get out alive.</li>
-        <li>Lose? You lose everything you carried in.</li>
+        <li data-en="BLACK: Extraction Raiders is a free online shooting game where every match is a bet — drop in, fight real players and AI Entities, grab the loot, and get out alive." data-ja="BLACK: Extraction Raidersは、全ての対戦が賭けになる無料オンラインシューターゲームです。降下して実プレイヤーとAIエンティティと戦い、戦利品を掴んで生き延びて脱出してください。">BLACK: Extraction Raiders is a free online shooting game where every match is a bet — drop in, fight real players and AI Entities, grab the loot, and get out alive.</li>
+        <li data-en="Lose? You lose everything you carried in." data-ja="負ければ、持ち込んだ全てを失います。">Lose? You lose everything you carried in.</li>
       </ul>
-      <a href="https://www.youtube.com/watch?v=b4IhWAkFeq0" target="_blank" class="watch-link">▶ Watch gameplay video</a>
+      <a href="https://www.youtube.com/watch?v=b4IhWAkFeq0" target="_blank" class="watch-link" data-en="▶ Watch gameplay video" data-ja="▶ ゲームプレイ動画を見る">▶ Watch gameplay video</a>
     </div>
     <div class="project-video">
       <iframe src="https://www.youtube.com/embed/kgT9pjK51Qc?autoplay=1&mute=1&loop=1&playlist=kgT9pjK51Qc&controls=0&rel=0&modestbranding=1"
@@ -204,11 +208,11 @@
     <div class="project-info">
       <h3>Laser Hawk</h3>
       <ul>
-        <li>Top-down multiplayer shooter</li>
-        <li>Rigged biped characters, created victory poses, emotes and locomotive cycles</li>
-        <li>Integrated and tested in-engine</li>
+        <li data-en="Top-down multiplayer shooter" data-ja="トップダウン型マルチプレイヤーシューター">Top-down multiplayer shooter</li>
+        <li data-en="Rigged biped characters, created victory poses, emotes and locomotive cycles" data-ja="二足歩行キャラクターをリグし、勝利ポーズ、エモート、移動サイクルを制作">Rigged biped characters, created victory poses, emotes and locomotive cycles</li>
+        <li data-en="Integrated and tested in-engine" data-ja="エンジン内での統合・テストを実施">Integrated and tested in-engine</li>
       </ul>
-      <a href="https://youtu.be/I6_KuopbfjU" target="_blank" class="watch-link">▶ Watch gameplay video</a>
+      <a href="https://youtu.be/I6_KuopbfjU" target="_blank" class="watch-link" data-en="▶ Watch gameplay video" data-ja="▶ ゲームプレイ動画を見る">▶ Watch gameplay video</a>
     </div>
     <div class="project-video">
       <iframe src="https://www.youtube.com/embed/JfWWQfk06EA?autoplay=1&mute=1&loop=1&playlist=JfWWQfk06EA&controls=0&rel=0&modestbranding=1"
@@ -220,11 +224,11 @@
     <div class="project-info">
       <h3>Clash of Beast</h3>
       <ul>
-        <li>Mobile strategy — rigged &amp; animated dozens of creatures/beasts, environmental assets (towers, trees, props)</li>
-        <li>Created feature mockup using cinematics of Unity game engine and spell VFX integrations</li>
-        <li>Creating bundles and testing them in Unity in close collaboration with the design and developer team</li>
+        <li data-en="Mobile strategy — rigged &amp; animated dozens of creatures/beasts, environmental assets (towers, trees, props)" data-ja="モバイルストラテジー — 多数のクリーチャー/ビーストや環境アセット（塔・木・プロップ）をリグ&アニメート">Mobile strategy — rigged &amp; animated dozens of creatures/beasts, environmental assets (towers, trees, props)</li>
+        <li data-en="Created feature mockup using cinematics of Unity game engine and spell VFX integrations" data-ja="UnityゲームエンジンのシネマティクスとスペルVFX統合を使ったフィーチャーモックアップを制作">Created feature mockup using cinematics of Unity game engine and spell VFX integrations</li>
+        <li data-en="Creating bundles and testing them in Unity in close collaboration with the design and developer team" data-ja="デザイン・開発チームと密に連携し、バンドル作成とUnityでのテストを実施">Creating bundles and testing them in Unity in close collaboration with the design and developer team</li>
       </ul>
-      <a href="https://youtu.be/xZYf_TgRlqE" target="_blank" class="watch-link">▶ Watch gameplay video</a>
+      <a href="https://youtu.be/xZYf_TgRlqE" target="_blank" class="watch-link" data-en="▶ Watch gameplay video" data-ja="▶ ゲームプレイ動画を見る">▶ Watch gameplay video</a>
     </div>
     <div class="project-video">
       <iframe src="https://www.youtube.com/embed/RCckNBJmN0Q?autoplay=1&mute=1&loop=1&playlist=RCckNBJmN0Q&controls=0&rel=0&modestbranding=1"
@@ -236,12 +240,12 @@
     <div class="project-info">
       <h3>Growtopia</h3>
       <ul>
-        <li>Sandbox MMO with 50M+ players</li>
-        <li>Handled full 2D sprite sheet pipeline, asset integration</li>
-        <li>Created marketing and store assets, optimization</li>
-        <li>Creating bundles, merging branches and troubleshooting</li>
+        <li data-en="Sandbox MMO with 50M+ players" data-ja="5000万人以上のプレイヤーを誇るサンドボックスMMO">Sandbox MMO with 50M+ players</li>
+        <li data-en="Handled full 2D sprite sheet pipeline, asset integration" data-ja="2Dスプライトシートパイプライン全般とアセット統合を担当">Handled full 2D sprite sheet pipeline, asset integration</li>
+        <li data-en="Created marketing and store assets, optimization" data-ja="マーケティング・ストアアセットの制作と最適化">Created marketing and store assets, optimization</li>
+        <li data-en="Creating bundles, merging branches and troubleshooting" data-ja="バンドル作成、ブランチマージ、トラブルシューティングを実施">Creating bundles, merging branches and troubleshooting</li>
       </ul>
-      <a href="https://youtu.be/fcWCKchL0To" target="_blank" class="watch-link">▶ Watch gameplay video</a>
+      <a href="https://youtu.be/fcWCKchL0To" target="_blank" class="watch-link" data-en="▶ Watch gameplay video" data-ja="▶ ゲームプレイ動画を見る">▶ Watch gameplay video</a>
     </div>
     <div class="project-video">
       <iframe src="https://www.youtube.com/embed/l7unNLNvrJ0?autoplay=1&mute=1&loop=1&playlist=l7unNLNvrJ0&controls=0&rel=0&modestbranding=1"
@@ -253,10 +257,10 @@
     <div class="project-info">
       <h3>Disney Sorcerer's Arena</h3>
       <ul>
-        <li>Rigged and animated Disney characters (special &amp; common moves)</li>
-        <li>Creating marketing videos using cinematics of Unity</li>
+        <li data-en="Rigged and animated Disney characters (special &amp; common moves)" data-ja="ディズニーキャラクターのリグ・アニメーション制作（特殊技・通常技）">Rigged and animated Disney characters (special &amp; common moves)</li>
+        <li data-en="Creating marketing videos using cinematics of Unity" data-ja="UnityシネマティクスでマーケティングPVを制作">Creating marketing videos using cinematics of Unity</li>
       </ul>
-      <a href="https://youtu.be/xE1LTJslUBY" target="_blank" class="watch-link">▶ Watch gameplay video</a>
+      <a href="https://youtu.be/xE1LTJslUBY" target="_blank" class="watch-link" data-en="▶ Watch gameplay video" data-ja="▶ ゲームプレイ動画を見る">▶ Watch gameplay video</a>
     </div>
     <div class="project-video">
       <iframe src="https://www.youtube.com/embed/EAjXS-AsHHI?autoplay=1&mute=1&loop=1&playlist=EAjXS-AsHHI&controls=0&rel=0&modestbranding=1"
@@ -268,10 +272,10 @@
     <div class="project-info">
       <h3>Deer Hunter</h3>
       <ul>
-        <li>First-person shooting cycles</li>
-        <li>Wild animal animations</li>
+        <li data-en="First-person shooting cycles" data-ja="一人称視点のシューティングサイクル">First-person shooting cycles</li>
+        <li data-en="Wild animal animations" data-ja="野生動物のアニメーション">Wild animal animations</li>
       </ul>
-      <a href="https://youtu.be/CrLgZM7mCFY" target="_blank" class="watch-link">▶ Watch gameplay video</a>
+      <a href="https://youtu.be/CrLgZM7mCFY" target="_blank" class="watch-link" data-en="▶ Watch gameplay video" data-ja="▶ ゲームプレイ動画を見る">▶ Watch gameplay video</a>
     </div>
     <div class="project-video">
       <iframe src="https://www.youtube.com/embed/DgT6KVyKc2M?autoplay=1&mute=1&loop=1&playlist=DgT6KVyKc2M&controls=0&rel=0&modestbranding=1"
@@ -283,9 +287,9 @@
     <div class="project-info">
       <h3>WWE Universe</h3>
       <ul>
-        <li>Complex win/fail wrestling moves for varying body types</li>
+        <li data-en="Complex win/fail wrestling moves for varying body types" data-ja="様々な体型に対応した複雑な勝敗プロレス技を制作">Complex win/fail wrestling moves for varying body types</li>
       </ul>
-      <a href="https://youtu.be/P3X0c4mnmcc" target="_blank" class="watch-link">▶ Watch gameplay video</a>
+      <a href="https://youtu.be/P3X0c4mnmcc" target="_blank" class="watch-link" data-en="▶ Watch gameplay video" data-ja="▶ ゲームプレイ動画を見る">▶ Watch gameplay video</a>
     </div>
     <div class="project-video">
       <iframe src="https://www.youtube.com/embed/Ettd7lCty-4?autoplay=1&mute=1&loop=1&playlist=Ettd7lCty-4&controls=0&rel=0&modestbranding=1"
@@ -297,9 +301,9 @@
     <div class="project-info">
       <h3>WWE Mayhem</h3>
       <ul>
-        <li>Sole animator for all exaggerated attack, combo, defense, and special moves for wrestlers</li>
+        <li data-en="Sole animator for all exaggerated attack, combo, defense, and special moves for wrestlers" data-ja="レスラーの誇張した攻撃・コンボ・防御・特殊技のアニメーション全てを単独で担当">Sole animator for all exaggerated attack, combo, defense, and special moves for wrestlers</li>
       </ul>
-      <a href="https://youtu.be/4BZ5CGzmhoQ" target="_blank" class="watch-link">▶ Watch gameplay video</a>
+      <a href="https://youtu.be/4BZ5CGzmhoQ" target="_blank" class="watch-link" data-en="▶ Watch gameplay video" data-ja="▶ ゲームプレイ動画を見る">▶ Watch gameplay video</a>
     </div>
     <div class="project-video">
       <iframe src="https://www.youtube.com/embed/kFAcyHiAl6c?autoplay=1&mute=1&loop=1&playlist=kFAcyHiAl6c&controls=0&rel=0&modestbranding=1"
@@ -314,9 +318,9 @@
     <div class="project-info">
       <h3>The Adventures of Puss in Boots</h3>
       <ul>
-        <li>Character animator on this DreamWorks TV show</li>
+        <li data-en="Character animator on this DreamWorks TV show" data-ja="DreamWorksのTVショーのキャラクターアニメーター">Character animator on this DreamWorks TV show</li>
       </ul>
-      <a href="https://youtu.be/mcWo1bSMCYA" target="_blank" class="watch-link">▶ Watch episode clips</a>
+      <a href="https://youtu.be/mcWo1bSMCYA" target="_blank" class="watch-link" data-en="▶ Watch episode clips" data-ja="▶ エピソードクリップを見る">▶ Watch episode clips</a>
     </div>
     <div class="project-video">
       <iframe src="https://www.youtube.com/embed/HmF3oAZ6JJ4?autoplay=1&mute=1&loop=1&playlist=HmF3oAZ6JJ4&controls=0&rel=0&modestbranding=1"
@@ -328,9 +332,9 @@
     <div class="project-info">
       <h3>Sheriff Callie's Wild West</h3>
       <ul>
-        <li>Character animator on this Disney Junior TV show</li>
+        <li data-en="Character animator on this Disney Junior TV show" data-ja="Disney JuniorのTVショーのキャラクターアニメーター">Character animator on this Disney Junior TV show</li>
       </ul>
-      <a href="https://youtu.be/sMvsAvWe5Uo" target="_blank" class="watch-link">▶ Watch episode clips</a>
+      <a href="https://youtu.be/sMvsAvWe5Uo" target="_blank" class="watch-link" data-en="▶ Watch episode clips" data-ja="▶ エピソードクリップを見る">▶ Watch episode clips</a>
     </div>
     <div class="project-video">
       <iframe src="https://www.youtube.com/embed/d8nAGikMGug?autoplay=1&mute=1&loop=1&playlist=d8nAGikMGug&controls=0&rel=0&modestbranding=1"
@@ -342,9 +346,9 @@
     <div class="project-info">
       <h3>Beware of Batman</h3>
       <ul>
-        <li>Character animator on this Cartoon Network TV show</li>
+        <li data-en="Character animator on this Cartoon Network TV show" data-ja="Cartoon NetworkのTVショーのキャラクターアニメーター">Character animator on this Cartoon Network TV show</li>
       </ul>
-      <a href="https://youtu.be/uTQ3CHBA9TA" target="_blank" class="watch-link">▶ Watch episode clips</a>
+      <a href="https://youtu.be/uTQ3CHBA9TA" target="_blank" class="watch-link" data-en="▶ Watch episode clips" data-ja="▶ エピソードクリップを見る">▶ Watch episode clips</a>
     </div>
     <div class="project-video">
       <iframe src="https://www.youtube.com/embed/fhFUY0UXEdM?autoplay=1&mute=1&loop=1&playlist=fhFUY0UXEdM&controls=0&rel=0&modestbranding=1"
@@ -356,9 +360,9 @@
     <div class="project-info">
       <h3>Tronji</h3>
       <ul>
-        <li>Character animator on this TV show</li>
+        <li data-en="Character animator on this TV show" data-ja="本TVショーのキャラクターアニメーター">Character animator on this TV show</li>
       </ul>
-      <a href="https://youtu.be/Jl9-fYVYQGs" target="_blank" class="watch-link">▶ Watch episode clips</a>
+      <a href="https://youtu.be/Jl9-fYVYQGs" target="_blank" class="watch-link" data-en="▶ Watch episode clips" data-ja="▶ エピソードクリップを見る">▶ Watch episode clips</a>
     </div>
     <div class="project-video">
       <iframe src="https://www.youtube.com/embed/te_bhtSeAyI?autoplay=1&mute=1&loop=1&playlist=te_bhtSeAyI&controls=0&rel=0&modestbranding=1"
@@ -370,9 +374,9 @@
     <div class="project-info">
       <h3>Cosmic Quantum Ray</h3>
       <ul>
-        <li>Character animator on this TV show</li>
+        <li data-en="Character animator on this TV show" data-ja="本TVショーのキャラクターアニメーター">Character animator on this TV show</li>
       </ul>
-      <a href="https://youtu.be/sZcgnklduKg" target="_blank" class="watch-link">▶ Watch episode clips</a>
+      <a href="https://youtu.be/sZcgnklduKg" target="_blank" class="watch-link" data-en="▶ Watch episode clips" data-ja="▶ エピソードクリップを見る">▶ Watch episode clips</a>
     </div>
     <div class="project-video">
       <iframe src="https://www.youtube.com/embed/ig4yAXiScg4?autoplay=1&mute=1&loop=1&playlist=ig4yAXiScg4&controls=0&rel=0&modestbranding=1"
@@ -384,9 +388,9 @@
     <div class="project-info">
       <h3>321 Penguins</h3>
       <ul>
-        <li>Character animator on this TV show</li>
+        <li data-en="Character animator on this TV show" data-ja="本TVショーのキャラクターアニメーター">Character animator on this TV show</li>
       </ul>
-      <a href="https://www.youtube.com/watch?v=_Wsd9daARR4" target="_blank" class="watch-link">▶ Watch episode clips</a>
+      <a href="https://www.youtube.com/watch?v=_Wsd9daARR4" target="_blank" class="watch-link" data-en="▶ Watch episode clips" data-ja="▶ エピソードクリップを見る">▶ Watch episode clips</a>
     </div>
     <div class="project-video">
       <iframe src="https://www.youtube.com/embed/Z2REr84TAUo?autoplay=1&mute=1&loop=1&playlist=Z2REr84TAUo&controls=0&rel=0&modestbranding=1"
@@ -398,9 +402,10 @@
     &copy; 2026 Sachin Desai &nbsp;·&nbsp;
     <a href="https://www.linkedin.com/in/sachindesai7" target="_blank">LinkedIn</a>
     &nbsp;·&nbsp;
-    <a href="about.html">Contact</a>
+    <a href="about.html" data-en="Contact" data-ja="お問い合わせ">Contact</a>
   </footer>
 
+  <script src="i18n.js"></script>
   <script>
     function toggleNav() {
       document.getElementById('navLinks').classList.toggle('open');

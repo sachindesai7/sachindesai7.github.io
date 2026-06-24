@@ -156,24 +156,28 @@
     }
   </style>
 </head>
-<body>
+<body data-title-en="2D Animation — Sachin Desai" data-title-ja="2Dアニメーション — Sachin Desai">
 
   <nav>
     <a href="index.html" class="nav-brand">
       <img src="images/header_profile.jpg" alt="Sachin Desai">
       <div>
         <span>Sachin Desai</span>
-        <small style="display:block;color:#4a8fa0;font-size:0.7rem;font-weight:400;">3D/2D Animation and Technical Artist</small>
+        <small style="display:block;font-size:0.7rem;font-weight:400;" class="nav-brand-subtitle" data-en="3D/2D Animation and Technical Artist" data-ja="3D/2Dアニメーター・テクニカルアーティスト">3D/2D Animation and Technical Artist</small>
       </div>
     </a>
     <ul class="nav-links" id="navLinks">
-      <li><a href="index.html">3D Animation</a></li>
-      <li><a href="tech-art.html">Tech Art</a></li>
-      <li><a href="2d-animation.html" class="active">2D Animation</a></li>
-      <li><a href="projects.html">Projects</a></li>
-      <li><a href="ai-pipeline.html">AI & Pipeline</a></li>
-      <li><a href="about.html">About Me</a></li>
+      <li><a href="index.html"><span data-en="3D Animation" data-ja="3Dアニメーション">3D Animation</span></a></li>
+      <li><a href="tech-art.html"><span data-en="Tech Art" data-ja="テクニカルアート">Tech Art</span></a></li>
+      <li><a href="2d-animation.html" class="active"><span data-en="2D Animation" data-ja="2Dアニメーション">2D Animation</span></a></li>
+      <li><a href="projects.html"><span data-en="Projects" data-ja="プロジェクト">Projects</span></a></li>
+      <li><a href="ai-pipeline.html"><span data-en="AI &amp; Pipeline" data-ja="AI &amp; パイプライン">AI &amp; Pipeline</span></a></li>
+      <li><a href="about.html"><span data-en="About Me" data-ja="私について">About Me</span></a></li>
     </ul>
+    <div class="lang-switcher">
+      <button class="lang-btn lang-btn--active" data-lang="en" aria-pressed="true">EN</button>
+      <button class="lang-btn" data-lang="ja" aria-pressed="false">JA</button>
+    </div>
     <div class="hamburger" onclick="toggleNav()">
       <span></span><span></span><span></span>
     </div>
@@ -183,13 +187,13 @@
   <!-- Character Animation - Spine -->
   <div class="project-row" style="margin-top:2rem;">
     <div class="project-info">
-      <h3>Character Animation <span>— Spine</span></h3>
+      <h3>Character Animation <span data-en="— Spine" data-ja="— Spine">— Spine</span></h3>
       <ul>
-        <li>Rigged and animated a chibi-style character in Spine</li>
-        <li>Created idle, walk and action cycles</li>
-        <li>Clean bone setup with mesh deformation</li>
+        <li data-en="Rigged and animated a chibi-style character in Spine" data-ja="Spineでチビスタイルのキャラクターをリグ・アニメート">Rigged and animated a chibi-style character in Spine</li>
+        <li data-en="Created idle, walk and action cycles" data-ja="アイドル、歩行、アクションサイクルを制作">Created idle, walk and action cycles</li>
+        <li data-en="Clean bone setup with mesh deformation" data-ja="メッシュデフォーメーションを使ったクリーンなボーン構成">Clean bone setup with mesh deformation</li>
       </ul>
-      <a href="https://youtu.be/IrayIHEj4z4" target="_blank" class="watch-link">▶ Watch animation</a>
+      <a href="https://youtu.be/IrayIHEj4z4" target="_blank" class="watch-link" data-en="▶ Watch animation" data-ja="▶ アニメーションを見る">▶ Watch animation</a>
     </div>
     <div class="project-video" onclick="playVideo(this,'IrayIHEj4z4')">
       <img src="https://img.youtube.com/vi/IrayIHEj4z4/maxresdefault.jpg" alt="Character Animation Spine" onerror="this.src='https://img.youtube.com/vi/IrayIHEj4z4/hqdefault.jpg'">
@@ -200,13 +204,13 @@
   <!-- Slot Animation - Spine -->
   <div class="project-row">
     <div class="project-info">
-      <h3>Slot Animation <span>— Spine</span></h3>
+      <h3>Slot Animation <span data-en="— Spine" data-ja="— Spine">— Spine</span></h3>
       <ul>
-        <li>Animated a glowing crystal/stone using Spine slot animation</li>
-        <li>Used slot attachments and color timeline for glow effects</li>
-        <li>Smooth looping idle animation with particle-style sparkles</li>
+        <li data-en="Animated a glowing crystal/stone using Spine slot animation" data-ja="Spineスロットアニメーションで光るクリスタル/ストーンをアニメート">Animated a glowing crystal/stone using Spine slot animation</li>
+        <li data-en="Used slot attachments and color timeline for glow effects" data-ja="スロットアタッチメントとカラータイムラインでグロー効果を表現">Used slot attachments and color timeline for glow effects</li>
+        <li data-en="Smooth looping idle animation with particle-style sparkles" data-ja="パーティクルスタイルのきらめきを含むスムーズなループアイドルアニメーション">Smooth looping idle animation with particle-style sparkles</li>
       </ul>
-      <a href="https://youtu.be/RE-x54GvGMI" target="_blank" class="watch-link">▶ Watch animation</a>
+      <a href="https://youtu.be/RE-x54GvGMI" target="_blank" class="watch-link" data-en="▶ Watch animation" data-ja="▶ アニメーションを見る">▶ Watch animation</a>
     </div>
     <div class="project-video" onclick="playVideo(this,'RE-x54GvGMI')">
       <img src="https://img.youtube.com/vi/RE-x54GvGMI/maxresdefault.jpg" alt="Slot Animation Spine" onerror="this.src='https://img.youtube.com/vi/RE-x54GvGMI/hqdefault.jpg'">
@@ -217,13 +221,13 @@
   <!-- Unity Sprite Animation -->
   <div class="project-row">
     <div class="project-info">
-      <h3>Unity Sprite Animation <span>— Avatar Setup</span></h3>
+      <h3>Unity Sprite Animation <span data-en="— Avatar Setup" data-ja="— アバターセットアップ">— Avatar Setup</span></h3>
       <ul>
-        <li>Set up and animated a 2D character avatar in Unity</li>
-        <li>Configured sprite rig with Unity's 2D animation package</li>
-        <li>Avatar ready for in-game use with modular costume system</li>
+        <li data-en="Set up and animated a 2D character avatar in Unity" data-ja="Unityで2Dキャラクターアバターをセットアップ・アニメート">Set up and animated a 2D character avatar in Unity</li>
+        <li data-en="Configured sprite rig with Unity's 2D animation package" data-ja="Unityの2Dアニメーションパッケージでスプライトリグを設定">Configured sprite rig with Unity's 2D animation package</li>
+        <li data-en="Avatar ready for in-game use with modular costume system" data-ja="モジュラーコスチュームシステムでゲーム内使用可能なアバター">Avatar ready for in-game use with modular costume system</li>
       </ul>
-      <a href="https://youtube.com/shorts/8HOHpCe7tus" target="_blank" class="watch-link">▶ Watch animation</a>
+      <a href="https://youtube.com/shorts/8HOHpCe7tus" target="_blank" class="watch-link" data-en="▶ Watch animation" data-ja="▶ アニメーションを見る">▶ Watch animation</a>
     </div>
     <div class="project-video portrait" onclick="playVideo(this,'8HOHpCe7tus')">
       <img src="https://img.youtube.com/vi/8HOHpCe7tus/maxresdefault.jpg" alt="Unity Sprite Animation" onerror="this.src='https://img.youtube.com/vi/8HOHpCe7tus/hqdefault.jpg'">
@@ -235,9 +239,10 @@
     &copy; 2026 Sachin Desai &nbsp;·&nbsp;
     <a href="https://www.linkedin.com/in/sachindesai7" target="_blank">LinkedIn</a>
     &nbsp;·&nbsp;
-    <a href="about.html">Contact</a>
+    <a href="about.html" data-en="Contact" data-ja="お問い合わせ">Contact</a>
   </footer>
 
+  <script src="i18n.js"></script>
   <script>
     function toggleNav() {
       document.getElementById('navLinks').classList.toggle('open');
