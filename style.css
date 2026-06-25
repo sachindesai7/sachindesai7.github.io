@@ -546,51 +546,49 @@ footer a {
 .lang-switcher {
   display: flex;
   align-items: center;
+  gap: 0;
   margin-left: 0.75rem;
   flex-shrink: 0;
 }
 
 .lang-btn {
-  background: transparent;
-  border: 1px solid rgba(232, 160, 32, 0.35);
-  color: var(--muted);
-  font-size: 0.72rem;
-  font-weight: 700;
-  letter-spacing: 1px;
-  padding: 0.28rem 0.55rem;
+  background: none;
+  border: none;
+  color: rgba(255, 255, 255, 0.38);
   cursor: pointer;
   font-family: 'Rajdhani', inherit;
-  transition: background 0.18s, color 0.18s, border-color 0.18s;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  padding: 0.15rem 0.35rem;
+  transition: color 0.18s;
   line-height: 1;
 }
 
-.lang-btn:first-child {
-  border-right: none;
-  border-radius: 3px 0 0 3px;
-}
-
-.lang-btn:last-child {
-  border-radius: 0 3px 3px 0;
+.lang-btn:hover {
+  color: rgba(255, 255, 255, 0.75);
 }
 
 .lang-btn--active {
-  background: var(--accent);
-  border-color: var(--accent);
-  color: #111;
+  color: #fff;
+  font-weight: 700;
 }
 
-.lang-btn:not(.lang-btn--active):hover {
-  color: var(--accent);
-  border-color: var(--accent);
+.lang-sep {
+  color: rgba(255, 255, 255, 0.2);
+  font-size: 0.72rem;
+  line-height: 1;
+  user-select: none;
+  pointer-events: none;
 }
 
 @media (max-width: 640px) {
   .lang-switcher {
-    margin-left: 0.5rem;
+    margin-left: 0.4rem;
   }
   .lang-btn {
-    font-size: 0.68rem;
-    padding: 0.25rem 0.45rem;
+    font-size: 0.72rem;
+    padding: 0.15rem 0.28rem;
   }
 }
 
