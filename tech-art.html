@@ -14,17 +14,40 @@
     gtag('config', 'G-VY2VFZ4FL2');
   </script>
   <style>
-    .section-title {
+    /* ── Tab bar ── */
+    .ta-tabs {
       max-width: 1100px;
-      margin: 3rem auto 1.5rem;
-      padding: 0 1rem 0 2rem;
-      font-size: 0.75rem;
-      font-weight: 700;
-      letter-spacing: 3px;
-      text-transform: uppercase;
-      color: var(--accent);
-      border-left: 3px solid var(--accent);
+      margin: 1.5rem auto 0;
+      padding: 0 2rem;
+      display: flex;
+      border-bottom: 2px solid var(--border);
     }
+
+    .ta-tab {
+      background: none;
+      border: none;
+      border-bottom: 3px solid transparent;
+      margin-bottom: -2px;
+      padding: 0.75rem 1.6rem;
+      color: rgba(255,255,255,0.38);
+      font-family: inherit;
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: color 0.18s, border-color 0.18s;
+    }
+
+    .ta-tab:hover { color: rgba(255,255,255,0.75); }
+
+    .ta-tab--active {
+      color: var(--accent);
+      border-bottom-color: var(--accent);
+    }
+
+    /* ── Section panels ── */
+    .ta-section { margin-top: 2rem; }
 
     .project-row {
       display: flex;
@@ -35,14 +58,11 @@
       padding: 0 2rem;
     }
 
-    .project-row:nth-child(even) {
+    .ta-section > .project-row:nth-child(even) {
       flex-direction: row-reverse;
     }
 
-    .project-info {
-      flex: 1;
-      padding-top: 0.5rem;
-    }
+    .project-info { flex: 1; padding-top: 0.5rem; }
 
     .project-info h3 {
       font-size: 1.5rem;
@@ -66,9 +86,7 @@
       margin-top: 0.8rem;
     }
 
-    .project-info ul li {
-      margin-bottom: 0.4rem;
-    }
+    .project-info ul li { margin-bottom: 0.4rem; }
 
     .btn-group {
       display: flex;
@@ -90,9 +108,7 @@
       padding: 0.5rem 0;
     }
 
-    .watch-link:hover {
-      border-bottom-color: var(--accent);
-    }
+    .watch-link:hover { border-bottom-color: var(--accent); }
 
     .download-btn {
       display: inline-flex;
@@ -110,10 +126,7 @@
       transition: opacity 0.2s, transform 0.2s;
     }
 
-    .download-btn:hover {
-      opacity: 0.85;
-      transform: translateY(-2px);
-    }
+    .download-btn:hover { opacity: 0.85; transform: translateY(-2px); }
 
     .github-btn {
       display: inline-flex;
@@ -130,12 +143,8 @@
       transition: border-color 0.2s, color 0.2s;
     }
 
-    .github-btn:hover {
-      border-color: var(--accent);
-      color: var(--accent);
-    }
+    .github-btn:hover { border-color: var(--accent); color: var(--accent); }
 
-    /* Video thumbnail */
     .project-video {
       flex: 1.6;
       aspect-ratio: 16/9;
@@ -155,18 +164,13 @@
       transition: transform 0.3s, opacity 0.3s;
     }
 
-    .project-video:hover img {
-      transform: scale(1.03);
-      opacity: 0.75;
-    }
+    .project-video:hover img { transform: scale(1.03); opacity: 0.75; }
 
     .play-btn {
       position: absolute;
-      top: 50%;
-      left: 50%;
+      top: 50%; left: 50%;
       transform: translate(-50%, -50%);
-      width: 64px;
-      height: 64px;
+      width: 64px; height: 64px;
       background: rgba(0,0,0,0.7);
       border-radius: 50%;
       display: flex;
@@ -184,8 +188,7 @@
     .play-btn::after {
       content: '';
       display: block;
-      width: 0;
-      height: 0;
+      width: 0; height: 0;
       border-style: solid;
       border-width: 11px 0 11px 20px;
       border-color: transparent transparent transparent #fff;
@@ -195,31 +198,24 @@
     .project-video iframe {
       position: absolute;
       top: 0; left: 0;
-      width: 100%;
-      height: 100%;
+      width: 100%; height: 100%;
       display: block;
       border: none;
     }
 
-    .divider {
-      max-width: 1100px;
-      margin: 1rem auto 2rem;
-      padding: 0 2rem;
-      border: none;
-      border-top: 1px solid var(--border);
-    }
-
     @media (max-width: 768px) {
       .project-row,
-      .project-row:nth-child(even) {
+      .ta-section > .project-row:nth-child(even) {
         flex-direction: column;
         gap: 1.2rem;
         margin-bottom: 3rem;
       }
+      .ta-tabs { padding: 0 1rem; }
+      .ta-tab { padding: 0.6rem 0.9rem; font-size: 0.72rem; letter-spacing: 1px; }
     }
   </style>
 </head>
-<body>
+<body data-title-en="Tech Art — Sachin Desai" data-title-ja="テクニカルアート — Sachin Desai">
 
   <nav>
     <a href="index.html" class="nav-brand">
@@ -247,134 +243,182 @@
     </div>
   </nav>
 
-
-
-  <!-- Rigging Demoreel -->
-  <div class="project-row" style="margin-top:2rem; padding-top:0;">
-    <div class="project-info">
-      <h3><span data-en="Rigging Demoreel" data-ja="リギングデモリール">Rigging Demoreel</span> <span data-en="— Maya, 3dsMax" data-ja="— Maya、3ds Max">— Maya, 3dsMax</span></h3>
-      <ul>
-        <li data-en="Character and creature rigs built in Maya and 3ds Max" data-ja="MayaとMax 3dsで制作したキャラクター・クリーチャーリグ">Character and creature rigs built in Maya and 3ds Max</li>
-        <li data-en="Full body rigs with IK/FK switching, facial controls and deformers" data-ja="IK/FK切り替え、フェイシャルコントロール、デフォーマーを備えたフルボディリグ">Full body rigs with IK/FK switching, facial controls and deformers</li>
-        <li data-en="Creature rigs including complex spine and limb setups" data-ja="複雑なスパイン・四肢セットアップを含むクリーチャーリグ">Creature rigs including complex spine and limb setups</li>
-        <li data-en="Production-ready rigs used in shipped game titles" data-ja="出荷済みゲームタイトルで使用したプロダクション品質のリグ">Production-ready rigs used in shipped game titles</li>
-      </ul>
-      <div class="btn-group">
-        <a href="https://youtu.be/GG7JzALkBxI" target="_blank" class="watch-link" data-en="▶ Watch full demoreel" data-ja="▶ フルデモリールを見る">▶ Watch full demoreel</a>
-      </div>
-    </div>
-    <div class="project-video" onclick="playVideo(this,'GG7JzALkBxI')">
-      <img src="https://img.youtube.com/vi/GG7JzALkBxI/maxresdefault.jpg" alt="Rigging Demoreel" onerror="this.src='https://img.youtube.com/vi/GG7JzALkBxI/hqdefault.jpg'">
-      <div class="play-btn"></div>
-    </div>
+  <!-- ── Tab bar ── -->
+  <div class="ta-tabs" role="tablist">
+    <button class="ta-tab ta-tab--active" data-tab="dcc"
+            data-en="DCC Tools" data-ja="DCCツール"
+            role="tab" aria-selected="true">DCC Tools</button>
+    <button class="ta-tab" data-tab="unity"
+            data-en="Unity" data-ja="Unity"
+            role="tab" aria-selected="false">Unity</button>
+    <button class="ta-tab" data-tab="pipeline"
+            data-en="Pipeline" data-ja="パイプライン"
+            role="tab" aria-selected="false">Pipeline</button>
   </div>
 
-  <!-- LOD Generator -->
-  <div class="project-row">
-    <div class="project-info">
-      <h3><span data-en="LOD Generator Tool" data-ja="LODジェネレーターツール">LOD Generator Tool</span> <span data-en="— Maya, Python" data-ja="— Maya、Python">— Maya, Python</span></h3>
-      <ul>
-        <li data-en="Automatically generates Level of Detail (LOD) meshes in Maya" data-ja="MayaでLOD（レベル・オブ・ディテール）メッシュを自動生成">Automatically generates Level of Detail (LOD) meshes in Maya</li>
-        <li data-en="Uses QEM (Quadric Error Metrics) algorithm — pure Python, no plugins needed" data-ja="QEM（二次誤差メトリクス）アルゴリズム使用 — 純Python、プラグイン不要">Uses QEM (Quadric Error Metrics) algorithm — pure Python, no plugins needed</li>
-        <li data-en="Reduces polygon count at each LOD level for game optimization" data-ja="各LODレベルでゲーム最適化のためポリゴン数を削減">Reduces polygon count at each LOD level for game optimization</li>
-        <li data-en="Outputs ready-to-integrate LOD meshes for Unity / Unreal" data-ja="Unity / Unrealに統合可能なLODメッシュを出力">Outputs ready-to-integrate LOD meshes for Unity / Unreal</li>
-      </ul>
-      <div class="btn-group">
-        <a href="files/maya_lod_qem_purepy.py" class="download-btn" download="maya_lod_qem_purepy.py" data-en="⬇ Download" data-ja="⬇ ダウンロード">⬇ Download</a>
-        <a href="https://github.com/sachindesai7/maya-tools/blob/main/maya_lod_qem_purepy.py"
-           target="_blank" class="github-btn" data-en="⌥ View on GitHub" data-ja="⌥ GitHubで見る">⌥ View on GitHub</a>
-      </div>
-    </div>
-    <div class="project-video" onclick="playVideo(this,'GI4z2T1pGm8')">
-      <img src="https://img.youtube.com/vi/GI4z2T1pGm8/maxresdefault.jpg" alt="LOD Generator" onerror="this.src='https://img.youtube.com/vi/GI4z2T1pGm8/hqdefault.jpg'">
-      <div class="play-btn"></div>
-    </div>
-  </div>
+  <!-- ══════════════════════════════════════
+       DCC TOOLS
+  ══════════════════════════════════════ -->
+  <div class="ta-section" id="tab-dcc">
 
-  <!-- FBX Exporter -->
-  <div class="project-row">
-    <div class="project-info">
-      <h3><span data-en="FBX Exporter Tool" data-ja="FBXエクスポーターツール">FBX Exporter Tool</span> <span data-en="— Maya, Python" data-ja="— Maya、Python">— Maya, Python</span></h3>
-      <ul>
-        <li data-en="Batch exports multiple Maya assets to FBX in one click" data-ja="複数のMayaアセットをワンクリックでFBXに一括エクスポート">Batch exports multiple Maya assets to FBX in one click</li>
-        <li data-en="Custom UI built with PyQt inside Maya" data-ja="Maya内でPyQtを使ったカスタムUIを構築">Custom UI built with PyQt inside Maya</li>
-        <li data-en="Supports custom export paths, naming conventions and settings" data-ja="カスタムエクスポートパス、命名規則、設定をサポート">Supports custom export paths, naming conventions and settings</li>
-        <li data-en="Saves hours of manual export work in production pipelines" data-ja="プロダクションパイプラインでの手動エクスポート作業を大幅に削減">Saves hours of manual export work in production pipelines</li>
-      </ul>
-      <div class="btn-group">
-        <a href="files/batch_fbx_exporter_pro.py" class="download-btn" download="batch_fbx_exporter_pro.py" data-en="⬇ Download" data-ja="⬇ ダウンロード">⬇ Download</a>
-        <a href="https://github.com/sachindesai7/maya-tools/blob/main/batch_fbx_exporter_pro.py"
-           target="_blank" class="github-btn" data-en="⌥ View on GitHub" data-ja="⌥ GitHubで見る">⌥ View on GitHub</a>
+    <!-- Rigging Demoreel -->
+    <div class="project-row">
+      <div class="project-info">
+        <h3><span data-en="Rigging Demoreel" data-ja="リギングデモリール">Rigging Demoreel</span> <span data-en="— Maya, 3dsMax" data-ja="— Maya、3ds Max">— Maya, 3dsMax</span></h3>
+        <ul>
+          <li data-en="Character and creature rigs built in Maya and 3ds Max" data-ja="MayaとMax 3dsで制作したキャラクター・クリーチャーリグ">Character and creature rigs built in Maya and 3ds Max</li>
+          <li data-en="Full body rigs with IK/FK switching, facial controls and deformers" data-ja="IK/FK切り替え、フェイシャルコントロール、デフォーマーを備えたフルボディリグ">Full body rigs with IK/FK switching, facial controls and deformers</li>
+          <li data-en="Creature rigs including complex spine and limb setups" data-ja="複雑なスパイン・四肢セットアップを含むクリーチャーリグ">Creature rigs including complex spine and limb setups</li>
+          <li data-en="Production-ready rigs used in shipped game titles" data-ja="出荷済みゲームタイトルで使用したプロダクション品質のリグ">Production-ready rigs used in shipped game titles</li>
+        </ul>
+        <div class="btn-group">
+          <a href="https://youtu.be/GG7JzALkBxI" target="_blank" class="watch-link" data-en="▶ Watch full demoreel" data-ja="▶ フルデモリールを見る">▶ Watch full demoreel</a>
+        </div>
+      </div>
+      <div class="project-video" onclick="playVideo(this,'GG7JzALkBxI')">
+        <img src="https://img.youtube.com/vi/GG7JzALkBxI/maxresdefault.jpg" alt="Rigging Demoreel" onerror="this.src='https://img.youtube.com/vi/GG7JzALkBxI/hqdefault.jpg'">
+        <div class="play-btn"></div>
       </div>
     </div>
-    <div class="project-video" onclick="playVideo(this,'zBSz3j1xEdM')">
-      <img src="https://img.youtube.com/vi/zBSz3j1xEdM/maxresdefault.jpg" alt="FBX Exporter" onerror="this.src='https://img.youtube.com/vi/zBSz3j1xEdM/hqdefault.jpg'">
-      <div class="play-btn"></div>
-    </div>
-  </div>
 
-  <!-- Feature Mockup -->
-  <div class="project-row">
-    <div class="project-info">
-      <h3><span data-en="Feature Mockup" data-ja="機能モックアップ">Feature Mockup</span> <span data-en="— Unity, Cinemachine" data-ja="— Unity、Cinemachine">— Unity, Cinemachine</span></h3>
-      <ul>
-        <li data-en="Created a feature mockup using in-game assets and Cinemachine in Unity" data-ja="ゲーム内アセットとCinemachineを使ったフィーチャーモックアップを制作">Created a feature mockup using in-game assets and Cinemachine in Unity</li>
-        <li data-en="Demonstrates camera sequencing, lighting and VFX integration" data-ja="カメラシーケンス、ライティング、VFX統合をデモ">Demonstrates camera sequencing, lighting and VFX integration</li>
-        <li data-en="Used to pitch and visualise game features to design teams" data-ja="デザインチームへのゲーム機能のピッチ・ビジュアライズに使用">Used to pitch and visualise game features to design teams</li>
-      </ul>
-      <div class="btn-group">
-        <a href="https://youtu.be/aNIix2QZL2Q" target="_blank" class="watch-link" data-en="▶ Watch mockup" data-ja="▶ モックアップを見る">▶ Watch mockup</a>
+    <!-- LOD Generator -->
+    <div class="project-row">
+      <div class="project-info">
+        <h3><span data-en="LOD Generator Tool" data-ja="LODジェネレーターツール">LOD Generator Tool</span> <span data-en="— Maya, Python" data-ja="— Maya、Python">— Maya, Python</span></h3>
+        <ul>
+          <li data-en="Automatically generates Level of Detail (LOD) meshes in Maya" data-ja="MayaでLOD（レベル・オブ・ディテール）メッシュを自動生成">Automatically generates Level of Detail (LOD) meshes in Maya</li>
+          <li data-en="Uses QEM (Quadric Error Metrics) algorithm — pure Python, no plugins needed" data-ja="QEM（二次誤差メトリクス）アルゴリズム使用 — 純Python、プラグイン不要">Uses QEM (Quadric Error Metrics) algorithm — pure Python, no plugins needed</li>
+          <li data-en="Reduces polygon count at each LOD level for game optimization" data-ja="各LODレベルでゲーム最適化のためポリゴン数を削減">Reduces polygon count at each LOD level for game optimization</li>
+          <li data-en="Outputs ready-to-integrate LOD meshes for Unity / Unreal" data-ja="Unity / Unrealに統合可能なLODメッシュを出力">Outputs ready-to-integrate LOD meshes for Unity / Unreal</li>
+        </ul>
+        <div class="btn-group">
+          <a href="files/maya_lod_qem_purepy.py" class="download-btn" download="maya_lod_qem_purepy.py" data-en="⬇ Download" data-ja="⬇ ダウンロード">⬇ Download</a>
+          <a href="https://github.com/sachindesai7/maya-tools/blob/main/maya_lod_qem_purepy.py"
+             target="_blank" class="github-btn" data-en="⌥ View on GitHub" data-ja="⌥ GitHubで見る">⌥ View on GitHub</a>
+        </div>
+      </div>
+      <div class="project-video" onclick="playVideo(this,'GI4z2T1pGm8')">
+        <img src="https://img.youtube.com/vi/GI4z2T1pGm8/maxresdefault.jpg" alt="LOD Generator" onerror="this.src='https://img.youtube.com/vi/GI4z2T1pGm8/hqdefault.jpg'">
+        <div class="play-btn"></div>
       </div>
     </div>
-    <div class="project-video" onclick="playVideo(this,'aNIix2QZL2Q')">
-      <img src="https://img.youtube.com/vi/aNIix2QZL2Q/maxresdefault.jpg" alt="Feature Mockup" onerror="this.src='https://img.youtube.com/vi/aNIix2QZL2Q/hqdefault.jpg'">
-      <div class="play-btn"></div>
-    </div>
-  </div>
 
-  <!-- Figma Asset Exporter -->
-  <div class="project-row">
-    <div class="project-info">
-      <h3><span data-en="Figma Asset Exporter" data-ja="Figmaアセットエクスポーター">Figma Asset Exporter</span> <span data-en="— Python, Figma Plugin" data-ja="— Python、Figmaプラグイン">— Python, Figma Plugin</span></h3>
-      <ul>
-        <li data-en="Exports images from Figma / FigJam boards directly to a local folder" data-ja="FigmaおよびFigJamボードから画像をローカルフォルダへ直接エクスポート">Exports images from Figma / FigJam boards directly to a local folder</li>
-        <li data-en="Two-component tool: Figma plugin + lightweight Python server (no pip needed)" data-ja="Figmaプラグイン + 軽量Pythonサーバーの2コンポーネント（pip不要）">Two-component tool: Figma plugin + lightweight Python server (no pip needed)</li>
-        <li data-en="Auto-organizes exports into nested folders by section and subsection" data-ja="エクスポートをセクション・サブセクション別フォルダに自動整理">Auto-organizes exports into nested folders by section and subsection</li>
-        <li data-en="No API token required — plugin talks to local server on localhost:7788" data-ja="APIトークン不要 — プラグインがlocalhost:7788のローカルサーバーに通信">No API token required — plugin talks to local server on localhost:7788</li>
-      </ul>
-      <div class="btn-group">
-        <a href="https://drive.google.com/uc?export=download&id=1ECuVWG7cGUngJ2GuEK3Rfb7LvmR9va5s" class="download-btn" target="_blank" data-en="⬇ Download" data-ja="⬇ ダウンロード">⬇ Download</a>
-        <a href="https://github.com/sachindesai7/maya-tools/tree/main/pipeline/figma_exporter"
-           target="_blank" class="github-btn" data-en="⌥ View on GitHub" data-ja="⌥ GitHubで見る">⌥ View on GitHub</a>
+    <!-- FBX Exporter -->
+    <div class="project-row">
+      <div class="project-info">
+        <h3><span data-en="FBX Exporter Tool" data-ja="FBXエクスポーターツール">FBX Exporter Tool</span> <span data-en="— Maya, Python" data-ja="— Maya、Python">— Maya, Python</span></h3>
+        <ul>
+          <li data-en="Batch exports multiple Maya assets to FBX in one click" data-ja="複数のMayaアセットをワンクリックでFBXに一括エクスポート">Batch exports multiple Maya assets to FBX in one click</li>
+          <li data-en="Custom UI built with PyQt inside Maya" data-ja="Maya内でPyQtを使ったカスタムUIを構築">Custom UI built with PyQt inside Maya</li>
+          <li data-en="Supports custom export paths, naming conventions and settings" data-ja="カスタムエクスポートパス、命名規則、設定をサポート">Supports custom export paths, naming conventions and settings</li>
+          <li data-en="Saves hours of manual export work in production pipelines" data-ja="プロダクションパイプラインでの手動エクスポート作業を大幅に削減">Saves hours of manual export work in production pipelines</li>
+        </ul>
+        <div class="btn-group">
+          <a href="files/batch_fbx_exporter_pro.py" class="download-btn" download="batch_fbx_exporter_pro.py" data-en="⬇ Download" data-ja="⬇ ダウンロード">⬇ Download</a>
+          <a href="https://github.com/sachindesai7/maya-tools/blob/main/batch_fbx_exporter_pro.py"
+             target="_blank" class="github-btn" data-en="⌥ View on GitHub" data-ja="⌥ GitHubで見る">⌥ View on GitHub</a>
+        </div>
+      </div>
+      <div class="project-video" onclick="playVideo(this,'zBSz3j1xEdM')">
+        <img src="https://img.youtube.com/vi/zBSz3j1xEdM/maxresdefault.jpg" alt="FBX Exporter" onerror="this.src='https://img.youtube.com/vi/zBSz3j1xEdM/hqdefault.jpg'">
+        <div class="play-btn"></div>
       </div>
     </div>
-    <div class="project-video" onclick="playVideo(this,'Yu6FB1wDGT0')">
-      <img src="https://img.youtube.com/vi/Yu6FB1wDGT0/maxresdefault.jpg" alt="Figma Asset Exporter" onerror="this.src='https://img.youtube.com/vi/Yu6FB1wDGT0/hqdefault.jpg'">
-      <div class="play-btn"></div>
-    </div>
-  </div>
 
-  <!-- Virus Cleaner -->
-  <div class="project-row">
-    <div class="project-info">
-      <h3><span data-en="Maya Virus Cleaner Tool" data-ja="Mayaウイルスクリーナーツール">Maya Virus Cleaner Tool</span> <span data-en="— Python" data-ja="— Python">— Python</span></h3>
-      <ul>
-        <li data-en="Detects and removes common Maya file viruses and corrupted scripts" data-ja="一般的なMayaファイルウイルスと破損スクリプトを検出・除去">Detects and removes common Maya file viruses and corrupted scripts</li>
-        <li data-en="Scans and cleans Maya ASCII/Binary files automatically" data-ja="MayaのASCII/バイナリファイルを自動スキャン・クリーニング">Scans and cleans Maya ASCII/Binary files automatically</li>
-        <li data-en="Prevents infected files from spreading across a production pipeline" data-ja="感染ファイルがプロダクションパイプラインに広がるのを防止">Prevents infected files from spreading across a production pipeline</li>
-        <li data-en="Saved multiple projects from data corruption in studio environments" data-ja="スタジオ環境でのデータ破損から複数のプロジェクトを救済">Saved multiple projects from data corruption in studio environments</li>
-      </ul>
-      <div class="btn-group">
-        <a href="files/maya_virus_cleaner.py" class="download-btn" download="maya_virus_cleaner.py" data-en="⬇ Download" data-ja="⬇ ダウンロード">⬇ Download</a>
-        <a href="https://github.com/sachindesai7/maya-tools/blob/main/maya_virus_cleaner.py"
-           target="_blank" class="github-btn" data-en="⌥ View on GitHub" data-ja="⌥ GitHubで見る">⌥ View on GitHub</a>
+  </div><!-- /tab-dcc -->
+
+  <!-- ══════════════════════════════════════
+       UNITY
+  ══════════════════════════════════════ -->
+  <div class="ta-section" id="tab-unity" style="display:none;">
+
+    <!-- Feature Mockup -->
+    <div class="project-row">
+      <div class="project-info">
+        <h3><span data-en="Feature Mockup" data-ja="機能モックアップ">Feature Mockup</span> <span data-en="— Unity, Cinemachine" data-ja="— Unity、Cinemachine">— Unity, Cinemachine</span></h3>
+        <ul>
+          <li data-en="Created a feature mockup using in-game assets and Cinemachine in Unity" data-ja="ゲーム内アセットとCinemachineを使ったフィーチャーモックアップを制作">Created a feature mockup using in-game assets and Cinemachine in Unity</li>
+          <li data-en="Demonstrates camera sequencing, lighting and VFX integration" data-ja="カメラシーケンス、ライティング、VFX統合をデモ">Demonstrates camera sequencing, lighting and VFX integration</li>
+          <li data-en="Used to pitch and visualise game features to design teams" data-ja="デザインチームへのゲーム機能のピッチ・ビジュアライズに使用">Used to pitch and visualise game features to design teams</li>
+        </ul>
+        <div class="btn-group">
+          <a href="https://youtu.be/aNIix2QZL2Q" target="_blank" class="watch-link" data-en="▶ Watch mockup" data-ja="▶ モックアップを見る">▶ Watch mockup</a>
+        </div>
+      </div>
+      <div class="project-video" onclick="playVideo(this,'aNIix2QZL2Q')">
+        <img src="https://img.youtube.com/vi/aNIix2QZL2Q/maxresdefault.jpg" alt="Feature Mockup" onerror="this.src='https://img.youtube.com/vi/aNIix2QZL2Q/hqdefault.jpg'">
+        <div class="play-btn"></div>
       </div>
     </div>
-    <div class="project-video" onclick="playVideo(this,'fw6gGDpFjx4')">
-      <img src="https://img.youtube.com/vi/fw6gGDpFjx4/maxresdefault.jpg" alt="Virus Cleaner" onerror="this.src='https://img.youtube.com/vi/fw6gGDpFjx4/hqdefault.jpg'">
-      <div class="play-btn"></div>
+
+    <!-- Unity Animation (moved from 3D Animation page) -->
+    <div class="project-row">
+      <div class="project-info">
+        <h3 data-en="Unity Animation" data-ja="Unityアニメーション">Unity Animation</h3>
+        <ul>
+          <li data-en="Character and prop animation built and integrated inside Unity" data-ja="Unity内でキャラクターとプロップのアニメーションを制作・統合">Character and prop animation built and integrated inside Unity</li>
+          <li data-en="Animation state machines, blend trees and in-engine testing" data-ja="アニメーションステートマシン、ブレンドツリー、エンジン内テスト">Animation state machines, blend trees and in-engine testing</li>
+        </ul>
+        <a href="https://youtu.be/EzmqlBVfVls" target="_blank" class="watch-link" data-en="▶ Watch video" data-ja="▶ 動画を見る">▶ Watch video</a>
+      </div>
+      <div class="project-video" onclick="playVideo(this,'EzmqlBVfVls')">
+        <img src="https://img.youtube.com/vi/EzmqlBVfVls/maxresdefault.jpg" alt="Unity Animation" onerror="this.src='https://img.youtube.com/vi/EzmqlBVfVls/hqdefault.jpg'">
+        <div class="play-btn"></div>
+      </div>
     </div>
-  </div>
+
+  </div><!-- /tab-unity -->
+
+  <!-- ══════════════════════════════════════
+       PIPELINE
+  ══════════════════════════════════════ -->
+  <div class="ta-section" id="tab-pipeline" style="display:none;">
+
+    <!-- Figma Asset Exporter -->
+    <div class="project-row">
+      <div class="project-info">
+        <h3><span data-en="Figma Asset Exporter" data-ja="Figmaアセットエクスポーター">Figma Asset Exporter</span> <span data-en="— Python, Figma Plugin" data-ja="— Python、Figmaプラグイン">— Python, Figma Plugin</span></h3>
+        <ul>
+          <li data-en="Exports images from Figma / FigJam boards directly to a local folder" data-ja="FigmaおよびFigJamボードから画像をローカルフォルダへ直接エクスポート">Exports images from Figma / FigJam boards directly to a local folder</li>
+          <li data-en="Two-component tool: Figma plugin + lightweight Python server (no pip needed)" data-ja="Figmaプラグイン + 軽量Pythonサーバーの2コンポーネント（pip不要）">Two-component tool: Figma plugin + lightweight Python server (no pip needed)</li>
+          <li data-en="Auto-organizes exports into nested folders by section and subsection" data-ja="エクスポートをセクション・サブセクション別フォルダに自動整理">Auto-organizes exports into nested folders by section and subsection</li>
+          <li data-en="No API token required — plugin talks to local server on localhost:7788" data-ja="APIトークン不要 — プラグインがlocalhost:7788のローカルサーバーに通信">No API token required — plugin talks to local server on localhost:7788</li>
+        </ul>
+        <div class="btn-group">
+          <a href="https://drive.google.com/uc?export=download&id=1ECuVWG7cGUngJ2GuEK3Rfb7LvmR9va5s" class="download-btn" target="_blank" data-en="⬇ Download" data-ja="⬇ ダウンロード">⬇ Download</a>
+          <a href="https://github.com/sachindesai7/maya-tools/tree/main/pipeline/figma_exporter"
+             target="_blank" class="github-btn" data-en="⌥ View on GitHub" data-ja="⌥ GitHubで見る">⌥ View on GitHub</a>
+        </div>
+      </div>
+      <div class="project-video" onclick="playVideo(this,'Yu6FB1wDGT0')">
+        <img src="https://img.youtube.com/vi/Yu6FB1wDGT0/maxresdefault.jpg" alt="Figma Asset Exporter" onerror="this.src='https://img.youtube.com/vi/Yu6FB1wDGT0/hqdefault.jpg'">
+        <div class="play-btn"></div>
+      </div>
+    </div>
+
+    <!-- Maya Virus Cleaner -->
+    <div class="project-row">
+      <div class="project-info">
+        <h3><span data-en="Maya Virus Cleaner Tool" data-ja="Mayaウイルスクリーナーツール">Maya Virus Cleaner Tool</span> <span data-en="— Python" data-ja="— Python">— Python</span></h3>
+        <ul>
+          <li data-en="Detects and removes common Maya file viruses and corrupted scripts" data-ja="一般的なMayaファイルウイルスと破損スクリプトを検出・除去">Detects and removes common Maya file viruses and corrupted scripts</li>
+          <li data-en="Scans and cleans Maya ASCII/Binary files automatically" data-ja="MayaのASCII/バイナリファイルを自動スキャン・クリーニング">Scans and cleans Maya ASCII/Binary files automatically</li>
+          <li data-en="Prevents infected files from spreading across a production pipeline" data-ja="感染ファイルがプロダクションパイプラインに広がるのを防止">Prevents infected files from spreading across a production pipeline</li>
+          <li data-en="Saved multiple projects from data corruption in studio environments" data-ja="スタジオ環境でのデータ破損から複数のプロジェクトを救済">Saved multiple projects from data corruption in studio environments</li>
+        </ul>
+        <div class="btn-group">
+          <a href="files/maya_virus_cleaner.py" class="download-btn" download="maya_virus_cleaner.py" data-en="⬇ Download" data-ja="⬇ ダウンロード">⬇ Download</a>
+          <a href="https://github.com/sachindesai7/maya-tools/blob/main/maya_virus_cleaner.py"
+             target="_blank" class="github-btn" data-en="⌥ View on GitHub" data-ja="⌥ GitHubで見る">⌥ View on GitHub</a>
+        </div>
+      </div>
+      <div class="project-video" onclick="playVideo(this,'fw6gGDpFjx4')">
+        <img src="https://img.youtube.com/vi/fw6gGDpFjx4/maxresdefault.jpg" alt="Virus Cleaner" onerror="this.src='https://img.youtube.com/vi/fw6gGDpFjx4/hqdefault.jpg'">
+        <div class="play-btn"></div>
+      </div>
+    </div>
+
+  </div><!-- /tab-pipeline -->
 
   <footer>
     &copy; 2026 Sachin Desai &nbsp;·&nbsp;
@@ -406,14 +450,9 @@
       el.style.cursor = 'default';
     }
 
-    document.addEventListener('DOMContentLoaded', function() {
-      document.querySelectorAll('.project-row').forEach(function(row, i) {
-        row.classList.add(i % 2 === 0 ? 'row-odd' : 'row-even');
-      });
-
-      var isMobile = window.innerWidth <= 768;
-      if (isMobile) return;
-      document.querySelectorAll('.project-video[onclick]').forEach(function(el) {
+    function initVideos(section) {
+      if (window.innerWidth <= 768) return;
+      section.querySelectorAll('.project-video[onclick]').forEach(function(el) {
         var match = el.getAttribute('onclick').match(/'([^']+)'\)/);
         if (!match) return;
         var videoId = match[1];
@@ -422,6 +461,29 @@
           '&controls=1&rel=0&modestbranding=1" allow="autoplay; encrypted-media" allowfullscreen></iframe>';
         el.style.cursor = 'default';
       });
+    }
+
+    function switchTab(tabId) {
+      document.querySelectorAll('.ta-tab').forEach(function(btn) {
+        var active = btn.getAttribute('data-tab') === tabId;
+        btn.classList.toggle('ta-tab--active', active);
+        btn.setAttribute('aria-selected', active ? 'true' : 'false');
+      });
+      document.querySelectorAll('.ta-section').forEach(function(sec) {
+        var show = sec.id === 'tab-' + tabId;
+        sec.style.display = show ? '' : 'none';
+        if (show) initVideos(sec);
+      });
+    }
+
+    document.querySelectorAll('.ta-tab').forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        switchTab(btn.getAttribute('data-tab'));
+      });
+    });
+
+    document.addEventListener('DOMContentLoaded', function() {
+      initVideos(document.getElementById('tab-dcc'));
     });
   </script>
 </body>
