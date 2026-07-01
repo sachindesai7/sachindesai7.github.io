@@ -361,8 +361,34 @@
     </div>
   </nav>
 
+  <!-- ── SMITHING MASTER ── -->
+  <div class="game-header" style="margin-top:2rem;">
+    <span class="game-tag" data-en="Game Prototype · Claude AI" data-ja="ゲームプロトタイプ · Claude AI">Game Prototype · Claude AI</span>
+    <h2 data-en="Smithing Master" data-ja="スミシング・マスター">Smithing Master</h2>
+    <p data-en="Built a fully playable RPG prototype using Claude as the sole development tool — presented at the Lila Games internal Game Jam. From smithing table to boss fights, the entire game loop was designed and coded through AI-assisted iteration." data-ja="Claudeを唯一の開発ツールとして使用した完全プレイ可能なRPGプロトタイプを制作し、Lila Games社内ゲームジャムで発表。鍛冶台からボス戦まで、ゲームループ全体をAIアシスト型のイテレーションで設計・開発しました。">Built a fully playable RPG prototype using Claude as the sole development tool — presented at the Lila Games internal Game Jam. From smithing table to boss fights, the entire game loop was designed and coded through AI-assisted iteration.</p>
+    <p style="margin-top:0.8rem;">
+      <span style="color:var(--muted);font-size:0.85rem;font-weight:600;letter-spacing:1px;text-transform:uppercase;" data-en="Built with —" data-ja="使用ツール —">Built with —</span>
+      <span style="color:#aaa;font-size:0.85rem;"> Claude (Anthropic)</span>
+    </p>
+  </div>
+
+  <div class="project-row">
+    <div class="project-info">
+      <ul>
+        <li data-en="Forge weapons at the smithing table to boost your ATK and HP stats" data-ja="鍛冶台で武器を鍛えてATKとHPのステータスを強化">Forge weapons at the smithing table to boost your ATK and HP stats</li>
+        <li data-en="Enter the Adventure map and battle through 18 nodes across 3 escalating zones" data-ja="アドベンチャーマップに入り、難易度が上がる3ゾーンの18ノードを戦い抜け">Enter the Adventure map and battle through 18 nodes across 3 escalating zones</li>
+        <li data-en="Spells and potions auto-pop when your HP hits 20% — last-moment saves" data-ja="HPが20%になると呪文とポーションが自動発動 — ギリギリの救済">Spells and potions auto-pop when your HP hits 20% — last-moment saves</li>
+        <li data-en="Defeat zone bosses to unlock the next area and earn rare rune rewards" data-ja="ゾーンボスを倒して次エリアを解放し、レアルーン報酬を獲得">Defeat zone bosses to unlock the next area and earn rare rune rewards</li>
+      </ul>
+    </div>
+    <div class="project-video-portrait" onclick="playVideo(this,'IT99yn40XwU')">
+      <img src="https://img.youtube.com/vi/IT99yn40XwU/maxresdefault.jpg" alt="Smithing Master Game Prototype" onerror="this.src='https://img.youtube.com/vi/IT99yn40XwU/hqdefault.jpg'">
+      <div class="play-btn"></div>
+    </div>
+  </div>
+
   <!-- ── OUTBOUND ── -->
-  <div class="game-header">
+  <div class="game-header" style="margin-top:3rem;">
     <span class="game-tag" data-en="AI Art Exploration" data-ja="AIアート探求">AI Art Exploration</span>
     <h2 data-en="Outbound" data-ja="アウトバウンド">Outbound</h2>
     <p data-en="Zombie hunter game concept — player navigates a constant-shooter vehicle through extraction zones, looting and surviving. Game progression includes vehicle upgrades, weapon upgrades, pilot unlocks and zone escalation. Two AI-generated art styles explored to find the game's visual identity." data-ja="ゾンビハンターゲームのコンセプト — プレイヤーは常時射撃型の車両で抽出ゾーンを進みながら、戦利品を集め生き延びます。ゲームの進行には車両・武器のアップグレード、パイロットのアンロック、ゾーンのエスカレーションが含まれます。ゲームのビジュアルアイデンティティを探るためにAI生成の2つのアートスタイルを検討しました。">Zombie hunter game concept — player navigates a constant-shooter vehicle through extraction zones, looting and surviving. Game progression includes vehicle upgrades, weapon upgrades, pilot unlocks and zone escalation. Two AI-generated art styles explored to find the game's visual identity.</p>
@@ -809,7 +835,7 @@
       // Color groups by game-header / hr.style-divider boundaries.
       // All project-rows within the same game get the same color.
       // hr.style-divider (used between Style 01/02 comparisons) toggles the color.
-      var postIndex = -1;
+      var postIndex = 0;
       var currentCls = null;
       document.querySelectorAll('.game-header, hr.style-divider, .project-row').forEach(function(el) {
         if (el.classList.contains('game-header') || el.tagName.toLowerCase() === 'hr') {
