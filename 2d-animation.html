@@ -148,6 +148,38 @@
       border: none;
     }
 
+    /* Image gallery for marketing posts */
+    .project-gallery {
+      flex: 1.6;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 4px;
+      border-radius: 8px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      align-self: start;
+    }
+
+    .project-gallery a {
+      display: block;
+      aspect-ratio: 1;
+      overflow: hidden;
+      background: #111;
+    }
+
+    .project-gallery a img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.3s, opacity 0.3s;
+      display: block;
+    }
+
+    .project-gallery a:hover img {
+      transform: scale(1.05);
+      opacity: 0.8;
+    }
+
     @media (max-width: 768px) {
       .project-row,
       .project-row:nth-child(even) {
@@ -160,6 +192,9 @@
         width: 100%;
         max-width: 300px;
         margin: 0 auto;
+      }
+      .project-gallery {
+        grid-template-columns: repeat(3, 1fr);
       }
     }
   </style>
@@ -241,6 +276,36 @@
     <div class="project-video portrait" onclick="playVideo(this,'8HOHpCe7tus')">
       <img src="https://img.youtube.com/vi/8HOHpCe7tus/maxresdefault.jpg" alt="Unity Sprite Animation" onerror="this.src='https://img.youtube.com/vi/8HOHpCe7tus/hqdefault.jpg'">
       <div class="play-btn"></div>
+    </div>
+  </div>
+
+  <!-- Growtopia Marketing Materials -->
+  <div class="project-row">
+    <div class="project-info">
+      <h3><span data-en="Growtopia Marketing" data-ja="グロウトピア マーケティング">Growtopia Marketing</span> <span data-en="— Social Media &amp; In-Game" data-ja="— ソーシャルメディア &amp; ゲーム内">— Social Media &amp; In-Game</span></h3>
+      <ul>
+        <li data-en="Created seasonal social media banners for Facebook and Instagram — events, store launches and key art" data-ja="Facebook・Instagram向けの季節イベント、ストアローンチ、キーアートのSNSバナーを制作">Created seasonal social media banners for Facebook and Instagram — events, store launches and key art</li>
+        <li data-en="Designed in-game UI and background assets including themed main menu screens" data-ja="テーマ付きメインメニュー画面などゲーム内UIと背景アセットをデザイン">Designed in-game UI and background assets including themed main menu screens</li>
+        <li data-en="Produced monthly calendar graphics for in-game event scheduling" data-ja="ゲーム内イベントスケジュール用の月次カレンダーグラフィックを制作">Produced monthly calendar graphics for in-game event scheduling</li>
+        <li data-en="Built store promotion visuals and voucher day banners using in-game assets" data-ja="ゲーム内アセットを活用したストアプロモーションビジュアルとバウチャーデーバナーを制作">Built store promotion visuals and voucher day banners using in-game assets</li>
+        <li data-en="Adapted assets across multiple platform formats: Facebook, Instagram, Mobile, Steam" data-ja="Facebook、Instagram、モバイル、Steamなど複数のプラットフォームフォーマットに対応">Adapted assets across multiple platform formats: Facebook, Instagram, Mobile, Steam</li>
+      </ul>
+    </div>
+    <div class="project-gallery">
+      <a href="images/growtopia/gt_stpatrick.png" target="_blank"><img src="images/growtopia/gt_stpatrick.png" alt="St Patrick Key Art"></a>
+      <a href="images/growtopia/gt_july25.png" target="_blank"><img src="images/growtopia/gt_july25.png" alt="July 2025 Social"></a>
+      <a href="images/growtopia/gt_auction_block.png" target="_blank"><img src="images/growtopia/gt_auction_block.png" alt="Auction Block"></a>
+      <a href="images/growtopia/gt_valentine.png" target="_blank"><img src="images/growtopia/gt_valentine.png" alt="Valentine CRM"></a>
+      <a href="images/growtopia/gt_calendar.png" target="_blank"><img src="images/growtopia/gt_calendar.png" alt="September Calendar"></a>
+      <a href="images/growtopia/gt_voucher.png" target="_blank"><img src="images/growtopia/gt_voucher.png" alt="Voucher Dayz"></a>
+      <a href="images/growtopia/gt_mobile.png" target="_blank"><img src="images/growtopia/gt_mobile.png" alt="Mobile Banner"></a>
+      <a href="images/growtopia/gt_mailbox.png" target="_blank"><img src="images/growtopia/gt_mailbox.png" alt="Core Mailbox"></a>
+      <a href="images/growtopia/gt_pet_bottles.png" target="_blank"><img src="images/growtopia/gt_pet_bottles.png" alt="Pet Bottles"></a>
+      <a href="images/growtopia/gt_menu_bg.png" target="_blank"><img src="images/growtopia/gt_menu_bg.png" alt="Main Menu Background"></a>
+      <a href="images/growtopia/gt_menu_bg_beta.png" target="_blank"><img src="images/growtopia/gt_menu_bg_beta.png" alt="Main Menu Background Beta"></a>
+      <a href="images/growtopia/gt_party_projector.png" target="_blank"><img src="images/growtopia/gt_party_projector.png" alt="Party Projector Store"></a>
+      <a href="images/growtopia/gt_wings_gaia.png" target="_blank"><img src="images/growtopia/gt_wings_gaia.png" alt="Wings of Gaia Store"></a>
+      <a href="images/growtopia/gt_steam_banner.png" target="_blank"><img src="images/growtopia/gt_steam_banner.png" alt="Steam Banner"></a>
     </div>
   </div>
 
