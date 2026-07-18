@@ -70,5 +70,5 @@ sachindesai7.github.io/
 
 ## About Me Bio (current)
 Senior Technical Artist · Rigging Artist · Gameplay Animator with 20+ years in games and animation.
-Ex-EA. Ex-Ubisoft Abu Dhabi. Currently at Lila Games, Bangalore on Extraction Shooter (LILA Black).
-Builds Maya/Python tools, game-ready rigs, Unity integrations, and gameplay animation systems.
+Ex-EA, Ex-Ubisoft Abu Dhabi, and Lila Games, Bangalore.
+Positioning emphasizes production-ready rigs, Maya/Python tools, Unity integration, FBX/LOD workflows, gameplay animation systems, and the bridge between art and engineering.

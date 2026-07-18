@@ -34,4 +34,4 @@
 | about.html | Legacy About Me URL (same content as home) |
 
 ## Last Updated
-2026-07-18 — Removed resume and cover-letter button markup from About/home pages.
+2026-07-18 — Rewrote About/home bio copy for senior Technical Artist positioning.
