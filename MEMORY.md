@@ -26,11 +26,12 @@
 ## Pages Summary
 | File | Content |
 |---|---|
-| index.html | 3D Animation homepage — 8 projects |
+| index.html | About Me home/landing page |
+| 3d-animation.html | 3D Animation page — 8 projects |
 | tech-art.html | Pipeline tools (FBX, LOD, Virus cleaner) + demoreel |
 | 2d-animation.html | Spine + Unity sprite animations |
 | projects.html | 14 shipped titles (games + TV shows) |
-| about.html | Bio, photo, resume/cover letter download |
+| about.html | Legacy About Me URL (same content as home) |
 
 ## Last Updated
-2026-07-18 — Repositioned site identity to Senior Technical Artist · Rigging Artist · Gameplay Animator.
+2026-07-18 — Made About Me the home/landing page and moved 3D Animation to 3d-animation.html.

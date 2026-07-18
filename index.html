@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Sachin Desai — Senior Technical Artist</title>
+  <title>About Me — Sachin Desai</title>
   <link rel="stylesheet" href="style.css?v=20260718" />
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-VY2VFZ4FL2"></script>
@@ -14,175 +14,166 @@
     gtag('config', 'G-VY2VFZ4FL2');
   </script>
   <style>
-    .project-row {
+    .about-hero {
       display: flex;
-      align-items: flex-start;
-      gap: 3rem;
-      max-width: 1100px;
-      margin: 0 auto 3.5rem;
+      align-items: center;
+      gap: 4rem;
+      max-width: 1000px;
+      margin: 4rem auto;
       padding: 0 2rem;
     }
 
-    .project-row:nth-child(even) {
-      flex-direction: row-reverse;
-    }
-
-    .project-info {
-      flex: 1;
-      padding-top: 0.5rem;
-    }
-
-    .project-info h3 {
-      font-size: 1.5rem;
-      font-weight: 700;
-      color: #fff;
-      margin-bottom: 0.3rem;
-    }
-
-    .project-info h3 span {
-      font-size: 0.9rem;
-      font-weight: 400;
-      color: var(--muted);
-    }
-
-    .project-info ul {
-      list-style: disc;
-      padding-left: 1.2rem;
-      color: #aaa;
-      font-size: 0.93rem;
-      line-height: 1.85;
-      margin-top: 0.8rem;
-    }
-
-    .project-info ul li {
-      margin-bottom: 0.4rem;
-    }
-
-    .watch-link {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.4rem;
-      margin-top: 1.2rem;
-      color: var(--accent);
-      font-size: 0.88rem;
-      font-weight: 600;
-      text-decoration: none;
-      border-bottom: 1px solid transparent;
-      transition: border-color 0.2s;
-    }
-
-    .watch-link:hover {
-      border-bottom-color: var(--accent);
-    }
-
-    .project-video {
-      flex: 1.6;
-      aspect-ratio: 16/9;
-      border-radius: 8px;
+    .about-photo {
+      flex-shrink: 0;
+      width: 320px;
+      height: 320px;
+      border-radius: 50%;
       overflow: hidden;
-      border: 1px solid var(--border);
-      background: #000;
-      position: relative;
-      cursor: pointer;
+      border: 4px solid var(--accent);
     }
 
-    .project-video img {
+    .about-photo img {
       width: 100%;
       height: 100%;
       object-fit: cover;
-      display: block;
-      transition: transform 0.3s, opacity 0.3s;
+      object-position: center top;
     }
 
-    .project-video:hover img {
-      transform: scale(1.03);
-      opacity: 0.75;
-    }
-
-    .play-btn {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      width: 64px;
-      height: 64px;
-      background: rgba(0,0,0,0.7);
-      border-radius: 50%;
+    .about-photo .no-photo {
+      width: 100%;
+      height: 100%;
+      background: #222;
       display: flex;
       align-items: center;
       justify-content: center;
-      pointer-events: none;
-      transition: background 0.2s, transform 0.2s;
+      font-size: 5rem;
     }
 
-    .project-video:hover .play-btn {
-      background: #ff0000;
-      transform: translate(-50%, -50%) scale(1.1);
+    .about-text h1 {
+      font-size: 3rem;
+      color: #fff;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
     }
 
-    .play-btn::after {
-      content: '';
-      display: block;
-      width: 0;
-      height: 0;
-      border-style: solid;
-      border-width: 11px 0 11px 20px;
-      border-color: transparent transparent transparent #fff;
-      margin-left: 4px;
+    .about-text h2 {
+      font-size: 1.2rem;
+      color: var(--accent);
+      font-weight: 600;
+      margin-bottom: 1.5rem;
+      letter-spacing: 1px;
     }
 
-    .project-video iframe {
-      position: absolute;
-      top: 0; left: 0;
-      width: 100%;
-      height: 100%;
-      display: block;
-      border: none;
+    .about-text p {
+      color: #bbb;
+      line-height: 1.85;
+      font-size: 0.97rem;
+      margin-bottom: 0.6rem;
     }
 
-    /* Two stacked videos for Clash of Beast */
-    .video-stack {
-      flex: 1.6;
+    .about-footer-strip {
+      background: var(--bg2);
+      border-top: 1px solid var(--border);
+      padding: 2.5rem 2rem;
       display: flex;
-      flex-direction: column;
-      gap: 0.8rem;
+      justify-content: space-between;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      gap: 2rem;
+      max-width: 1000px;
+      margin: 2rem auto 0;
     }
 
-    .video-stack .project-video {
-      flex: none;
-      width: 100%;
+    .footer-col h4 {
+      color: #fff;
+      font-size: 0.9rem;
+      font-weight: 700;
+      margin-bottom: 0.8rem;
+      letter-spacing: 1px;
+      text-transform: uppercase;
     }
 
-    @media (max-width: 768px) {
-      .project-row,
-      .project-row:nth-child(even) {
+    .footer-col p, .footer-col a {
+      color: var(--muted);
+      font-size: 0.88rem;
+      display: block;
+      line-height: 1.9;
+      text-decoration: none;
+    }
+
+    .footer-col a:hover {
+      color: var(--accent);
+    }
+
+    .linkedin-icon {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 36px;
+      height: 36px;
+      background: #0a66c2;
+      border-radius: 6px;
+      color: #fff;
+      font-weight: 700;
+      font-size: 0.9rem;
+      text-decoration: none;
+      margin-top: 0.3rem;
+      transition: opacity 0.2s;
+    }
+
+    .linkedin-icon:hover {
+      opacity: 0.8;
+    }
+
+    @media (max-width: 700px) {
+      .about-hero {
         flex-direction: column;
-        gap: 1.2rem;
-        margin-bottom: 3rem;
+        text-align: center;
+        gap: 2rem;
+        margin: 2rem auto;
       }
-      .video-stack {
-        width: 100%;
+      .about-photo {
+        width: 220px;
+        height: 220px;
+      }
+      .btn-row {
+        justify-content: center;
+        flex-direction: row !important;
+        flex-wrap: wrap;
+        gap: 0.6rem;
+      }
+      .btn {
+        flex: 1;
+        min-width: 140px;
+        justify-content: center;
+        font-size: 0.82rem;
+        padding: 0.6rem 0.8rem;
+      }
+      .about-text h1 { font-size: 2rem; }
+      .about-footer-strip {
+        flex-direction: column;
+        text-align: center;
       }
     }
   </style>
 </head>
-<body>
+<body data-title-en="About Me — Sachin Desai" data-title-ja="私について — Sachin Desai">
 
   <nav>
     <a href="index.html" class="nav-brand">
       <img src="images/header_profile.jpg" alt="Sachin Desai">
       <div>
         <span>Sachin Desai</span>
-        <small style="display:block;color:#4a8fa0;font-size:0.7rem;font-weight:400;" data-en="Senior Technical Artist · Rigging Artist · Gameplay Animator" data-ja="シニアテクニカルアーティスト・リギングアーティスト・ゲームプレイアニメーター">Senior Technical Artist · Rigging Artist · Gameplay Animator</small>
+        <small style="display:block;font-size:0.7rem;font-weight:400;" class="nav-brand-subtitle" data-en="Senior Technical Artist · Rigging Artist · Gameplay Animator" data-ja="シニアテクニカルアーティスト・リギングアーティスト・ゲームプレイアニメーター">Senior Technical Artist · Rigging Artist · Gameplay Animator</small>
       </div>
     </a>
     <ul class="nav-links" id="navLinks">
-      <li><a href="index.html" class="active"><span data-en="3D Animation" data-ja="3Dアニメーション">3D Animation</span></a></li>
+      <li><a href="index.html" class="active"><span data-en="About Me" data-ja="私について">About Me</span></a></li>
       <li><a href="tech-art.html"><span data-en="Tech Art" data-ja="テクニカルアート">Tech Art</span></a></li>
+      <li><a href="3d-animation.html"><span data-en="3D Animation" data-ja="3Dアニメーション">3D Animation</span></a></li>
+      <li><a href="ai-pipeline.html"><span data-en="AI Lab" data-ja="AIラボ">AI Lab</span></a></li>
       <li><a href="2d-animation.html"><span data-en="2D Art &amp; Design" data-ja="2Dアート &amp; デザイン">2D Art &amp; Design</span></a></li>
       <li><a href="projects.html"><span data-en="Projects" data-ja="プロジェクト">Projects</span></a></li>
-      <li><a href="ai-pipeline.html"><span data-en="AI Lab" data-ja="AIラボ">AI Lab</span></a></li>
-      <li><a href="about.html"><span data-en="About Me" data-ja="私について">About Me</span></a></li>
     </ul>
     <div class="lang-switcher">
       <button class="lang-btn lang-btn--active" data-lang="en" aria-pressed="true">EN</button>
@@ -194,124 +185,57 @@
     </div>
   </nav>
 
-  <!-- LILA Black -->
-  <div class="project-row" style="margin-top:2rem;">
-    <div class="project-info">
-      <h3><span data-en="LILA Black" data-ja="ライラ ブラック">LILA Black</span> <span data-en="— Animation, Game Integration, Tech Art" data-ja="— アニメーション、ゲーム統合、テクニカルアート">— Animation, Game Integration, Tech Art</span></h3>
-      <ul>
-        <li data-en="Extraction Shooter — animated player characters, creatures and NPCs" data-ja="エクストラクションシューター — プレイヤーキャラクター、クリーチャー、NPCのアニメーション制作">Extraction Shooter — animated player characters, creatures and NPCs</li>
-        <li data-en="Created locomotion cycles, combat moves and special animations" data-ja="ロコモーションサイクル、戦闘モーション、スペシャルアニメーションの制作">Created locomotion cycles, combat moves and special animations</li>
-        <li data-en="Integrated and tested in-engine at Lila Games" data-ja="Lila Gamesにてエンジン内で統合・テスト">Integrated and tested in-engine at Lila Games</li>
-      </ul>
-      <a href="https://youtu.be/SOLzU9LYnXw" target="_blank" class="watch-link" data-en="▶ Watch animation work" data-ja="▶ アニメーション作品を見る">▶ Watch animation work</a>
-    </div>
-    <div class="project-video" onclick="playVideo(this,'SOLzU9LYnXw')">
-      <img src="https://img.youtube.com/vi/SOLzU9LYnXw/maxresdefault.jpg" alt="LILA Black Animation"
-           onerror="this.src='https://img.youtube.com/vi/SOLzU9LYnXw/hqdefault.jpg'">
-      <div class="play-btn"></div>
-    </div>
-  </div>
+  <!-- Hero: Photo + Text side by side -->
+  <div class="about-hero">
 
-  <!-- Captain Laser Hawk -->
-  <div class="project-row" style="margin-top:2rem;">
-    <div class="project-info">
-      <h3><span data-en="Captain Laser Hawk" data-ja="キャプテン・レーザーホーク">Captain Laser Hawk</span> <span data-en="— Animation, Rigging, Game Integration, Tech Art" data-ja="— アニメーション、リギング、ゲーム統合、テクニカルアート">— Animation, Rigging, Game Integration, Tech Art</span></h3>
-      <ul>
-        <li data-en="Top-down multiplayer shooter — rigged biped characters" data-ja="トップダウン型マルチプレイヤーシューター — 二足歩行キャラクターのリグ制作">Top-down multiplayer shooter — rigged biped characters</li>
-        <li data-en="Created victory poses, emotes and locomotive cycles" data-ja="勝利ポーズ、エモート、移動サイクルの制作">Created victory poses, emotes and locomotive cycles</li>
-        <li data-en="Integrated and tested in-engine" data-ja="エンジン内で統合・テスト">Integrated and tested in-engine</li>
-      </ul>
-      <a href="https://youtu.be/a3jojm-xbZM" target="_blank" class="watch-link" data-en="▶ Watch video" data-ja="▶ 動画を見る">▶ Watch video</a>
+    <div class="about-photo">
+      <img src="images/profile.jpg" alt="Sachin Desai" onerror="this.parentElement.innerHTML='<div class=\'no-photo\'>👤</div>'">
     </div>
-    <div class="project-video" onclick="playVideo(this,'a3jojm-xbZM')">
-      <img src="https://img.youtube.com/vi/a3jojm-xbZM/maxresdefault.jpg" alt="Captain Laser Hawk" onerror="this.src='https://img.youtube.com/vi/a3jojm-xbZM/hqdefault.jpg'">
-      <div class="play-btn"></div>
-    </div>
-  </div>
 
-  <!-- Clash of Beast (2 videos) -->
-  <div class="project-row">
-    <div class="project-info">
-      <h3><span data-en="Clash of Beast" data-ja="クラッシュ・オブ・ビースト">Clash of Beast</span> <span data-en="— Animation, Rigging, Game Integration, Tech Art" data-ja="— アニメーション、リギング、ゲーム統合、テクニカルアート">— Animation, Rigging, Game Integration, Tech Art</span></h3>
-      <ul>
-        <li data-en="Mobile strategy — rigged &amp; animated dozens of creatures/beasts and environmental assets" data-ja="モバイルストラテジー — 多数のクリーチャー/ビーストと環境アセットのリグ・アニメーション制作">Mobile strategy — rigged &amp; animated dozens of creatures/beasts and environmental assets</li>
-        <li data-en="Created feature mockup using Unity Cinemachine and spell VFX integrations" data-ja="Unity CinemachineとスペルVFX統合によるフィーチャーモックアップ制作">Created feature mockup using Unity Cinemachine and spell VFX integrations</li>
-        <li data-en="Built and tested bundles in Unity in close collaboration with design and dev team" data-ja="デザイン・開発チームと密に連携しUnityでバンドルをビルド・テスト">Built and tested bundles in Unity in close collaboration with design and dev team</li>
-      </ul>
-      <a href="https://youtu.be/l-sVlzuFMvU" target="_blank" class="watch-link" data-en="▶ Watch videos" data-ja="▶ 動画を見る">▶ Watch videos</a>
-    </div>
-    <div class="video-stack">
-      <div class="project-video" onclick="playVideo(this,'l-sVlzuFMvU')">
-        <img src="https://img.youtube.com/vi/l-sVlzuFMvU/maxresdefault.jpg" alt="Clash of Beast A" onerror="this.src='https://img.youtube.com/vi/l-sVlzuFMvU/hqdefault.jpg'">
-        <div class="play-btn"></div>
-      </div>
-      <div class="project-video" onclick="playVideo(this,'QTlXPh7OnD4')">
-        <img src="https://img.youtube.com/vi/QTlXPh7OnD4/maxresdefault.jpg" alt="Clash of Beast B" onerror="this.src='https://img.youtube.com/vi/QTlXPh7OnD4/hqdefault.jpg'">
-        <div class="play-btn"></div>
+    <div class="about-text">
+      <h1 data-en="Welcome" data-ja="ようこそ">Welcome</h1>
+      <h2 data-en="About Me" data-ja="私について">About Me</h2>
+      <p data-en="Hey there! Welcome to my portfolio. My little corner of the internet." data-ja="こんにちは！私のポートフォリオへようこそ。ネット上の私だけの小さな空間です。">Hey there! Welcome to my portfolio. My little corner of the internet.</p>
+      <p data-html="true" data-en="I&#39;m Sachin, a Senior Technical Artist, Rigging Artist, and Gameplay Animator with 20+ years in games and animation. I&#39;ve worked at <strong style=&quot;color:var(--accent)&quot;>EA</strong>, <strong style=&quot;color:var(--accent)&quot;>Ubisoft Abu Dhabi</strong>, and <strong style=&quot;color:var(--accent)&quot;>Lila Games, Bangalore</strong>, building production-ready rigs, Unity/Maya pipeline tools, and gameplay animation for shipped projects." data-ja="サチンと申します。ゲームとアニメーション業界で20年以上の経験を持つシニアテクニカルアーティスト、リギングアーティスト、ゲームプレイアニメーターです。<strong style=&quot;color:var(--accent)&quot;>EA</strong>、<strong style=&quot;color:var(--accent)&quot;>Ubisoft Abu Dhabi</strong>、<strong style=&quot;color:var(--accent)&quot;>Lila Games（バンガロール）</strong>で、プロダクション向けリグ、Unity/Mayaパイプラインツール、出荷タイトル向けゲームプレイアニメーションを制作してきました。">I'm Sachin, a Senior Technical Artist, Rigging Artist, and Gameplay Animator with
+         20+ years in games and animation. I've worked at <strong style="color:var(--accent)">EA</strong>,
+         <strong style="color:var(--accent)">Ubisoft Abu Dhabi</strong>, and
+         <strong style="color:var(--accent)">Lila Games, Bangalore</strong>, building production-ready rigs,
+         Unity/Maya pipeline tools, and gameplay animation for shipped projects.</p>
+      <p data-en="Over the years I&#39;ve built Maya tools, FBX export workflows, LOD systems, game-ready rigs, Unity integrations, and animation systems for beasts, wrestlers, Disney heroes, TV show characters, and modern game projects." data-ja="これまでMayaツール、FBXエクスポートワークフロー、LODシステム、ゲーム向けリグ、Unity統合、ビースト・レスラー・ディズニーヒーロー・TVキャラクター向けのアニメーションシステムを制作してきました。">Over the years I've built Maya tools, FBX export workflows, LOD systems, game-ready rigs,
+         Unity integrations, and animation systems for beasts, wrestlers, Disney heroes,
+         TV show characters, and modern game projects.</p>
+      <p data-en="This site is where I share my journey, the projects I&#39;m proud of, and the little (and big) things I&#39;ve learned along the way. Have a look around, watch the reels, and if something catches your eye, say hello — I&#39;d love to chat!" data-ja="このサイトは私の歩み、誇りに思えるプロジェクト、そして道中で学んだことを共有する場所です。ぜひ見て回ってリールを観て、気になることがあればぜひ声をかけてください！">This site is where I share my journey, the projects I'm proud of, and the
+         little (and big) things I've learned along the way. Have a look around, watch
+         the reels, and if something catches your eye, say hello — I'd love to chat!</p>
+      <p data-en="Enjoy the stay! 💫" data-ja="ごゆっくりどうぞ！💫">Enjoy the stay! 💫</p>
+
+      <div class="btn-row" style="margin-top:1.8rem;">
+        <a data-href-en="files/Sachin_Desai_Resume.pdf" data-href-ja="files/Sachin_Desai_Resume_JA.pdf"
+           href="files/Sachin_Desai_Resume.pdf" class="btn btn-primary" download
+           data-en="⬇ Download Resume" data-ja="⬇ 履歴書をダウンロード">
+          ⬇ Download Resume
+        </a>
+        <a data-href-en="files/Sachin_Desai_Cover_Letter.pdf" data-href-ja="files/Sachin_Desai_Cover_Letter_JA.pdf"
+           href="files/Sachin_Desai_Cover_Letter.pdf" class="btn btn-outline" download
+           data-en="⬇ Download Cover Letter" data-ja="⬇ カバーレターをダウンロード">
+          ⬇ Download Cover Letter
+        </a>
       </div>
     </div>
+
   </div>
 
-  <!-- Deer Hunter -->
-  <div class="project-row">
-    <div class="project-info">
-      <h3><span data-en="Deer Hunter" data-ja="ディアハンター">Deer Hunter</span> <span data-en="— Animation, Game Integration" data-ja="— アニメーション、ゲーム統合">— Animation, Game Integration</span></h3>
-      <ul>
-        <li data-en="First-person shooting cycles" data-ja="一人称視点の射撃サイクル">First-person shooting cycles</li>
-        <li data-en="Wild animal animations" data-ja="野生動物のアニメーション">Wild animal animations</li>
-      </ul>
-      <a href="https://youtu.be/7hwnC-gsl-U" target="_blank" class="watch-link" data-en="▶ Watch video" data-ja="▶ 動画を見る">▶ Watch video</a>
+  <!-- Contact strip -->
+  <div class="about-footer-strip">
+    <div class="footer-col">
+      <h4 data-en="Contact" data-ja="連絡先">Contact</h4>
+      <p data-en="India : +91-9820213275" data-ja="インド : +91-9820213275">India : +91-9820213275</p>
+      <a href="mailto:sachindesai7@gmail.com">sachindesai7@gmail.com</a>
     </div>
-    <div class="project-video" onclick="playVideo(this,'7hwnC-gsl-U')">
-      <img src="https://img.youtube.com/vi/7hwnC-gsl-U/maxresdefault.jpg" alt="Deer Hunter" onerror="this.src='https://img.youtube.com/vi/7hwnC-gsl-U/hqdefault.jpg'">
-      <div class="play-btn"></div>
-    </div>
-  </div>
 
-  <!-- WWE Mayhem -->
-  <div class="project-row">
-    <div class="project-info">
-      <h3><span data-en="WWE Mayhem" data-ja="WWE メイヘム">WWE Mayhem</span> <span data-en="— Animation, Game Integration" data-ja="— アニメーション、ゲーム統合">— Animation, Game Integration</span></h3>
-      <ul>
-        <li data-en="Sole animator for all exaggerated attack, combo, defense and special moves for wrestlers" data-ja="レスラーの誇張されたアタック、コンボ、防御、スペシャルムーブをすべて単独でアニメーション">Sole animator for all exaggerated attack, combo, defense and special moves for wrestlers</li>
-      </ul>
-      <a href="https://youtu.be/f5peGpKzl94" target="_blank" class="watch-link" data-en="▶ Watch video" data-ja="▶ 動画を見る">▶ Watch video</a>
-    </div>
-    <div class="project-video" onclick="playVideo(this,'f5peGpKzl94')">
-      <img src="https://img.youtube.com/vi/f5peGpKzl94/maxresdefault.jpg" alt="WWE Mayhem" onerror="this.src='https://img.youtube.com/vi/f5peGpKzl94/hqdefault.jpg'">
-      <div class="play-btn"></div>
-    </div>
-  </div>
-
-  <!-- Mocap and VR Demoreel -->
-  <div class="project-row">
-    <div class="project-info">
-      <h3 data-en="Mocap and VR Demoreel" data-ja="モーキャプ＆VRデモリール">Mocap and VR Demoreel</h3>
-      <ul>
-        <li data-en="Motion capture performance cleanup and retargeting" data-ja="モーションキャプチャのパフォーマンスクリーンアップとリターゲット">Motion capture performance cleanup and retargeting</li>
-        <li data-en="VR character animation and interaction systems" data-ja="VRキャラクターアニメーションとインタラクションシステム">VR character animation and interaction systems</li>
-      </ul>
-      <a href="https://youtu.be/CZTYiUbLDJo" target="_blank" class="watch-link" data-en="▶ Watch demoreel" data-ja="▶ デモリールを見る">▶ Watch demoreel</a>
-    </div>
-    <div class="project-video" onclick="playVideo(this,'CZTYiUbLDJo')">
-      <img src="https://img.youtube.com/vi/CZTYiUbLDJo/maxresdefault.jpg" alt="Mocap VR Demoreel" onerror="this.src='https://img.youtube.com/vi/CZTYiUbLDJo/hqdefault.jpg'">
-      <div class="play-btn"></div>
-    </div>
-  </div>
-
-  <!-- Character Animation Reel -->
-  <div class="project-row">
-    <div class="project-info">
-      <h3><span data-en="Character Animation Reel" data-ja="キャラクターアニメーションリール">Character Animation Reel</span> <span data-en="— TV Series" data-ja="— TVシリーズ">— TV Series</span></h3>
-      <ul>
-        <li data-en="Character animation demoreel for TV series productions" data-ja="TVシリーズ制作のキャラクターアニメーションデモリール">Character animation demoreel for TV series productions</li>
-        <li data-en="Showcases acting, body mechanics and facial animation" data-ja="演技、ボディメカニクス、フェイシャルアニメーションを披露">Showcases acting, body mechanics and facial animation</li>
-      </ul>
-      <a href="https://youtu.be/GO5D99TCI_4" target="_blank" class="watch-link" data-en="▶ Watch demoreel" data-ja="▶ デモリールを見る">▶ Watch demoreel</a>
-    </div>
-    <div class="project-video" onclick="playVideo(this,'GO5D99TCI_4')">
-      <img src="https://img.youtube.com/vi/GO5D99TCI_4/maxresdefault.jpg" alt="Character Animation Reel" onerror="this.src='https://img.youtube.com/vi/GO5D99TCI_4/hqdefault.jpg'">
-      <div class="play-btn"></div>
+    <div class="footer-col">
+      <h4 data-en="Follow Me" data-ja="フォロー">Follow Me</h4>
+      <a href="https://www.linkedin.com/in/sachindesai7" target="_blank" class="linkedin-icon">in</a>
     </div>
   </div>
 
@@ -319,7 +243,7 @@
     &copy; 2026 Sachin Desai &nbsp;·&nbsp;
     <a href="https://www.linkedin.com/in/sachindesai7" target="_blank">LinkedIn</a>
     &nbsp;·&nbsp;
-    <a href="about.html" data-en="Contact" data-ja="お問い合わせ">Contact</a>
+    <a href="index.html" data-en="Contact" data-ja="お問い合わせ">Contact</a>
   </footer>
 
   <script src="i18n.js?v=20260718"></script>
@@ -327,45 +251,17 @@
     function toggleNav() {
       document.getElementById('navLinks').classList.toggle('open');
     }
-
-    // Close menu when a link is tapped
     document.querySelectorAll('.nav-links a').forEach(function(link) {
       link.addEventListener('click', function() {
         document.getElementById('navLinks').classList.remove('open');
       });
     });
-
-    // Close menu when tapping outside
     document.addEventListener('click', function(e) {
       var nav = document.getElementById('navLinks');
       var hamburger = document.querySelector('.hamburger');
       if (!nav.contains(e.target) && !hamburger.contains(e.target)) {
         nav.classList.remove('open');
       }
-    });
-
-    function playVideo(el, videoId) {
-      el.innerHTML = '<iframe src="https://www.youtube.com/embed/' + videoId + '?autoplay=1&rel=0&modestbranding=1" allow="autoplay; encrypted-media" allowfullscreen></iframe>';
-      el.style.cursor = 'default';
-    }
-
-    // Desktop: autoplay all videos. Mobile: keep thumbnails, tap to play
-    document.addEventListener('DOMContentLoaded', function() {
-      document.querySelectorAll('.project-row').forEach(function(row, i) {
-        row.classList.add(i % 2 === 0 ? 'row-odd' : 'row-even');
-      });
-
-      var isMobile = window.innerWidth <= 768;
-      if (isMobile) return; // mobile keeps thumbnails
-      document.querySelectorAll('.project-video[onclick]').forEach(function(el) {
-        var match = el.getAttribute('onclick').match(/'([^']+)'\)/);
-        if (!match) return;
-        var videoId = match[1];
-        el.innerHTML = '<iframe src="https://www.youtube.com/embed/' + videoId +
-          '?autoplay=1&mute=1&loop=1&playlist=' + videoId +
-          '&controls=1&rel=0&modestbranding=1" allow="autoplay; encrypted-media" allowfullscreen></iframe>';
-        el.style.cursor = 'default';
-      });
     });
   </script>
 </body>

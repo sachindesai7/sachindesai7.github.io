@@ -1,6 +1,6 @@
 # YouTube Video IDs
 
-## index.html — 3D Animation Page
+## 3d-animation.html — 3D Animation Page
 All autoplay on desktop, thumbnail+click on mobile.
 
 | Project | Video ID | Notes |

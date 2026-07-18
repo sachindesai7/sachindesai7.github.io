@@ -12,6 +12,8 @@
 <img src="images/header_profile.jpg"> <!-- nav small photo -->
 Sachin Desai / Senior Technical Artist · Rigging Artist · Gameplay Animator
 ```
+- Brand/home link points to `index.html`
+- Main nav order: About Me, Tech Art, 3D Animation, AI Lab, 2D Art & Design, Projects
 
 ## Video Behaviour
 - **Desktop (>768px):** YouTube iframes autoplay (muted, looped) via JS on DOMContentLoaded
@@ -40,11 +42,12 @@ Sachin Desai / Senior Technical Artist · Rigging Artist · Gameplay Animator
 ## File Structure
 ```
 sachindesai7.github.io/
-├── index.html          3D Animation homepage
+├── index.html          About Me home/landing page
+├── 3d-animation.html   3D Animation work page
 ├── tech-art.html       Pipeline tools + demoreel
 ├── 2d-animation.html   Spine + Unity animations
 ├── projects.html       14 shipped titles
-├── about.html          Bio + resume download
+├── about.html          Legacy About Me URL (same content as home)
 ├── style.css           Global dark theme
 ├── MEMORY.md           AI agent index
 ├── context/            AI agent context files
