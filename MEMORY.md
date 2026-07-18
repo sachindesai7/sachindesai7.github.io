@@ -34,4 +34,4 @@
 | about.html | Legacy About Me URL (same content as home) |
 
 ## Last Updated
-2026-07-18 — Renamed Tech Art sections to emphasize Rigging, Unity integration, and pipeline automation.
+2026-07-18 — Hid resume and cover-letter download buttons on the About/home pages.

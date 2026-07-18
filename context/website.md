@@ -41,8 +41,8 @@ Sachin Desai / Senior Technical Artist · Rigging Artist · Gameplay Animator
 - Two-column: circular photo left + bio text right
 - Photo: `images/profile.jpg` (laser tag photo)
 - Nav photo: `images/header_profile.jpg` (blue t-shirt photo)
-- Footer strip: Contact | Follow Me (LinkedIn) — Download section REMOVED (buttons above)
-- Download buttons: side-by-side on mobile
+- Footer strip: Contact | Follow Me (LinkedIn)
+- Resume and cover-letter download buttons are hidden on `index.html` and `about.html`; PDF files remain in `files/`
 
 ## File Structure
 ```
