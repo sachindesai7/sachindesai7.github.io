@@ -10,7 +10,7 @@
 ## Nav Brand (all pages)
 ```html
 <img src="images/header_profile.jpg"> <!-- nav small photo -->
-Sachin Desai / Senior Technical Artist · Rigging Artist · Gameplay Animator
+Sachin Desai / Senior Gameplay Animator · Technical Art & Rigging
 ```
 - Brand/home link points to `index.html`
 - Main nav order: About Me, Tech Art, 3D Animation, AI Lab, 2D Art & Design, Projects
@@ -24,7 +24,7 @@ Sachin Desai / Senior Technical Artist · Rigging Artist · Gameplay Animator
 ## Mobile Menu
 - Hamburger toggles `.nav-links.open`
 - Closes on: link tap OR tap outside nav
-- Nav links collapse at <=768px so the longer Technical Artist/Rigging/Game Animation title does not squeeze the tablet header
+- Nav links collapse at <=768px so the longer Gameplay Animator/Technical Art/Rigging title does not squeeze the tablet header
 - Nav brand subtitle is hidden at <=480px to keep phone headers clean in both English and Japanese
 
 ## Language Switcher
@@ -69,6 +69,7 @@ sachindesai7.github.io/
 ```
 
 ## About Me Bio (current)
-Senior Technical Artist · Rigging Artist · Gameplay Animator with 20+ years in games and animation.
+Senior Gameplay Animator with strong technical art and rigging experience across games and animation.
 Ex-EA, Ex-Ubisoft Abu Dhabi, and Lila Games, Bangalore.
 Positioning emphasizes production-ready rigs, Maya/Python tools, Unity integration, FBX/LOD workflows, gameplay animation systems, and the bridge between art and engineering.
+Includes a recruiter-facing note directing gameplay animation roles to the 3D Animation section.

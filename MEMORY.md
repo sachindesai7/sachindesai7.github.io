@@ -6,7 +6,7 @@
 - **Owner:** Sachin Desai | sachindesai7@gmail.com | +91-9820213275
 - **Live site:** https://sachindesai7.github.io
 - **Repo:** https://github.com/sachindesai7/sachindesai7.github.io
-- **Role:** Senior Technical Artist · Rigging Artist · Gameplay Animator
+- **Role:** Senior Gameplay Animator · Technical Art & Rigging
 - **Current job:** Lila Games, Bangalore (Extraction Shooter — LILA Black)
 - **Previous:** Ex-EA · Ex-Ubisoft Abu Dhabi (since 2006)
 - **LinkedIn:** https://linkedin.com/in/sachindesai7
@@ -34,4 +34,4 @@
 | about.html | Legacy About Me URL (same content as home) |
 
 ## Last Updated
-2026-07-18 — Replaced AI Lab Smithing Master video with Pixel Art short.
+2026-07-18 — Repositioned site title toward Senior Gameplay Animator with Technical Art & Rigging.
