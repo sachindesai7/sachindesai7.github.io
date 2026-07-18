@@ -28,10 +28,10 @@
 |---|---|
 | index.html | About Me home/landing page |
 | 3d-animation.html | 3D Animation page — 8 projects |
-| tech-art.html | Pipeline tools (FBX, LOD, Virus cleaner) + demoreel |
+| tech-art.html | Rigging & DCC Tools, Engine & Unity Integration, Pipeline Automation |
 | 2d-animation.html | Spine + Unity sprite animations |
 | projects.html | 14 shipped titles (games + TV shows) |
 | about.html | Legacy About Me URL (same content as home) |
 
 ## Last Updated
-2026-07-18 — Made About Me the home/landing page and moved 3D Animation to 3d-animation.html.
+2026-07-18 — Renamed Tech Art sections to emphasize Rigging, Unity integration, and pipeline automation.

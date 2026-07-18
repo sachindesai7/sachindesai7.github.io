@@ -32,6 +32,11 @@ Sachin Desai / Senior Technical Artist · Rigging Artist · Gameplay Animator
 - Uses `data-en` / `data-ja` attributes and supports `data-html="true"`
 - Persists language in `localStorage` when available, but continues switching if browser storage is blocked
 
+## Tech Art Page Sections
+- Rigging & DCC Tools
+- Engine & Unity Integration
+- Pipeline Automation
+
 ## About Page Layout
 - Two-column: circular photo left + bio text right
 - Photo: `images/profile.jpg` (laser tag photo)
