@@ -5,7 +5,7 @@
 - **Nav:** #0d0d0d with 3px gold bottom border, sticky
 - **Font:** Segoe UI | **Border:** #2a2a2a
 - **File:** style.css
-- HTML pages reference `style.css?v=20260718` and `i18n.js?v=20260718` to refresh cached site assets after this repositioning update
+- HTML pages reference `style.css?v=20260718b` and `i18n.js?v=20260718` to refresh cached site assets after this repositioning update
 
 ## Nav Brand (all pages)
 ```html
@@ -42,7 +42,7 @@ Sachin Desai / Senior Technical Artist · Rigging Artist · Gameplay Animator
 - Photo: `images/profile.jpg` (laser tag photo)
 - Nav photo: `images/header_profile.jpg` (blue t-shirt photo)
 - Footer strip: Contact | Follow Me (LinkedIn)
-- Resume and cover-letter download buttons are hidden on `index.html` and `about.html`; PDF files remain in `files/`
+- Resume and cover-letter download buttons are removed from `index.html` and `about.html`; PDF files remain in `files/`
 
 ## File Structure
 ```

@@ -305,6 +305,10 @@ nav::after {
   margin-top: 2rem;
 }
 
+.about-text .btn-row {
+  display: none !important;
+}
+
 .btn {
   display: inline-flex;
   align-items: center;
