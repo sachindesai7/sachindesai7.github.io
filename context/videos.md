@@ -36,6 +36,21 @@ Autoplay on desktop, thumbnail on mobile.
 | Slot Animation — Spine | RE-x54GvGMI |
 | Unity Sprite Animation (Short) | 8HOHpCe7tus |
 
+## ai-pipeline.html — AI Lab Page
+Autoplay on desktop, thumbnail+click on mobile.
+
+| Project | Video ID | Notes |
+|---|---|---|
+| Smithing Master | ko8OLhrGNoA | Pixel Art prototype short |
+| Outbound — Wild Wild West | ebJL4rr6Eq8 | AI art exploration |
+| Outbound — Dragon Hunter | mRAIBY3tS2M | AI art exploration |
+| Ball X Pit — Gummy Blaster | AXJtELfmXVo | Portrait short |
+| Ball X Pit — Jungle Pixel | MzrTzJqk5DU | Portrait short |
+| ComfyUI Trellis | xc6uKEJ1wl0 | AI 3D generation |
+| Blender Retopo vs AI Mesh | My7RJah7eZY | Mesh comparison |
+| Tripo Meshy | qoW8k4lHF0Y | AI 3D model generation |
+| Auto-rigging AI 3D Model | nZBzfFqP7yI | Auto-rigging test |
+
 ## projects.html — Projects Page (14 titles)
 Two video IDs per project: PLAYER (own 15-sec recording, autoplay) + WATCH LINK (original gameplay)
 

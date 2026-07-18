@@ -34,4 +34,4 @@
 | about.html | Legacy About Me URL (same content as home) |
 
 ## Last Updated
-2026-07-18 — Rewrote About/home bio copy for senior Technical Artist positioning.
+2026-07-18 — Replaced AI Lab Smithing Master video with Pixel Art short.
