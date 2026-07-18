@@ -53,6 +53,11 @@ nav::after {
   align-items: center;
   gap: 0.75rem;
   text-decoration: none;
+  min-width: 0;
+}
+
+.nav-brand > div {
+  min-width: 0;
 }
 
 .nav-brand img {
@@ -68,6 +73,12 @@ nav::after {
   font-weight: 600;
   font-size: 1rem;
   letter-spacing: 0.5px;
+}
+
+.nav-brand small {
+  max-width: 340px;
+  line-height: 1.05;
+  white-space: normal;
 }
 
 .nav-links {
@@ -345,6 +356,28 @@ footer a {
     flex: none !important;
     min-height: 200px;
   }
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    right: 0;
+    background: #0d0d0d;
+    flex-direction: column;
+    padding: 1rem;
+    border-bottom: 1px solid var(--border);
+    gap: 0;
+  }
+  .nav-links.open {
+    display: flex;
+  }
+  .nav-links a {
+    padding: 0.75rem 1rem;
+    font-size: 0.95rem;
+  }
+  .hamburger {
+    display: flex;
+  }
   /* Simpler nav menu on mobile */
   .nav-links a.active {
     background: transparent !important;
@@ -377,6 +410,10 @@ footer a {
 
   .hamburger {
     display: flex;
+  }
+
+  .nav-brand small {
+    max-width: 48vw;
   }
 
   .hero h1 {
@@ -589,6 +626,12 @@ footer a {
   .lang-btn {
     font-size: 0.72rem;
     padding: 0.15rem 0.28rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .nav-brand small {
+    display: none !important;
   }
 }
 

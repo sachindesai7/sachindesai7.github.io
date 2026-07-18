@@ -6,7 +6,7 @@
 - **Owner:** Sachin Desai | sachindesai7@gmail.com | +91-9820213275
 - **Live site:** https://sachindesai7.github.io
 - **Repo:** https://github.com/sachindesai7/sachindesai7.github.io
-- **Role:** 3D/2D Animator · Rigger · Technical Artist
+- **Role:** Senior Technical Artist · Rigging Artist · Gameplay Animator
 - **Current job:** Lila Games, Bangalore (Extraction Shooter — LILA Black)
 - **Previous:** Ex-EA · Ex-Ubisoft Abu Dhabi (since 2006)
 - **LinkedIn:** https://linkedin.com/in/sachindesai7
@@ -33,4 +33,4 @@
 | about.html | Bio, photo, resume/cover letter download |
 
 ## Last Updated
-2026-06-09 — Added Figma Asset Exporter tool to tech-art.html (video Yu6FB1wDGT0, Drive zip download)
+2026-07-18 — Repositioned site identity to Senior Technical Artist · Rigging Artist · Gameplay Animator.

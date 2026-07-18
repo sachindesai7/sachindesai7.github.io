@@ -5,11 +5,12 @@
 - **Nav:** #0d0d0d with 3px gold bottom border, sticky
 - **Font:** Segoe UI | **Border:** #2a2a2a
 - **File:** style.css
+- HTML pages reference `style.css?v=20260718` and `i18n.js?v=20260718` to refresh cached site assets after this repositioning update
 
 ## Nav Brand (all pages)
 ```html
 <img src="images/header_profile.jpg"> <!-- nav small photo -->
-Sachin Desai / 3D/2D Animation and Technical Artist
+Sachin Desai / Senior Technical Artist · Rigging Artist · Gameplay Animator
 ```
 
 ## Video Behaviour
@@ -21,6 +22,13 @@ Sachin Desai / 3D/2D Animation and Technical Artist
 ## Mobile Menu
 - Hamburger toggles `.nav-links.open`
 - Closes on: link tap OR tap outside nav
+- Nav links collapse at <=768px so the longer Technical Artist/Rigging/Game Animation title does not squeeze the tablet header
+- Nav brand subtitle is hidden at <=480px to keep phone headers clean in both English and Japanese
+
+## Language Switcher
+- Shared script: `i18n.js`
+- Uses `data-en` / `data-ja` attributes and supports `data-html="true"`
+- Persists language in `localStorage` when available, but continues switching if browser storage is blocked
 
 ## About Page Layout
 - Two-column: circular photo left + bio text right
@@ -53,6 +61,6 @@ sachindesai7.github.io/
 ```
 
 ## About Me Bio (current)
-3D/2D animator, rigger & technical artist since 2006.
+Senior Technical Artist · Rigging Artist · Gameplay Animator with 20+ years in games and animation.
 Ex-EA. Ex-Ubisoft Abu Dhabi. Currently at Lila Games, Bangalore on Extraction Shooter (LILA Black).
-Animated beasts, wrestlers, Disney heroes, TV show characters.
+Builds Maya/Python tools, game-ready rigs, Unity integrations, and gameplay animation systems.

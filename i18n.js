@@ -6,11 +6,29 @@
  */
 (function () {
   var LANG_KEY = 'sachin_lang';
-  var currentLang = localStorage.getItem(LANG_KEY) || 'en';
+  function getStoredLang() {
+    try {
+      return window.localStorage ? localStorage.getItem(LANG_KEY) : null;
+    } catch (e) {
+      return null;
+    }
+  }
+
+  function setStoredLang(lang) {
+    try {
+      if (window.localStorage) {
+        localStorage.setItem(LANG_KEY, lang);
+      }
+    } catch (e) {
+      // Language switching should still work if storage is blocked.
+    }
+  }
+
+  var currentLang = getStoredLang() || 'en';
 
   function applyLang(lang) {
     currentLang = lang;
-    localStorage.setItem(LANG_KEY, lang);
+    setStoredLang(lang);
     document.documentElement.lang = lang === 'ja' ? 'ja' : 'en';
 
     // Translate text/html nodes
