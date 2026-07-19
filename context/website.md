@@ -37,6 +37,15 @@ Sachin Desai / Senior Gameplay Animator · Technical Art & Rigging
 - Engine & Unity Integration
 - Pipeline Automation
 
+## AI Lab Page Sections
+- Smithing Master game prototype with YouTube Shorts video
+- Social Play Character Selection: AI-assisted 2D concept design using ChatGPT and Gemini, with 6 curated images under `images/social-play/character-selection/`
+- Outbound AI art exploration
+- Ball X Pit AI art exploration
+- ComfyUI + Trellis local AI 3D research
+- Online AI 3D Model Generation
+- AI in Art Production report
+
 ## About Page Layout
 - Two-column: circular photo left + bio text right
 - Photo: `images/profile.jpg` (laser tag photo)

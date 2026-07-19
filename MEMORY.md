@@ -34,4 +34,4 @@
 | about.html | Legacy About Me URL (same content as home) |
 
 ## Last Updated
-2026-07-18 — Repositioned site title toward Senior Gameplay Animator with Technical Art & Rigging.
+2026-07-19 — Added Social Play character-selection concepts to AI Lab.

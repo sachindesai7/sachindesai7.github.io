@@ -180,6 +180,67 @@
       border-color: var(--accent);
     }
 
+    .social-play-header .game-tag {
+      color: #061014;
+      background: var(--accent2);
+      border: 1px solid rgba(232, 160, 32, 0.65);
+    }
+
+    .social-play-row.project-row {
+      background: linear-gradient(135deg, rgba(0, 180, 216, 0.11), rgba(232, 160, 32, 0.08));
+      border-left-color: rgba(0, 180, 216, 0.65);
+    }
+
+    .social-play-feature {
+      flex: 1.15;
+      aspect-ratio: 16/10;
+      background: #05080a;
+      border: 2px solid var(--accent2);
+      box-shadow: 5px 5px 0 rgba(232, 160, 32, 0.22);
+      overflow: hidden;
+      cursor: zoom-in;
+    }
+
+    .social-play-feature img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      display: block;
+      padding: 0.45rem;
+      transition: transform 0.25s, opacity 0.25s;
+    }
+
+    .social-play-feature:hover img {
+      transform: scale(1.025);
+      opacity: 0.9;
+    }
+
+    .social-play-gallery.image-gallery {
+      background: linear-gradient(135deg, rgba(0, 180, 216, 0.08), rgba(232, 160, 32, 0.07));
+      border-left: 3px solid rgba(0, 180, 216, 0.65);
+      padding-top: 1rem;
+      padding-bottom: 1.8rem;
+    }
+
+    .social-play-gallery .image-gallery-grid {
+      gap: 1rem;
+    }
+
+    .social-play-gallery .gallery-img {
+      aspect-ratio: 4/3;
+      object-fit: contain;
+      background: #05080a;
+      padding: 0.4rem;
+      border: 1px solid rgba(0, 180, 216, 0.55);
+      border-radius: 0;
+      box-shadow: 4px 4px 0 rgba(232, 160, 32, 0.18);
+    }
+
+    .social-play-gallery .gallery-img:nth-child(even) {
+      border-color: rgba(232, 160, 32, 0.62);
+      box-shadow: 4px 4px 0 rgba(0, 180, 216, 0.16);
+    }
+
     /* Lightbox */
     .lightbox {
       display: none;
@@ -384,6 +445,45 @@
     <div class="project-video-portrait" onclick="playVideo(this,'ko8OLhrGNoA')">
       <img src="https://img.youtube.com/vi/ko8OLhrGNoA/maxresdefault.jpg" alt="Smithing Master Pixel Art Prototype" onerror="this.src='https://img.youtube.com/vi/ko8OLhrGNoA/hqdefault.jpg'">
       <div class="play-btn"></div>
+    </div>
+  </div>
+
+  <!-- ── SOCIAL PLAY CHARACTER SELECTION ── -->
+  <div class="game-header social-play-header" style="margin-top:3rem;">
+    <span class="game-tag" data-en="AI-Assisted 2D Concept Design" data-ja="AI支援 2Dコンセプトデザイン">AI-Assisted 2D Concept Design</span>
+    <h2 data-en="Social Play Character Selection" data-ja="Social Play キャラクター選択コンセプト">Social Play Character Selection</h2>
+    <p data-en="Character-selection concepts for a social play game, created through ChatGPT and Gemini image iteration. The focus was not only image generation, but art direction: readable silhouettes, fantasy-musician archetypes, costume language, pose clarity, and a roster that could work inside a game selection screen." data-ja="ChatGPTとGeminiでの画像イテレーションを使って制作した、ソーシャルプレイゲーム向けのキャラクター選択コンセプトです。単なる画像生成ではなく、アートディレクションとして、読みやすいシルエット、ファンタジー音楽家のアーキタイプ、衣装の方向性、ポーズの明確さ、選択画面で機能するキャラクターロスターを重視しました。">Character-selection concepts for a social play game, created through ChatGPT and Gemini image iteration. The focus was not only image generation, but art direction: readable silhouettes, fantasy-musician archetypes, costume language, pose clarity, and a roster that could work inside a game selection screen.</p>
+    <p style="margin-top:0.8rem;">
+      <span style="color:var(--muted);font-size:0.85rem;font-weight:600;letter-spacing:1px;text-transform:uppercase;" data-en="Images —" data-ja="画像 —">Images —</span>
+      <span style="color:#aaa;font-size:0.85rem;"> ChatGPT &nbsp;·&nbsp; Gemini</span>
+      &nbsp;&nbsp;
+      <span style="color:var(--muted);font-size:0.85rem;font-weight:600;letter-spacing:1px;text-transform:uppercase;" data-en="Focus —" data-ja="重点 —">Focus —</span>
+      <span style="color:#aaa;font-size:0.85rem;" data-en="Character roster · Silhouette · Selection UI" data-ja="キャラクターロスター · シルエット · 選択UI">Character roster · Silhouette · Selection UI</span>
+    </p>
+  </div>
+
+  <div class="project-row social-play-row">
+    <div class="project-info">
+      <ul>
+        <li data-en="Curated 6 final concepts from 12 generated options to keep the portfolio edit focused" data-ja="12枚の生成候補から6枚の最終コンセプトを選び、ポートフォリオとして見やすく整理">Curated 6 final concepts from 12 generated options to keep the portfolio edit focused</li>
+        <li data-en="Explored two readable archetype families: expressive bard performers and heavier fantasy-warrior musicians" data-ja="表情豊かなバード系パフォーマーと、重厚なファンタジー戦士系ミュージシャンという2つの読みやすいアーキタイプを検討">Explored two readable archetype families: expressive bard performers and heavier fantasy-warrior musicians</li>
+        <li data-en="Checked character silhouettes, costume rhythm, props, and pose clarity for small selection-card use" data-ja="小さな選択カードでの使用を想定し、シルエット、衣装のリズム、プロップ、ポーズの明確さを確認">Checked character silhouettes, costume rhythm, props, and pose clarity for small selection-card use</li>
+        <li data-en="Used AI output as a concept-development stage, with human selection and direction deciding the final set" data-ja="AI出力をコンセプト開発段階として使い、最終セットは人の選定とディレクションで決定">Used AI output as a concept-development stage, with human selection and direction deciding the final set</li>
+      </ul>
+    </div>
+    <div class="social-play-feature" onclick="openLightbox('images/social-play/character-selection/bard-performer.png')">
+      <img src="images/social-play/character-selection/bard-performer.png" alt="Social Play bard performer character concept">
+    </div>
+  </div>
+
+  <div class="image-gallery social-play-gallery">
+    <div class="image-gallery-grid">
+      <img class="gallery-img" src="images/social-play/character-selection/bard-performer.png" alt="Social Play bard performer concept" onclick="openLightbox(this.src)">
+      <img class="gallery-img" src="images/social-play/character-selection/dwarf-warrior-card.png" alt="Social Play dwarf warrior character card" onclick="openLightbox(this.src)">
+      <img class="gallery-img" src="images/social-play/character-selection/dwarf-bard-card.png" alt="Social Play dwarf bard character card" onclick="openLightbox(this.src)">
+      <img class="gallery-img" src="images/social-play/character-selection/dwarf-axe-action.png" alt="Social Play dwarf axe action concept" onclick="openLightbox(this.src)">
+      <img class="gallery-img" src="images/social-play/character-selection/dwarf-music-action.png" alt="Social Play dwarf musician action concept" onclick="openLightbox(this.src)">
+      <img class="gallery-img" src="images/social-play/character-selection/bard-axe-character.png" alt="Social Play bard axe character concept" onclick="openLightbox(this.src)">
     </div>
   </div>
 
