@@ -180,25 +180,31 @@
       border-color: var(--accent);
     }
 
-    .social-play-header .game-tag {
+    .game-header.row-even .game-tag {
       color: #061014;
       background: var(--accent2);
-      border: 1px solid rgba(232, 160, 32, 0.65);
+      border: 1px solid rgba(232, 160, 32, 0.5);
     }
 
-    .social-play-row.project-row {
-      background: linear-gradient(135deg, rgba(0, 180, 216, 0.11), rgba(232, 160, 32, 0.08));
-      border-left-color: rgba(0, 180, 216, 0.65);
+    .game-header.row-odd .game-tag {
+      color: #111;
+      background: var(--accent);
+      border: 1px solid rgba(0, 180, 216, 0.35);
     }
 
     .social-play-feature {
       flex: 1.15;
       aspect-ratio: 16/10;
       background: #05080a;
-      border: 2px solid var(--accent2);
+      border: 2px solid var(--accent);
       box-shadow: 5px 5px 0 rgba(232, 160, 32, 0.22);
       overflow: hidden;
       cursor: zoom-in;
+    }
+
+    .project-row.row-even .social-play-feature {
+      border-color: var(--accent2);
+      box-shadow: 5px 5px 0 rgba(0, 180, 216, 0.18);
     }
 
     .social-play-feature img {
@@ -216,8 +222,6 @@
     }
 
     .social-play-gallery.image-gallery {
-      background: linear-gradient(135deg, rgba(0, 180, 216, 0.08), rgba(232, 160, 32, 0.07));
-      border-left: 3px solid rgba(0, 180, 216, 0.65);
       padding-top: 1rem;
       padding-bottom: 1.8rem;
     }
@@ -231,14 +235,18 @@
       object-fit: contain;
       background: #05080a;
       padding: 0.4rem;
-      border: 1px solid rgba(0, 180, 216, 0.55);
+      border: 1px solid var(--accent);
       border-radius: 0;
       box-shadow: 4px 4px 0 rgba(232, 160, 32, 0.18);
     }
 
-    .social-play-gallery .gallery-img:nth-child(even) {
-      border-color: rgba(232, 160, 32, 0.62);
+    .social-play-gallery.row-even .gallery-img {
+      border-color: var(--accent2);
       box-shadow: 4px 4px 0 rgba(0, 180, 216, 0.16);
+    }
+
+    .social-play-gallery.row-even .gallery-img:hover {
+      border-color: var(--accent2);
     }
 
     /* Lightbox */
@@ -941,6 +949,9 @@
         if (el.classList.contains('game-header') || el.tagName.toLowerCase() === 'hr') {
           postIndex++;
           currentCls = postIndex % 2 === 0 ? 'row-odd' : 'row-even';
+          if (el.classList.contains('game-header')) {
+            el.classList.add(currentCls);
+          }
           return;
         }
         if (!currentCls) return;

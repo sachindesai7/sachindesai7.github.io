@@ -45,6 +45,7 @@ Sachin Desai / Senior Gameplay Animator · Technical Art & Rigging
 - ComfyUI + Trellis local AI 3D research
 - Online AI 3D Model Generation
 - AI in Art Production report
+- AI Lab post colors alternate by post boundary: blue, gold, blue, gold. `game-header` and `hr.style-divider` elements advance the sequence.
 
 ## About Page Layout
 - Two-column: circular photo left + bio text right
