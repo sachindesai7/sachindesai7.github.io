@@ -204,6 +204,12 @@
       border: none;
     }
 
+    .project-video.portrait {
+      flex: 0 0 320px;
+      aspect-ratio: 9/16;
+      max-height: 560px;
+    }
+
     @media (max-width: 768px) {
       .project-row,
       .ta-section > .project-row:nth-child(even) {
@@ -213,6 +219,12 @@
       }
       .ta-tabs { padding: 0 1rem; }
       .ta-tab { padding: 0.6rem 0.9rem; font-size: 0.72rem; letter-spacing: 1px; }
+      .project-video.portrait {
+        flex: none;
+        width: 100%;
+        max-width: 280px;
+        margin: 0 auto;
+      }
     }
   </style>
 </head>
@@ -332,6 +344,26 @@
        UNITY
   ══════════════════════════════════════ -->
   <div class="ta-section" id="tab-unity" style="display:none;">
+
+    <!-- VAT vs Skinned vs VAT + Half Precision -->
+    <div class="project-row">
+      <div class="project-info">
+        <h3><span data-en="VAT vs Skinned vs VAT + Half Precision" data-ja="VAT vs スキンド vs VAT + 半精度">VAT vs Skinned vs VAT + Half Precision</span> <span data-en="— Unity" data-ja="— Unity">— Unity</span></h3>
+        <ul>
+          <li data-en="Compared Vertex Animation Texture (VAT), Skinned Mesh Renderer, and VAT with Half Precision in Unity" data-ja="UnityでVAT（頂点アニメーションテクスチャ）、スキンドメッシュレンダラー、VAT+半精度の3方式を比較">Compared Vertex Animation Texture (VAT), Skinned Mesh Renderer, and VAT with Half Precision in Unity</li>
+          <li data-en="VAT bakes animation into GPU textures, eliminating CPU skinning cost — ideal for large crowd simulations" data-ja="VATはアニメーションをGPUテクスチャに焼き付けCPUスキニングコストを排除 — 大規模群衆シミュレーションに最適">VAT bakes animation into GPU textures, eliminating CPU skinning cost — ideal for large crowd simulations</li>
+          <li data-en="Half Precision VAT halves texture memory footprint with negligible visual loss at gameplay distances" data-ja="半精度VATはゲームプレイ距離での視覚的損失を最小限に抑えながらテクスチャメモリを半減">Half Precision VAT halves texture memory footprint with negligible visual loss at gameplay distances</li>
+          <li data-en="Benchmarked GPU cost and memory across all three approaches to inform production pipeline decisions" data-ja="3方式のGPUコストとメモリをベンチマークしプロダクションパイプラインの意思決定に活用">Benchmarked GPU cost and memory across all three approaches to inform production pipeline decisions</li>
+        </ul>
+        <div class="btn-group">
+          <a href="https://youtube.com/shorts/yk0OhAeyOS8" target="_blank" class="watch-link" data-en="▶ Watch test" data-ja="▶ テストを見る">▶ Watch test</a>
+        </div>
+      </div>
+      <div class="project-video portrait" onclick="playVideo(this,'yk0OhAeyOS8')">
+        <img src="https://img.youtube.com/vi/yk0OhAeyOS8/maxresdefault.jpg" alt="VAT vs Skinned vs VAT Half Precision" onerror="this.src='https://img.youtube.com/vi/yk0OhAeyOS8/hqdefault.jpg'">
+        <div class="play-btn"></div>
+      </div>
+    </div>
 
     <!-- Tech Art - Clash of Beast -->
     <div class="project-row">
