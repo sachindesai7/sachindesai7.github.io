@@ -345,6 +345,26 @@
   ══════════════════════════════════════ -->
   <div class="ta-section" id="tab-unity" style="display:none;">
 
+    <!-- Animator Controller vs Playables A/B -->
+    <div class="project-row">
+      <div class="project-info">
+        <h3><span data-en="Animator Controller vs Playables A/B" data-ja="アニメーターコントローラー vs Playables A/B">Animator Controller vs Playables A/B</span> <span data-en="— Unity, Android" data-ja="— Unity、Android">— Unity, Android</span></h3>
+        <ul>
+          <li data-en="A/B tested Animator Controller against a direct PlayableGraph (no controller) across 25 tower characters on a real Android device (POCO F4 GT, 120 fps target)" data-ja="実機Android（POCO F4 GT、120fps目標）で25タワーキャラクターを使いAnimatorControllerとPlayableGraph直接再生のA/Bテストを実施">A/B tested Animator Controller against a direct PlayableGraph (no controller) across 25 tower characters on a real Android device (POCO F4 GT, 120 fps target)</li>
+          <li data-en="Removing the Animator Controller cut CPU main by 11% (steady state) and reduced frame drops from 13% to 0.2% at the 120 fps budget" data-ja="AnimatorController除去でCPUメイン11%削減（定常時）、120fps予算でのフレームドロップを13%→0.2%に改善">Removing the Animator Controller cut CPU main by 11% (steady state) and reduced frame drops from 13% to 0.2% at the 120 fps budget</li>
+          <li data-en="Isolated animation-system cost from skinning and rendering using Unity Profiler markers" data-ja="Unityプロファイラーマーカーでアニメーションシステムコストをスキニング・レンダリングから分離">Isolated animation-system cost from skinning and rendering using Unity Profiler markers</li>
+          <li data-en="Identified draw calls (60 per tower) as the dominant GPU bottleneck at scale — the next optimization target" data-ja="規模拡大時のGPUボトルネックはドローコール（タワーあたり60）と特定 — 次の最適化対象">Identified draw calls (60 per tower) as the dominant GPU bottleneck at scale — the next optimization target</li>
+        </ul>
+        <div class="btn-group">
+          <a href="https://youtu.be/Gf1ZEQB2tnE" target="_blank" class="watch-link" data-en="▶ Watch test" data-ja="▶ テストを見る">▶ Watch test</a>
+        </div>
+      </div>
+      <div class="project-video" onclick="playVideo(this,'Gf1ZEQB2tnE')">
+        <img src="https://img.youtube.com/vi/Gf1ZEQB2tnE/maxresdefault.jpg" alt="Animator Controller vs Playables A/B" onerror="this.src='https://img.youtube.com/vi/Gf1ZEQB2tnE/hqdefault.jpg'">
+        <div class="play-btn"></div>
+      </div>
+    </div>
+
     <!-- VAT vs Skinned vs VAT + Half Precision -->
     <div class="project-row">
       <div class="project-info">
@@ -438,26 +458,6 @@
       </div>
       <div class="project-video" onclick="playVideo(this,'eT-X_mrN3jY')">
         <img src="https://img.youtube.com/vi/eT-X_mrN3jY/maxresdefault.jpg" alt="Feature Mockup Base Alignment" onerror="this.src='https://img.youtube.com/vi/eT-X_mrN3jY/hqdefault.jpg'">
-        <div class="play-btn"></div>
-      </div>
-    </div>
-
-    <!-- Feature Mockup -->
-    <div class="project-row">
-      <div class="project-info">
-        <h3><span data-en="Feature Mockup" data-ja="機能モックアップ">Feature Mockup</span> <span data-en="— Unity, Cinemachine" data-ja="— Unity、Cinemachine">— Unity, Cinemachine</span></h3>
-        <ul>
-          <li data-en="Created a feature mockup using in-game assets and Cinemachine in Unity" data-ja="ゲーム内アセットとCinemachineを使ったフィーチャーモックアップを制作">Created a feature mockup using in-game assets and Cinemachine in Unity</li>
-          <li data-en="Demonstrates camera sequencing, lighting and VFX integration" data-ja="カメラシーケンス、ライティング、VFX統合をデモ">Demonstrates camera sequencing, lighting and VFX integration</li>
-          <li data-en="Used to pitch and visualise game features to design teams" data-ja="デザインチームへのゲーム機能のピッチ・ビジュアライズに使用">Used to pitch and visualise game features to design teams</li>
-          <li data-en="Worked as Technical Artist with Developers to create as Feature for Game" data-ja="テクニカルアーティストとしてデベロッパーとともにゲームフィーチャーを制作">Worked as Technical Artist with Developers to create as Feature for Game</li>
-        </ul>
-        <div class="btn-group">
-          <a href="https://youtu.be/aNIix2QZL2Q" target="_blank" class="watch-link" data-en="▶ Watch mockup" data-ja="▶ モックアップを見る">▶ Watch mockup</a>
-        </div>
-      </div>
-      <div class="project-video" onclick="playVideo(this,'aNIix2QZL2Q')">
-        <img src="https://img.youtube.com/vi/aNIix2QZL2Q/maxresdefault.jpg" alt="Feature Mockup" onerror="this.src='https://img.youtube.com/vi/aNIix2QZL2Q/hqdefault.jpg'">
         <div class="play-btn"></div>
       </div>
     </div>
