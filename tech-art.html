@@ -352,26 +352,6 @@
   ══════════════════════════════════════ -->
   <div class="ta-section" id="tab-perf" style="display:none;">
 
-    <!-- Animator Controller vs Playables A/B -->
-    <div class="project-row">
-      <div class="project-info">
-        <h3><span data-en="Animator Controller vs Playables A/B" data-ja="アニメーターコントローラー vs Playables A/B">Animator Controller vs Playables A/B</span> <span data-en="— Unity, Android" data-ja="— Unity、Android">— Unity, Android</span></h3>
-        <ul>
-          <li data-en="A/B tested Animator Controller against a direct PlayableGraph (no controller) across 25 tower characters on a real Android device (POCO F4 GT, 120 fps target)" data-ja="実機Android（POCO F4 GT、120fps目標）で25タワーキャラクターを使いAnimatorControllerとPlayableGraph直接再生のA/Bテストを実施">A/B tested Animator Controller against a direct PlayableGraph (no controller) across 25 tower characters on a real Android device (POCO F4 GT, 120 fps target)</li>
-          <li data-en="Removing the Animator Controller cut CPU main by 11% (steady state) and reduced frame drops from 13% to 0.2% at the 120 fps budget" data-ja="AnimatorController除去でCPUメイン11%削減（定常時）、120fps予算でのフレームドロップを13%→0.2%に改善">Removing the Animator Controller cut CPU main by 11% (steady state) and reduced frame drops from 13% to 0.2% at the 120 fps budget</li>
-          <li data-en="Isolated animation-system cost from skinning and rendering using Unity Profiler markers" data-ja="Unityプロファイラーマーカーでアニメーションシステムコストをスキニング・レンダリングから分離">Isolated animation-system cost from skinning and rendering using Unity Profiler markers</li>
-          <li data-en="Identified draw calls (60 per tower) as the dominant GPU bottleneck at scale — the next optimization target" data-ja="規模拡大時のGPUボトルネックはドローコール（タワーあたり60）と特定 — 次の最適化対象">Identified draw calls (60 per tower) as the dominant GPU bottleneck at scale — the next optimization target</li>
-        </ul>
-        <div class="btn-group">
-          <a href="https://youtu.be/Gf1ZEQB2tnE" target="_blank" class="watch-link" data-en="▶ Watch test" data-ja="▶ テストを見る">▶ Watch test</a>
-        </div>
-      </div>
-      <div class="project-video" onclick="playVideo(this,'Gf1ZEQB2tnE')">
-        <img src="https://img.youtube.com/vi/Gf1ZEQB2tnE/maxresdefault.jpg" alt="Animator Controller vs Playables A/B" onerror="this.src='https://img.youtube.com/vi/Gf1ZEQB2tnE/hqdefault.jpg'">
-        <div class="play-btn"></div>
-      </div>
-    </div>
-
     <!-- VAT vs Skinned vs VAT + Half Precision -->
     <div class="project-row">
       <div class="project-info">
@@ -392,12 +372,92 @@
       </div>
     </div>
 
+    <!-- Mobile VFX Optimization: Projectile Pooling -->
+    <div class="project-row">
+      <div class="project-info">
+        <h3><span data-en="Mobile VFX Optimization: Projectile Pooling" data-ja="モバイルVFX最適化：プロジェクタイルプーリング">Mobile VFX Optimization: Projectile Pooling</span> <span data-en="— Unity, Android" data-ja="— Unity、Android">— Unity, Android</span></h3>
+        <ul>
+          <li data-en="Compared creating and destroying objects during gameplay against reusing pooled bullets and hit effects" data-ja="ゲームプレイ中のオブジェクト生成・破棄とプールされた弾丸・ヒットエフェクトの再利用を比較">Compared creating and destroying objects during gameplay against reusing pooled bullets and hit effects</li>
+          <li data-en="Tested 25 towers firing approximately 400 projectiles per second with additional burst volleys" data-ja="25タワーが追加バースト射撃を含む毎秒約400発の弾丸を発射してテスト">Tested 25 towers firing approximately 400 projectiles per second with additional burst volleys</li>
+          <li data-en="Reduced average CPU main-thread time from 5.73 ms to 5.25 ms — about 8.4% gain" data-ja="CPUメインスレッド平均時間を5.73msから5.25msに削減 — 約8.4%改善">Reduced average CPU main-thread time from 5.73 ms to 5.25 ms — about 8.4% gain</li>
+          <li data-en="Reduced frames exceeding 12 ms from 11 to 1 during 30-second captures — fewer hitches" data-ja="30秒キャプチャ中に12msを超えるフレームを11から1に削減 — ヒッチ大幅減少">Reduced frames exceeding 12 ms from 11 to 1 during 30-second captures — fewer hitches</li>
+          <li data-en="Memory trade-off: pooling increased median Unity memory by 7.6 MiB to keep objects ready" data-ja="メモリトレードオフ：プーリングでUnityメモリ中央値が7.6MiB増加（オブジェクト待機コスト）">Memory trade-off: pooling increased median Unity memory by 7.6 MiB to keep objects ready</li>
+          <li data-en="Reset trails, particles and lifetimes on reuse to preserve correct visual behaviour; tested on POCO F4 GT with Vulkan" data-ja="再利用時にトレイル・パーティクル・ライフタイムをリセットして正しい視覚動作を維持；POCO F4 GT / Vulkanでテスト">Reset trails, particles and lifetimes on reuse to preserve correct visual behaviour; tested on POCO F4 GT with Vulkan</li>
+        </ul>
+        <div class="btn-group">
+          <a href="https://youtu.be/QegEDLZ1gK0" target="_blank" class="watch-link" data-en="▶ Watch test" data-ja="▶ テストを見る">▶ Watch test</a>
+        </div>
+      </div>
+      <div class="project-video" onclick="playVideo(this,'QegEDLZ1gK0')">
+        <img src="https://img.youtube.com/vi/QegEDLZ1gK0/maxresdefault.jpg" alt="Mobile VFX Optimization Projectile Pooling" onerror="this.src='https://img.youtube.com/vi/QegEDLZ1gK0/hqdefault.jpg'">
+        <div class="play-btn"></div>
+      </div>
+    </div>
+
+    <!-- Animator Controller vs Playables A/B -->
+    <div class="project-row">
+      <div class="project-info">
+        <h3><span data-en="Animator Controller vs Playables A/B" data-ja="アニメーターコントローラー vs Playables A/B">Animator Controller vs Playables A/B</span> <span data-en="— Unity, Android" data-ja="— Unity、Android">— Unity, Android</span></h3>
+        <ul>
+          <li data-en="A/B tested Animator Controller against a direct PlayableGraph (no controller) across 25 tower characters on a real Android device (POCO F4 GT, 120 fps target)" data-ja="実機Android（POCO F4 GT、120fps目標）で25タワーキャラクターを使いAnimatorControllerとPlayableGraph直接再生のA/Bテストを実施">A/B tested Animator Controller against a direct PlayableGraph (no controller) across 25 tower characters on a real Android device (POCO F4 GT, 120 fps target)</li>
+          <li data-en="Removing the Animator Controller cut CPU main by 11% (steady state) and reduced frame drops from 13% to 0.2% at the 120 fps budget" data-ja="AnimatorController除去でCPUメイン11%削減（定常時）、120fps予算でのフレームドロップを13%→0.2%に改善">Removing the Animator Controller cut CPU main by 11% (steady state) and reduced frame drops from 13% to 0.2% at the 120 fps budget</li>
+          <li data-en="Isolated animation-system cost from skinning and rendering using Unity Profiler markers" data-ja="Unityプロファイラーマーカーでアニメーションシステムコストをスキニング・レンダリングから分離">Isolated animation-system cost from skinning and rendering using Unity Profiler markers</li>
+          <li data-en="Identified draw calls (60 per tower) as the dominant GPU bottleneck at scale — the next optimization target" data-ja="規模拡大時のGPUボトルネックはドローコール（タワーあたり60）と特定 — 次の最適化対象">Identified draw calls (60 per tower) as the dominant GPU bottleneck at scale — the next optimization target</li>
+        </ul>
+        <div class="btn-group">
+          <a href="https://youtu.be/Gf1ZEQB2tnE" target="_blank" class="watch-link" data-en="▶ Watch test" data-ja="▶ テストを見る">▶ Watch test</a>
+        </div>
+      </div>
+      <div class="project-video" onclick="playVideo(this,'Gf1ZEQB2tnE')">
+        <img src="https://img.youtube.com/vi/Gf1ZEQB2tnE/maxresdefault.jpg" alt="Animator Controller vs Playables A/B" onerror="this.src='https://img.youtube.com/vi/Gf1ZEQB2tnE/hqdefault.jpg'">
+        <div class="play-btn"></div>
+      </div>
+    </div>
+
   </div><!-- /tab-perf -->
 
   <!-- ══════════════════════════════════════
        ANIMATION
   ══════════════════════════════════════ -->
   <div class="ta-section" id="tab-animation" style="display:none;">
+
+    <!-- Unity Animation -->
+    <div class="project-row">
+      <div class="project-info">
+        <h3><span data-en="Unity Animation" data-ja="Unityアニメーション">Unity Animation</span></h3>
+        <ul>
+          <li data-en="Character and prop animation built and integrated inside Unity" data-ja="Unity内でキャラクターとプロップのアニメーションを制作・統合">Character and prop animation built and integrated inside Unity</li>
+          <li data-en="Animation state machines, blend trees and in-engine testing" data-ja="アニメーションステートマシン、ブレンドツリー、エンジン内テスト">Animation state machines, blend trees and in-engine testing</li>
+        </ul>
+        <div class="btn-group">
+          <a href="https://youtu.be/EzmqlBVfVls" target="_blank" class="watch-link" data-en="▶ Watch video" data-ja="▶ 動画を見る">▶ Watch video</a>
+        </div>
+      </div>
+      <div class="project-video" onclick="playVideo(this,'EzmqlBVfVls')">
+        <img src="https://img.youtube.com/vi/EzmqlBVfVls/maxresdefault.jpg" alt="Unity Animation" onerror="this.src='https://img.youtube.com/vi/EzmqlBVfVls/hqdefault.jpg'">
+        <div class="play-btn"></div>
+      </div>
+    </div>
+
+    <!-- Feature Mockup : Base Alignment -->
+    <div class="project-row">
+      <div class="project-info">
+        <h3><span data-en="Feature Mockup : Base Alignment" data-ja="フィーチャーモックアップ：ベースアライメント">Feature Mockup : Base Alignment</span> <span data-en="— Unity, Cinemachine" data-ja="— Unity、Cinemachine">— Unity, Cinemachine</span></h3>
+        <ul>
+          <li data-en="Created a feature mockup using in-game assets, VFX, and Cinemachine in Unity" data-ja="Unityでインゲームアセット、VFX、Cinemachineを使用したフィーチャーモックアップを制作">Created a feature mockup using in-game assets, VFX, and Cinemachine in Unity</li>
+          <li data-en="Demonstrates camera sequencing, lighting and VFX integration" data-ja="カメラシーケンス、ライティング、VFX統合を実証">Demonstrates camera sequencing, lighting and VFX integration</li>
+          <li data-en="Used to pitch and visualise game features to design teams" data-ja="デザインチームへのゲームフィーチャーのピッチとビジュアライズに活用">Used to pitch and visualise game features to design teams</li>
+          <li data-en="Worked as Technical Artist with Developers to create as Feature for Game" data-ja="テクニカルアーティストとしてデベロッパーとともにゲームフィーチャーを制作">Worked as Technical Artist with Developers to create as Feature for Game</li>
+        </ul>
+        <div class="btn-group">
+          <a href="https://youtu.be/eT-X_mrN3jY" target="_blank" class="watch-link" data-en="▶ Watch mockup" data-ja="▶ モックアップを見る">▶ Watch mockup</a>
+        </div>
+      </div>
+      <div class="project-video" onclick="playVideo(this,'eT-X_mrN3jY')">
+        <img src="https://img.youtube.com/vi/eT-X_mrN3jY/maxresdefault.jpg" alt="Feature Mockup Base Alignment" onerror="this.src='https://img.youtube.com/vi/eT-X_mrN3jY/hqdefault.jpg'">
+        <div class="play-btn"></div>
+      </div>
+    </div>
 
     <!-- Tech Art - Clash of Beast -->
     <div class="project-row">
@@ -436,42 +496,6 @@
       </div>
       <div class="project-video" onclick="playVideo(this,'sDqCfHvlnjg')">
         <img src="https://img.youtube.com/vi/sDqCfHvlnjg/maxresdefault.jpg" alt="Tech Art Growtopia" onerror="this.src='https://img.youtube.com/vi/sDqCfHvlnjg/hqdefault.jpg'">
-        <div class="play-btn"></div>
-      </div>
-    </div>
-
-    <!-- Unity Animation -->
-    <div class="project-row">
-      <div class="project-info">
-        <h3 data-en="Unity Animation" data-ja="Unityアニメーション">Unity Animation</h3>
-        <ul>
-          <li data-en="Character and prop animation built and integrated inside Unity" data-ja="Unity内でキャラクターとプロップのアニメーションを制作・統合">Character and prop animation built and integrated inside Unity</li>
-          <li data-en="Animation state machines, blend trees and in-engine testing" data-ja="アニメーションステートマシン、ブレンドツリー、エンジン内テスト">Animation state machines, blend trees and in-engine testing</li>
-        </ul>
-        <a href="https://youtu.be/EzmqlBVfVls" target="_blank" class="watch-link" data-en="▶ Watch video" data-ja="▶ 動画を見る">▶ Watch video</a>
-      </div>
-      <div class="project-video" onclick="playVideo(this,'EzmqlBVfVls')">
-        <img src="https://img.youtube.com/vi/EzmqlBVfVls/maxresdefault.jpg" alt="Unity Animation" onerror="this.src='https://img.youtube.com/vi/EzmqlBVfVls/hqdefault.jpg'">
-        <div class="play-btn"></div>
-      </div>
-    </div>
-
-    <!-- Feature Mockup : Base Alignment -->
-    <div class="project-row">
-      <div class="project-info">
-        <h3><span data-en="Feature Mockup : Base Alignment" data-ja="フィーチャーモックアップ：ベースアライメント">Feature Mockup : Base Alignment</span> <span data-en="— Unity, Cinemachine" data-ja="— Unity、Cinemachine">— Unity, Cinemachine</span></h3>
-        <ul>
-          <li data-en="Created a feature mockup using in-game assets, VFX, and Cinemachine in Unity" data-ja="Unityでインゲームアセット、VFX、Cinemachineを使用したフィーチャーモックアップを制作">Created a feature mockup using in-game assets, VFX, and Cinemachine in Unity</li>
-          <li data-en="Demonstrates camera sequencing, lighting and VFX integration" data-ja="カメラシーケンス、ライティング、VFX統合を実証">Demonstrates camera sequencing, lighting and VFX integration</li>
-          <li data-en="Used to pitch and visualise game features to design teams" data-ja="デザインチームへのゲームフィーチャーのピッチとビジュアライズに活用">Used to pitch and visualise game features to design teams</li>
-          <li data-en="Worked as Technical Artist with Developers to create as Feature for Game" data-ja="テクニカルアーティストとしてデベロッパーとともにゲームフィーチャーを制作">Worked as Technical Artist with Developers to create as Feature for Game</li>
-        </ul>
-        <div class="btn-group">
-          <a href="https://youtu.be/eT-X_mrN3jY" target="_blank" class="watch-link" data-en="▶ Watch mockup" data-ja="▶ モックアップを見る">▶ Watch mockup</a>
-        </div>
-      </div>
-      <div class="project-video" onclick="playVideo(this,'eT-X_mrN3jY')">
-        <img src="https://img.youtube.com/vi/eT-X_mrN3jY/maxresdefault.jpg" alt="Feature Mockup Base Alignment" onerror="this.src='https://img.youtube.com/vi/eT-X_mrN3jY/hqdefault.jpg'">
         <div class="play-btn"></div>
       </div>
     </div>
