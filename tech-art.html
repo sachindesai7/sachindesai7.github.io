@@ -21,6 +21,7 @@
       padding: 0 2rem;
       display: flex;
       justify-content: center;
+      flex-wrap: wrap;
       border-bottom: 2px solid var(--border);
     }
 
@@ -259,11 +260,17 @@
   <!-- ── Tab bar ── -->
   <div class="ta-tabs" role="tablist">
     <button class="ta-tab ta-tab--active" data-tab="dcc"
-            data-en="Rigging &amp; DCC Tools" data-ja="リギング &amp; DCCツール"
-            role="tab" aria-selected="true">Rigging &amp; DCC Tools</button>
-    <button class="ta-tab" data-tab="unity"
-            data-en="Engine &amp; Unity Integration" data-ja="エンジン &amp; Unity統合"
-            role="tab" aria-selected="false">Engine &amp; Unity Integration</button>
+            data-en="Rigging &amp; Export Tools" data-ja="リギング &amp; エクスポートツール"
+            role="tab" aria-selected="true">Rigging &amp; Export Tools</button>
+    <button class="ta-tab" data-tab="perf"
+            data-en="Performance" data-ja="パフォーマンス"
+            role="tab" aria-selected="false">Performance</button>
+    <button class="ta-tab" data-tab="animation"
+            data-en="Animation" data-ja="アニメーション"
+            role="tab" aria-selected="false">Animation</button>
+    <button class="ta-tab" data-tab="shader"
+            data-en="Shader" data-ja="シェーダー"
+            role="tab" aria-selected="false">Shader</button>
     <button class="ta-tab" data-tab="pipeline"
             data-en="Pipeline Automation" data-ja="パイプライン自動化"
             role="tab" aria-selected="false">Pipeline Automation</button>
@@ -341,9 +348,9 @@
   </div><!-- /tab-dcc -->
 
   <!-- ══════════════════════════════════════
-       UNITY
+       PERFORMANCE
   ══════════════════════════════════════ -->
-  <div class="ta-section" id="tab-unity" style="display:none;">
+  <div class="ta-section" id="tab-perf" style="display:none;">
 
     <!-- Animator Controller vs Playables A/B -->
     <div class="project-row">
@@ -384,6 +391,13 @@
         <div class="play-btn"></div>
       </div>
     </div>
+
+  </div><!-- /tab-perf -->
+
+  <!-- ══════════════════════════════════════
+       ANIMATION
+  ══════════════════════════════════════ -->
+  <div class="ta-section" id="tab-animation" style="display:none;">
 
     <!-- Tech Art - Clash of Beast -->
     <div class="project-row">
@@ -426,7 +440,7 @@
       </div>
     </div>
 
-    <!-- Unity Animation (moved from 3D Animation page) -->
+    <!-- Unity Animation -->
     <div class="project-row">
       <div class="project-info">
         <h3 data-en="Unity Animation" data-ja="Unityアニメーション">Unity Animation</h3>
@@ -462,7 +476,34 @@
       </div>
     </div>
 
-  </div><!-- /tab-unity -->
+  </div><!-- /tab-animation -->
+
+  <!-- ══════════════════════════════════════
+       SHADER
+  ══════════════════════════════════════ -->
+  <div class="ta-section" id="tab-shader" style="display:none;">
+
+    <!-- Earth Shader -->
+    <div class="project-row">
+      <div class="project-info">
+        <h3><span data-en="Earth Shader" data-ja="アースシェーダー">Earth Shader</span> <span data-en="— Unity, Shader Graph" data-ja="— Unity、Shader Graph">— Unity, Shader Graph</span></h3>
+        <ul>
+          <li data-en="Built a stylised Earth shader in Unity Shader Graph with 5 runtime-controllable parameters covering atmosphere, clouds, surface colour, specular and rotation" data-ja="Unity Shader Graphで大気、雲、表面色、スペキュラー、回転の5つのランタイムパラメーターを持つスタイライズされた地球シェーダーを制作">Built a stylised Earth shader in Unity Shader Graph with 5 runtime-controllable parameters covering atmosphere, clouds, surface colour, specular and rotation</li>
+          <li data-en="Authored a companion star field in hand-written HLSL — 8 live controls including density, brightness, parallax offset and colour temperature" data-ja="手書きHLSLで密度、輝度、視差オフセット、色温度など8つのライブコントロールを持つ星空シェーダーを制作">Authored a companion star field in hand-written HLSL — 8 live controls including density, brightness, parallax offset and colour temperature</li>
+          <li data-en="Integrated NASA Blue Marble texture as the base map; all parameters exposed for live tweaking in the Inspector" data-ja="NASAブルーマーブルテクスチャをベースマップに統合し、全パラメーターをインスペクターでライブ調整可能">Integrated NASA Blue Marble texture as the base map; all parameters exposed for live tweaking in the Inspector</li>
+          <li data-en="Targets mobile-tier hardware via URP; full 66-second showcase demonstrates every control range" data-ja="URPを使用してモバイルハードウェアをターゲットに設定、66秒のショーケースで全コントロール範囲をデモ">Targets mobile-tier hardware via URP; full 66-second showcase demonstrates every control range</li>
+        </ul>
+        <div class="btn-group">
+          <a href="https://youtu.be/IGj1AsW-t6E" target="_blank" class="watch-link" data-en="▶ Watch showcase" data-ja="▶ ショーケースを見る">▶ Watch showcase</a>
+        </div>
+      </div>
+      <div class="project-video" onclick="playVideo(this,'IGj1AsW-t6E')">
+        <img src="https://img.youtube.com/vi/IGj1AsW-t6E/maxresdefault.jpg" alt="Earth Shader Unity Shader Graph" onerror="this.src='https://img.youtube.com/vi/IGj1AsW-t6E/hqdefault.jpg'">
+        <div class="play-btn"></div>
+      </div>
+    </div>
+
+  </div><!-- /tab-shader -->
 
   <!-- ══════════════════════════════════════
        PIPELINE
