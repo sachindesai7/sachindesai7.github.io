@@ -372,6 +372,27 @@
       </div>
     </div>
 
+    <!-- Shadow Types: Blob vs Planar vs Realtime -->
+    <div class="project-row">
+      <div class="project-info">
+        <h3><span data-en="Shadow Types: Blob vs Planar vs Realtime" data-ja="シャドウタイプ：Blob vs Planar vs Realtime">Shadow Types: Blob vs Planar vs Realtime</span> <span data-en="— Unity, URP" data-ja="— Unity、URP">— Unity, URP</span></h3>
+        <ul>
+          <li data-en="Blob: a simple grounding cue when detailed silhouettes aren't needed — lowest rendering cost" data-ja="Blob：詳細なシルエットが不要な場合のシンプルなグラウンディングキュー — 最低レンダリングコスト">Blob: a simple grounding cue when detailed silhouettes aren't needed — lowest rendering cost</li>
+          <li data-en="Planar: preserves the animated silhouette, but requires a suitable receiver plane" data-ja="Planar：アニメーションシルエットを保持するが、適切な受影平面が必要">Planar: preserves the animated silhouette, but requires a suitable receiver plane</li>
+          <li data-en="Realtime: reserve detail where it matters; tune shadow distance, resolution and cascades" data-ja="Realtime：重要な箇所にディテールを確保；シャドウ距離・解像度・カスケードを調整">Realtime: reserve detail where it matters; tune shadow distance, resolution and cascades</li>
+          <li data-en="Watch draw calls and transparent overlap when scaling to many characters" data-ja="多数キャラクターへのスケール時はドローコールと透明オーバーラップに注意">Watch draw calls and transparent overlap when scaling to many characters</li>
+          <li data-en="Lower rendering cost doesn't automatically mean higher FPS — whole-frame medians stayed around 32.9 ms across all three types" data-ja="レンダリングコスト削減が必ずしもFPS向上に直結しない — 全フレーム中央値は3方式とも約32.9msを維持">Lower rendering cost doesn't automatically mean higher FPS — whole-frame medians stayed around 32.9 ms across all three types</li>
+        </ul>
+        <div class="btn-group">
+          <a href="https://youtu.be/sWGlVc7WvfY" target="_blank" class="watch-link" data-en="▶ Watch test" data-ja="▶ テストを見る">▶ Watch test</a>
+        </div>
+      </div>
+      <div class="project-video" onclick="playVideo(this,'sWGlVc7WvfY')">
+        <img src="https://img.youtube.com/vi/sWGlVc7WvfY/maxresdefault.jpg" alt="Shadow Types Blob Planar Realtime Unity" onerror="this.src='https://img.youtube.com/vi/sWGlVc7WvfY/hqdefault.jpg'">
+        <div class="play-btn"></div>
+      </div>
+    </div>
+
     <!-- Mobile VFX Optimization: Projectile Pooling -->
     <div class="project-row">
       <div class="project-info">
@@ -390,6 +411,28 @@
       </div>
       <div class="project-video" onclick="playVideo(this,'QegEDLZ1gK0')">
         <img src="https://img.youtube.com/vi/QegEDLZ1gK0/maxresdefault.jpg" alt="Mobile VFX Optimization Projectile Pooling" onerror="this.src='https://img.youtube.com/vi/QegEDLZ1gK0/hqdefault.jpg'">
+        <div class="play-btn"></div>
+      </div>
+    </div>
+
+    <!-- Character LODs — UnityMeshSimplifier -->
+    <div class="project-row">
+      <div class="project-info">
+        <h3><span data-en="Character LODs — UnityMeshSimplifier" data-ja="キャラクターLOD — UnityMeshSimplifier">Character LODs — UnityMeshSimplifier</span> <span data-en="— Unity" data-ja="— Unity">— Unity</span></h3>
+        <ul>
+          <li data-en="Created three animated character LODs using UnityMeshSimplifier's LOD Generator Helper" data-ja="UnityMeshSimplifierのLOD Generator Helperを使用して3段階のアニメーションキャラクターLODを制作">Created three animated character LODs using UnityMeshSimplifier's LOD Generator Helper</li>
+          <li data-en="LOD0: 11,334 triangles — original detail; LOD1: 5,667 triangles — 50% reduction; LOD2: 2,266 triangles — approx. 80% reduction" data-ja="LOD0：11,334トライアングル（原寸）、LOD1：5,667（50%削減）、LOD2：2,266（約80%削減）">LOD0: 11,334 triangles — original detail; LOD1: 5,667 triangles — 50% reduction; LOD2: 2,266 triangles — approx. 80% reduction</li>
+          <li data-en="Configured automatic LOD switching based on the character's screen size" data-ja="キャラクターのスクリーンサイズに基づいたLOD自動切り替えを設定">Configured automatic LOD switching based on the character's screen size</li>
+          <li data-en="Retained the same animation, skeleton and material across all three levels" data-ja="3段階すべてで同じアニメーション、スケルトン、マテリアルを維持">Retained the same animation, skeleton and material across all three levels</li>
+          <li data-en="Checked silhouette and animation deformation to assess visual tradeoffs at each level" data-ja="各レベルのシルエットとアニメーションデフォーメーションを確認してビジュアルトレードオフを評価">Checked silhouette and animation deformation to assess visual tradeoffs at each level</li>
+          <li data-en="Key takeaway: optimize geometry alongside materials, shadows and animation costs — GPU/FPS gains require a controlled target-device benchmark" data-ja="重要な学び：マテリアル・シャドウ・アニメーションコストと合わせてジオメトリを最適化 — GPU/FPS改善は実機ベンチマークが必要">Key takeaway: optimize geometry alongside materials, shadows and animation costs — GPU/FPS gains require a controlled target-device benchmark</li>
+        </ul>
+        <div class="btn-group">
+          <a href="https://youtu.be/5exRgwnHTtI" target="_blank" class="watch-link" data-en="▶ Watch test" data-ja="▶ テストを見る">▶ Watch test</a>
+        </div>
+      </div>
+      <div class="project-video" onclick="playVideo(this,'5exRgwnHTtI')">
+        <img src="https://img.youtube.com/vi/5exRgwnHTtI/maxresdefault.jpg" alt="Character LODs UnityMeshSimplifier" onerror="this.src='https://img.youtube.com/vi/5exRgwnHTtI/hqdefault.jpg'">
         <div class="play-btn"></div>
       </div>
     </div>
